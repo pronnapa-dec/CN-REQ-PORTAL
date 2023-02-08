@@ -1,0 +1,93 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_bill_receive_verify" name="frm_bill_receive_verify" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-bill_receive_verify" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo" style="width: 100%">
+                <div class="modal-header">
+                    <h6 class="modal-title">ตรวจสอบข้อมูล/บิลรับเงิน</h6>
+                    <span class="tx-15 tx-primary pd-t-3 mg-l-10 time-today"></span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-sm">
+                        <div class="col-sm-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="counter-status d-flex md-mb-0">
+                                        <div class="counter-icon bg-primary-transparent">
+                                            <i class="icon-layers text-primary"></i>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <h5 class="tx-13">บิลทั้งหมด</h5>
+                                            <h2 class="mb-0 tx-22 mb-1 mt-1 parameter_1">0</h2>
+                                            <p class="text-muted mb-0 tx-11"><i class="si si-arrow-up-circle text-success mr-1"></i>รายการ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="counter-status d-flex md-mb-0">
+                                        <div class="counter-icon bg-danger-transparent">
+                                            <i class="las la-trash text-danger"></i>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <h5 class="tx-13">นำออก</h5>
+                                            <h2 class="mb-0 tx-22 mb-1 mt-1 parameter_2">0</h2> 
+                                            <p class="text-muted mb-0 tx-11"><i class="si si-arrow-up-circle text-success mr-1"></i>รายการ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="counter-status d-flex md-mb-0">
+                                        <div class="counter-icon bg-success-transparent">
+                                            <i class="las la-plus-circle text-success"></i>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <h5 class="tx-13">นำเข้าใหม่</h5>
+                                            <h2 class="mb-0 tx-22 mb-1 mt-1 parameter_3">0</h2>
+                                            <p class="text-muted mb-0 tx-11"><i class="si si-arrow-up-circle text-success mr-1"></i>รายการ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="counter-status d-flex md-mb-0">
+                                        <div class="counter-icon bg-indigo-transparent">
+                                            <i class="las la-edit tx-indigo "></i>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <h5 class="tx-13">แก้ไข</h5>
+                                            <h2 class="mb-0 tx-22 mb-1 mt-1 parameter_4">0</h2>
+                                            <p class="text-muted mb-0 tx-11"><i class="si si-arrow-up-circle text-success mr-1"></i>รายการ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-sm">
+                        <div class="col-lg-12">
+                            <table id="tbl-bill_receive_verify" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-bill_upload" class="btn ripple btn-indigo" data-action="save_exit" type="button" disabled>อัพโหลด</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--End Scroll with content modal -->

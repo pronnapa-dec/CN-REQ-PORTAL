@@ -1,0 +1,55 @@
+﻿<!-- Scroll with content modal -->
+<div class="modal effect-flip-vertical" id="modal-frm_history" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">ประวัติการรับคืน</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary tabs-style-2">
+                    <div class=" tab-menu-heading">
+                        <div class="tabs-menu1">
+                            <!-- Tabs -->
+                            <ul class="nav panel-tabs main-nav-line">
+                                <li><a href="#tab1" class="nav-link active" data-toggle="tab">การรับแจ้ง</a></li>
+                                <li><a href="#tab2" class="nav-link" data-toggle="tab">ผู้รับผิดชอบ</a></li>
+                                <li><a href="#tab3" class="nav-link" data-toggle="tab">คนขับรถ</a></li>
+                                <li><a href="#tab4" class="nav-link" data-toggle="tab">สภาพสินค้า</a></li>
+                                <li><a href="#tab5" class="nav-link" data-toggle="tab">สถานะงาน</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body tabs-menu-body main-content-body-right border">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <p class="ตารางประวัติ mg-b-5 tx-14 mg-b-20"> ตารางประวัติการเปลี่ยนแปลงของการรับแจ้ง</p>
+                                <table id="tbl-list-history-souce" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <p class=" mg-b-5 tx-14 mg-b-20"> ตารางประวัติการเปลี่ยนแปลงของผู้รับผิดชอบ</p>
+                                <table id="tbl-list-history-assige" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <p class=" mg-b-5 tx-14 mg-b-20"> ตารางประวัติการเปลี่ยนแปลงของคนขับรถ</p>
+                                <table id="tbl-list-history-driver" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                            <div class="tab-pane" id="tab4">
+                                <p class=" mg-b-5 tx-14 mg-b-20"> ตารางประวัติการเปลี่ยนแปลงของสภาพสินค้า</p>
+                                <table id="tbl-list-history-condition" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                            <div class="tab-pane" id="tab5">
+                                <p class=" mg-b-5 tx-14 mg-b-20"> ตารางประวัติการเปลี่ยนแปลงของสถานะงาน</p>
+                                <table id="tbl-list-history-status" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Scroll with content modal -->

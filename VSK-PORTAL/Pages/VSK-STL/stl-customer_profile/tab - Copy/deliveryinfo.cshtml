@@ -1,0 +1,233 @@
+﻿<div class="tab-pane" id="deliveryinfo">
+    <div class="row mg-t-5">
+        <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5 col-xl-5 col-xs-5 col-sm-5">
+                            <div class="main-content-label mg-b-5 tx-14">
+                                ข้อมูลการขนส่งสินค้า
+                            </div>
+                            <div class="row row-sm mg-t-20">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">สาย</label>
+                                    <input class="form-control form-control-sm" placeholder="สาย" type="text" id="emmas_kline" style="margin-top: -3px;">
+                                </div>
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Sub Route</label>
+                                    <input class="form-control form-control-sm" placeholder="Sub. Route" type="text" id="customer_delivery_subroute" style="margin-top: -3px;">
+                                </div>
+                            </div>
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Priority Type</label>
+                                    <input class="form-control form-control-sm" placeholder="Priority Type" type="text" id="customer_delivery_prioritytype" style="margin-top: -3px;">
+                                </div>
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">เวลาขนส่งมาตราฐาน</label>
+                                    <input class="form-control form-control-sm" placeholder="เวลาขนส่งมาตราฐาน" type="text" id="customer_delivery_stdtime" style="margin-top: -3px;">
+                                </div>
+                            </div>
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">บริษัทขนส่งเอกชน</label>
+                                    <input class="form-control form-control-sm" placeholder="บริษัทขนส่งเอกชน" type="text" id="customer_delivery_pds" style="margin-top: -3px;">
+                                </div>
+                            </div>
+                            @*<div class="row row-sm mg-t-15">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;" id="customer_ax_trponhold">Invoice and delivery on hold</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="badge badge-success">Yes</span>&nbsp;&nbsp;<span class="badge badge-secondary">No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="badge badge-secondary">Yes</span>&nbsp;&nbsp;<span class="badge badge-danger">No</span>
+                                    </div>
+                                </div>*@
+                        </div>
+
+                        <div class="col-md-7 col-xl-7 col-xs-7 col-sm-7">
+                            <div class="main-content-label mg-b-5 tx-14">
+                                &nbsp;
+                            </div>
+                            <div class="row row-sm mg-t-20">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Delivery Charged by</label>
+                                    <input class="form-control form-control-sm" placeholder="Delivery Charged by" type="text" id="customer_delivery_deliverychargedby" style="margin-top: -3px;">
+                                </div>
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Return Charged by</label>
+                                    <input class="form-control form-control-sm" placeholder="Return Charged by" type="text" id="customer_delivery_returnchargedby" style="margin-top: -3px;">
+                                </div>
+                            </div>
+
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Delivery Window</label>
+                                    <input class="form-control form-control-sm" placeholder="Delivery Window" type="text" id="customer_delivery_deliverywindow" style="margin-top: -3px;">
+                                </div>
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Delivery Appointment</label>
+                                    <input class="form-control form-control-sm" placeholder="Delivery Appointment" type="text" id="customer_delivery_deliveryappointment" style="margin-top: -3px;">
+                                </div>
+                            </div>
+
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Delivery Time</label>
+                                    <input class="form-control form-control-sm" placeholder="Delivery Time" type="text" id="customer_delivery_deliverytime" style="margin-top: -3px;">
+                                </div>
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Lunch Break</label>
+                                    <input class="form-control form-control-sm" placeholder="Lunch Break" type="text" id="customer_delivery_deliverylunchbreak" style="margin-top: -3px;">
+                                </div>
+                            </div>
+
+                            @*<div class="row row-sm mg-t-15">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Delivery day</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Sun</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Mon</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Tue</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Wed</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Thu</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Fri</span></label>
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">&nbsp;</label>
+                                        <label class="ckbox"><input type="checkbox" id=""><span class="tx-14 tx-medium tx-gray-700">Sat</span></label>
+                                    </div>
+                                </div>*@
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
+                            <div class="row row-sm mg-t-20">
+                                <div class="col-lg">
+                                    <table border="0" width="25%">
+                                        <tr>
+                                            <td style="width: 10%"><label class="tx-13 tx-medium tx-gray-700" style="padding-left: 0px;">Delivery day</label></td>
+                                            <td style="width: 15%">
+                                                <label class="ckbox mg-b-8"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: 0px;">เลือกทั้งหมด</span></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row row-sm mg-t-5 mg-l-0">
+                                <div class="col-lg mg-t-10 mg-lg-t-0">
+                                    <table border="0" width="70%">
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันอาทิตย์</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันจันทร์</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันอังคาร</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันพุธ</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันพฤหัสบดี</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันศุกร์</span></label>
+                                            </td>
+                                            <td style="width: 10%;">
+                                                <label class="ckbox"><input type="checkbox" id=""><span class="tx-12 tx-medium tx-gray-700" style="margin-left: -4px;">วันเสาร์</span></label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="row mg-t-20">
+            <div class="col-md-12 col-xl-12 col-xs-12 col-sm-12">
+                <div class="card card-primary">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-6 col-xs-6 col-sm-6">
+                                <div class="main-content-label mg-b-5 tx-14">
+                                    ข้อมูลสถานที่จัดส่งสินค้าและข้อมูลติดต่อ
+                                </div>
+                                <div class="row row-sm mg-t-20">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">วงเงินเครดิต</label>
+                                        <input class="form-control form-control-sm" placeholder="วงเงินเครดิต" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">วงเงินชั่วคราว</label>
+                                        <input class="form-control form-control-sm" placeholder="วงเงินชั่วคราว" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                </div>
+                                <div class="row row-sm mg-t-15">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">ยอดค้างชำระ</label>
+                                        <input class="form-control form-control-sm" placeholder="ยอดค้างชำระ" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">ยอดค้างชำระ VAT</label>
+                                        <input class="form-control form-control-sm" placeholder="ยอดค้างชำระ VAT" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-6 col-xs-6 col-sm-6">
+                                <div class="main-content-label mg-b-5 tx-14">
+                                    &nbsp;
+                                </div>
+                                <div class="row row-sm mg-t-20">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">VAT</label>
+                                        <input class="form-control form-control-sm" placeholder="VAT" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Credit rating</label>
+                                        <input class="form-control form-control-sm" placeholder="Credit rating" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                    <div class="col-lg mg-t-10 mg-lg-t-0">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">เครดิต (วัน)</label>
+                                        <input class="form-control form-control-sm" placeholder="เครดิต" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                </div>
+                                <div class="row row-sm mg-t-15">
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Account statement</label>
+                                        <input class="form-control form-control-sm" placeholder="Account statement" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                    <div class="col-lg">
+                                        <label class="tx-13 tx-medium tx-gray-700" style="padding-left: 5px;">Mandatory credit limit</label>
+                                        <input class="form-control form-control-sm" placeholder="Mandatory credit limit" type="text" id="" style="margin-top: -3px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>

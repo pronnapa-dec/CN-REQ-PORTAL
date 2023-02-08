@@ -1,0 +1,65 @@
+﻿@page "/trp/trp_movemax_mc"
+
+@{
+    ViewData["Script"] = "apps/trp/opt-trp_movemax-mc.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "VSK TRP MOVEMAX MC";
+    ViewData["Content-Title-Page"] = "บันทึกการนำส่งสินค้าแบบมอเตอร์ไซต์-ประจำวัน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+
+            </div>
+        </div>
+        @* breadcrumb *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-print" class="btn btn-dark btn-with-icon btn-block d-none"><i class="mdi mdi-printer mr-1"></i>Print</button>
+                @*<div class="dropdown" id="pay_dropdown">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn ripple btn-dark" data-toggle="dropdown" type="button"> การชำระ<i class="fas fa-caret-down ml-1"></i></button>
+                    <div class="dropdown-menu tx-13">
+                        <a class="dropdown-item" id="pay_origin" active href="#">ต้นทาง</a>
+                        <a class="dropdown-item" id="pay_destination" href="#">ปลายทาง</a>
+                        <a class="dropdown-item" id="pay_cod" href="#">COD</a>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-trp_movemax-mc/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+
+    @* modal form *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/BR/br-opt-job/List_history.cshtml" />
+    </div>-->
+    @* modal form *@
+
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-trp_movemax-mc/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@

@@ -1,0 +1,125 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:90%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"]</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="row row-sm">
+                                <div class="col-lg-12 tx-center">
+                                    @*<label class="tx-left">ไฟล์สลิปเงินโอน:</label>*@
+                                    @*<img alt="Responsive image" class="img-fluid" id="bankslip_image" style="max-height:200px !important" src="../../assets/img/photos/1.jpg">*@
+                                    <div class="img-gallery" data-rel="imageGallery">
+                                        <div data-src="../../assets/img/photos/1.jpg" id="bankslip_gallery">
+                                            <img src="../../assets/img/photos/1.jpg" id="bankslip_image" class="img-fluid" style="max-height:300px !important" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="main-dashboard-header-right">
+                                <div>
+                                    <label class="tx-13" id="text_qty_item">ยอดคงเหลือ</label>
+                                    <div><h5 id="sum_qty_item">0</h5>บาท</div>
+                                </div>
+                                <div>
+                                    <label class="tx-13" id="text_qty_current">ยอดตามบิล</label>
+                                    <div><h5 id="sum_qty_current">0</h5> บาท</div>
+                                </div>
+                                <div>
+                                    <label class="tx-13" id="text_qty_total">ยอดเงินโอน</label>
+                                    <div><h5 id="sum_qty_total">0</h5> บาท</div>
+                                </div>
+                            </div>
+                            <div class="row row-sm mt-2">
+                                <div class="col-lg-3">
+                                    <label for="bankslip_date">วันที่:</label>
+                                    <input type="text" class="form-control" id="bankslip_date" name="bankslip_date" placeholder="" required="" disabled>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="bankslip_jobnov">ใบงาน :</label>
+                                    <input type="text" class="form-control" id="bankslip_jobno" name="bankslip_jobno" placeholder="" required="" disabled>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="bankslip_ref">รหัสอ้างอิง (ref) :</label>
+                                    <input type="text" class="form-control" id="bankslip_ref" name="bankslip_ref" placeholder="" required="" disabled>
+                                </div>
+                            </div>
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg-6">
+                                    <label for="bankslip_number">เลขที่บัญชี :</label>
+                                    <input type="text" class="form-control" id="bankslip_number" name="bankslip_number" placeholder="" required="" disabled>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="bankslip_payindate">วัน/เวลา โอนเงิน :</label>
+                                    <input type="text" class="form-control" id="bankslip_payindate" name="bankslip_payindate" placeholder="" required="" disabled>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="bankslip_emmas">ยอดสลิปเงินโอน/บาท :</label>
+                                    <input type="text" class="form-control" id="bankslip_total" name="bankslip_total" placeholder="0.00" required="" disabled>
+                                </div>
+                            </div>
+                            <div class="row row-sm mg-t-15">
+                                <div class="col-lg-12">
+                                    <label for="bankslip_emmas">ลูกค้า :</label>
+                                    <select class="form-control select2" id="bankslip_emmas" name="bankslip_emmas" data-width="100%" required="" disabled>
+                                        <option value="">--- Select ---</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 d-none">
+                                    <label for="bankslip_billno">เลขที่บิล   :</label>
+                                    <input type="text" class="form-control" id="bankslip_billno" name="bankslip_billno" placeholder="" required="" disabled>
+                                </div>
+                                <div class="col-lg-4 mg-t-25 d-none">
+                                    <button type="button" class="btn btn-primary d-none" id="btn-add" disabled><i class="typcn typcn-document-add"></i>เพิ่ม</button>
+                                    <button type="reset" class="btn btn-secondary" onClick="window.location.reload();" disabled>รีเซต</button>
+                                    <button type="button" class="btn btn-danger" id="btn-main" onClick="window.location.href" style="float: right;" disabled>หลัก</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row row-sm mg-t-25">
+                        <div class="col-lg-12">
+                            <table id="tbl-bill" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ลำดับ</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">วันที่ INV</th>
+                                        <th valign="middle" @*width="40%"*@ class="tx-center">เลขที่บิล</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">รหัสลูกค้า</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ชื่อลูกค้า</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ยอดเงิน</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ประเภท</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ผู้ออกบิล</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">สาขาบืล</th>
+                                        <th valign="middle" @*width="15%"*@ class="tx-center">ผู้บันทึก</th>
+                                        <th valign="middle" @*width="20%"*@ class="tx-center">วันที่สรุป</th>
+                                        <th valign="middle" @*width="15%"*@ class="tx-center d-none">จัดการ</th>
+                                        <th valign="middle" class="tx-center d-none">ID</th>
+                                        <th valign="middle" class="tx-center d-none">REF</th>
+                                        <th valign="middle" class="tx-center d-none">STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                    <button id="btn-save_new" class="btn ripple btn-success btn-save_form d-none" data-action="save_new" type="submit">Save & New</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--End Scroll with content modal -->
+</form>

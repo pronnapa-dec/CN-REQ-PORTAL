@@ -1,0 +1,112 @@
+﻿<form id="frm_hr_pms" name="frm_hr_pms" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-hr_pms" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:1400px">
+            <div class="modal-content modal-content-demo" @*style="width: 120%"*@>
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="modal-title">Detail CarModelMix</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        <div class="mb-6 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                       
+                            <div class="col-sm-3">
+                                <label for="search_quarter" class="col-form-label tx-left">Quarter</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="search_status" class="col-form-label tx-left">Status</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="search_leader" class="col-form-label tx-left">Leader</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="search_employee" class="col-form-label tx-left">Employee</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_quarter" name="search_quarter" required>
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_status" name="search_status">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                    <option value="0/1">0/1</option>
+                                    <option value="0/2">0/2</option>
+                                    <option value="0/3">0/3</option>
+                                    <option value="1/1">1/1</option>
+                                    <option value="1/2">1/2</option>
+                                    <option value="1/3">1/3</option>
+                                    <option value="2/2">2/2</option>
+                                    <option value="2/3">2/3</option>
+                                    <option value="3/3">3/3</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_leader" name="search_leader">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_employee" name="search_employee">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="search_section" class="col-form-label tx-left">Section</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="search_department" class="col-form-label tx-left">Department</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="search_position" class="col-form-label tx-left">Position </label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="col-form-label tx-left"> </label>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_section" name="search_section">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_department" name="search_department">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control select2" id="search_position" name="search_position">
+                                    <option value="" selected>--SELECT ALL--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3" align="right">
+                                <button type="submit" class="btn btn-primary" id="btn-search">Search</button>
+                                <button type="reset" class="btn btn-secondary reset" id="btn-reset">Cancel</button>
+                            </div>
+                        </div>
+
+                   
+
+                    <div class="row mg-t-20">
+                        <div class="col-sm-12">
+                            <iframe id="url_report" src="" frameborder="0" width="100%" height="900px"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" style="width: 100px;" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

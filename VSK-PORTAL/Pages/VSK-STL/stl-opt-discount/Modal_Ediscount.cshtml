@@ -1,0 +1,69 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off" data-parsley-validate="">
+    <div class="modal effect-flip-vertical" id="modal-ediscount" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h5 class="modal-title">ตารางกำหนดส่วนลด</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <label class="col-sm-2 col-form-label tx-left">รหัส Template <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-4 col-form-label tx-left">รายละเอียด <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-5 col-form-label tx-left">หมายเหตุ <span class="tx-danger">*</span></label>
+                                        <label class="col-sm-1 col-form-label tx-left">&nbsp;</label>
+
+                                        <div class="col-sm-2">
+                                            <input type="text" class="form-control" id="template_code" name="template_code" placeholder="" maxlength="8" required>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="template_detail" name="template_detail" placeholder="" required>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="template_remark" name="template_remark" placeholder="">
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <div class="d-btn-create" style="margin: 0 .125rem; ">
+                                                <button class="btn btn-outline-success btn-icon btn-action btn-gdishead-action" data-action="create" id="create_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                            </div>
+                                            <div class="d-btn-reset" style="margin: 0 .125rem; ">
+                                                <button class="btn btn-outline-secondary btn-icon btn-action btn-reset" data-action="reset" id="btn-reset" type="reset"><i class="fas fa-undo"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-success">
+                                <div class="card-body">
+                                    <table id="tbl-gdishead-list" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>รหัส Template</th>
+                                                <th>รายละเอียด</th>
+                                                <th>หมายเหตุ</th>
+                                                <th>Update ราคาล่าสุดวันที่</th>
+                                                <th>Update โดย</th>
+                                                <th>จัดการ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--End Scroll with content modal -->

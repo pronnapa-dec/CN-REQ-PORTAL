@@ -1,0 +1,207 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"] List</h5>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+
+                <div class="row row-sm">
+                    <div class="col-lg-3">
+                        <label for="search_source_site_code">Source Site :</label>
+                        <input type="text" class="form-control" id="search_source_site_code" name="search_source_site_code" readonly />
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="search_destination_site_code">Destination Site :</label>
+                        <select class="form-control select2" id="search_destination_site_code" name="search_destination_site_code" data-width="100%">
+                            <option value="">--- Select Destination Site ---</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="s_stock_status">Formula :</label>
+                        <select class="form-control select2" id="search_item_formula" name="search_item_formula" data-width="100%">
+                            <option value="">--- Select Formula ---</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="s_stock_status">Active Status :</label>
+                        <select class="form-control select2" id="search_record_status" name="search_record_status" data-width="100%">
+                            <option value="">--- Select Active Status ---</option>
+                            <option value="enabled">Enabled</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row row-sm mg-t-15">
+                    <div class="col-lg-6">
+                        <label for="search_item">Item Search (Code, Barcode, SPcode, Name) :</label>
+                        @*<select class="form-control select2" id="search_itemmaster" name="search_itemmaster" data-width="100%">
+                        <option value="">--- Select Search Code, Barcode, SPcode, Name ---</option>
+                    </select>*@
+
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_itemmaster" name="search_itemmaster" data-width="91%">
+                                <option value="">--- Select Search Code, Barcode, SPcode, Name ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="search_stock_status">Stock Status :</label>
+                        <select class="form-control select2" id="search_stock_status" name="search_stock_status" data-width="100%">
+                            <option value="">--- Select Stock Status ---</option>
+                            <option value="plan">PLAN</option>
+                            <option value="backlog">BACKLOG</option>
+                            <option value="stock">STOCK</option>
+                            <option value="service">SERVICE</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label for="search_item_status_site_setting">Stock Status Site Setting :</label>
+                        <select class="form-control select2" id="search_item_status_site_setting" name="search_item_status_site_setting" data-width="100%">
+                            <option value="">--- Select Status Site Setting ---</option>
+                            <option value="backlog">BACKLOG</option>
+                            <option value="stock">STOCK</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row row-sm mg-t-15">
+
+                    <div class="col-3">
+                        <label for="search_item">Code 1 :</label>
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_item_code1_abb" name="search_item_code1_abb" data-width="80%">
+                                <option value="">--- Select Code 1 ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" data-clear="search_item_code1_abb" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-2">
+                        <label for="search_item">Code 2 :</label>
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_item_code2" name="search_item_code2" data-width="70%">
+                                <option value="">--- Select Code 2 ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" data-clear="search_item_code2" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <label for="search_item">Code 3 :</label>
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_item_code3" name="search_item_code3" data-width="70%">
+                                <option value="">--- Select Code 3 ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" data-clear="search_item_code3" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <label for="search_item">Code 4 :</label>
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_item_code4" name="search_item_code4" data-width="70%">
+                                <option value="">--- Select Code 4 ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" data-clear="search_item_code4" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <label for="search_item">Code 5 :</label>
+                        <div class="input-group">
+                            <select class="form-control select2" id="search_item_code5" name="search_item_code5" data-width="80%">
+                                <option value="">--- Select Code 5 ---</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-clear" data-clear="search_item_code5" type="button"><span class="input-group-btn"><i class="fa fa-times"></i></span></button>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end float-left">
+                    <div class="d-sm-flex justify-content-between align-items-center mt-3">
+                        <div class="d-flex align-items-center mr-2">
+                            <i class="mdi mdi-clock tx-15 mb-0 mr-1 text-primary"></i>
+                            <p class="mb-0 tx-15">last update time</p>
+                        </div>
+                        <p class="text-muted mb-0 ml-auto last-time mr-1"><span class="tx-danger">*</span> Pleses select a destination site</p>
+                        <a href="javascript:void(0)" class="mb-0 ml-auto btn-refresh d-none" id="btn-refresh-all" data-placement="top" data-toggle="tooltip" title="refresh"><i class="bx bx-refresh text-danger tx-22"></i></a>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end float-right">
+                    <div>
+                        <button type="submit" class="btn btn-info" id="btn-search">Search</button>
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">Reset</button>
+                        <button type="button" class="btn btn-primary" id="btn-export" data-toggle="dropdown">Export <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                        <div class="dropdown-menu menu-report">
+                            <a href="" class="dropdown-item btn-report" id="report-mrp_branch" target="_blank">Report MRP (SSRS) as XLS</a>
+                            <a href="" class="dropdown-item btn-report" id="report-mr_data" target="_blank">Report MR DATA (SSRS) as XLS</a>
+                            @*<a href="http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fReport+Project1%2fRPT_MRP_ItemSetup_GetAll&rs:Command=Render&rs:Format=excel" class="dropdown-item btn-report" id="export_mrp_klh" target="_blank">Export KLH (SSRS) as XLS</a>
+                        <a href="http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fReport+Project1%2fRPT_MRP_ItemSetup_GetAll_LLK&rs:Command=Render&rs:Format=excel" class="dropdown-item btn-report" id="export_mrp_llk" target="_blank">Export LLK (SSRS) as XLS</a>
+                        <a href="http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fReport+Project1%2fRPT_MRP_STEP&rs:Command=Render&rs:Format=excel" class="dropdown-item btn-report" id="export_branch" target="_blank">Export Branch (SSRS) as XLS</a>*@
+                            @*<a href="" class="dropdown-item btn-report btn-tbl_export" data-export="excel">Export as XLS</a>
+                        <a href="" class="dropdown-item btn-report btn-tbl_export" data-export="csv">Export as CSV</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+           </form>
+            <div class="border-top my-3"></div>
+      
+ 
+            <div class="table-responsive mg-t-20">
+                <table id="table_list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+            </div>
+
+            <!--<div class="panel panel-primary tabs-style-3">
+                <div class="tab-menu-heading">
+                    <div class="tabs-menu ">-->
+                        <!-- Tabs -->
+                        <!--<ul class="nav panel-tabs">
+                            <li class=""><a href="#tab11" class="active" data-toggle="tab"><i class="fa fa-laptop"></i> List</a></li>
+                            <li><a href="#tab12" data-toggle="tab"><i class="fa fa-cube"></i> MR-DATA TO BR</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body tabs-menu-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab11">
+                            <div class="table-responsive">
+                                <table id="table_list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab12">
+                            <p> Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. </p>
+                            <p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+
+        </div>
+    </div>
+</div>

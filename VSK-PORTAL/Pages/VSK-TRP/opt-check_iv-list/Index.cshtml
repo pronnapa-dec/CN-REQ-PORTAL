@@ -1,0 +1,46 @@
+﻿@page "/trp/check_iv_list"
+
+@{
+    ViewData["Script"] = "apps/trp/opt-check_iv-list.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "TRP";
+    ViewData["Content-Title-Page"] = "รายกาตรวจสอบสินค้า";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-document-add"></i> New Item</button>
+            </div>
+        </div>
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-check_iv-list/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-check_iv-list/List.cshtml" />
+    </div>
+    @* datatables *@
+
+</div>
+@* Container closed *@

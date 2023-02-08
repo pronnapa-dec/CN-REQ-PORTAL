@@ -1,0 +1,55 @@
+﻿<div class="col-12 col-sm-12 d-none" id="page_opt">
+    <div class="card">
+        <div class="card-header text-center">
+            <h1 class="text-center mb-0 formheader">ระดับปฏิบัติการ</h1>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontals" id="frm_data" name="frm_data" autocomplete="off">
+
+                <div class="col-xl-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>&emsp;&emsp;<i class='fas fa-book-open'></i> เกณฑ์การให้คะแนน</h4>
+                            <hr>
+                            <div class="main-criterion">
+                                <p style="font-size:13px;"> 1-2 = ต่ำกว่าความคาดหวัง/เป้าหมายอย่างต่อเนื่อง&emsp; 3-4= ต่ำกว่าความคาดหวัง/เป้าหมาย&emsp;  5-6 = เป็นไปตามความคาดหวัง/เป้าหมาย&emsp;7-8 = ดีกว่าความคาดหวัง/เป้าหมาย&emsp; 9-10= ดีกว่าความคาดหวัง/เป้าหมายอย่างต่อเนื่อง</p>
+                                <hr />
+                            </div>
+                            <div class="card-portlet__body">
+                                <div class="row">
+                                    <table class="table table-head-bg-brand table-bordered table-hover" id="assessment-list">
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle;">
+                                            <th class="text-center tx-16" rowspan="2" valign="middle" style="vertical-align:middle; width:40%;">ปัจจัยการประเมินผลงาน</th>
+                                            <th class="text-center header_weight d-none" rowspan="2" valign="middle" style="vertical-align:middle; width:5%;">น้ำหนัก</th>
+                                            <th class="text-center quarter_score tx-16" colspan="6" valign="middle" style="vertical-align:middle; width:17%;">คะแนนการประเมิน</th>
+                                        </tr>
+                                        <tr class="text-center">
+                                            <th class="text-center" width="6%"> คะแนน 1 - 10</th>
+                                            <th class="text-center" width="22%">ความคิดเห็น</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-sm table-head-bg-brand table-bordered"  id="assessment-more" style="border:1px solid #000 !important">
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle; background-color:#c2DFFc">
+                                            <th valign="middle" style="vertical-align:middle; width:40%;" width="50%">ความสำเร็จและจุดเด่น (อย่างน้อย 3 ข้อ)</th>
+                                            <th valign="middle" style="vertical-align:middle; width:40%;" width="50%">สิ่งที่ควรปรับปรุงและพัฒนาเพิ่มเติม (อย่างน้อย 3 ข้อ)</th>
+                                        </tr>
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle;">
+                                            <td><textarea class="form-control" id="comment_1_1" name="comment_1_1" style="width:100%" rows="3" required></textarea></td>
+                                            <td><textarea class="form-control" id="comment_1_2" name="comment_1_2" style="width:100%" rows="3" required></textarea></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mb-3 mb-xl-0">
+                                <button id="btn-save_form" type="submit" class="btn-emp_create btn btn-primary btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_data"><i class="far fa-save"></i>บันทึก</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

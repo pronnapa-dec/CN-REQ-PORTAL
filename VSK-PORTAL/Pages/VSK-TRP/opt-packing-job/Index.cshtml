@@ -1,0 +1,60 @@
+﻿@page "/trp/packing_job"
+
+@{
+    ViewData["Script"] = "apps/trp/opt-packing-job.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "TRP";
+    ViewData["Content-Title-Page"] = "ใบงานการแพคสินค้า";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+    <div class="d-flex my-xl-auto right-content">
+        <div class="mb-3 mb-xl-0 mg-r-10">
+            <button id="btn-modal-check" class="btn btn-secondary btn-with-icon btn-block"><i class="las la-search-location mr-1"></i>ตรวจสอบ</button>
+        </div>
+        <div class="mb-3 mb-xl-0">
+            <button id="btn-print" class="btn btn-primary btn-with-icon btn-block d-none"><i class="mdi mdi-printer mr-1"></i>พิมพ์</button>
+        </div>
+    </div>
+
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-packing-job/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+
+    @* modal form *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/BR/br-opt-job/List_history.cshtml" />
+    </div>-->
+    @* modal form *@
+
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-packing-job/List.cshtml" />
+    </div>
+    @* datatables *@
+
+</div>
+@* Container closed *@
+
+<partial name="~/Pages/VSK-TRP/opt-packing-job/Modal_Check.cshtml" />

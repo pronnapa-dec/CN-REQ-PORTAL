@@ -1,0 +1,52 @@
+﻿@page "/stl/discount"
+
+@{
+    ViewData["Script"] = "apps/stl/stl-opt-discount.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "Discount";
+    ViewData["Content-Title-Page"] = "ตารางส่วนลด";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="pr-2 mb-6 mb-xl-0">
+                <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-ediscount"><i class="typcn typcn-document-add"></i> ตารางส่วนลด </button>
+            </div>
+            <div class="mb-6 mb-xl-0">
+                <button id="btn-item_import" class="btn btn-primary btn-with-icon btn-block d-none" data-toggle="modal" data-target="#modal-ediscount_import"><i class="typcn typcn-upload"></i> Template ตารางส่วนลด</button>
+            </div>
+        </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-STL/stl-opt-discount/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@
+
+<partial name="~/Pages/VSK-STL/stl-opt-discount/Modal_Ediscount.cshtml" />
+
+<partial name="~/Pages/VSK-STL/stl-opt-discount/Modal_Ediscount_import.cshtml" />

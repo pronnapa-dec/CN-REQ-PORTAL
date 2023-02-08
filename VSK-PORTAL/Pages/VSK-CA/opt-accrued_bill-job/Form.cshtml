@@ -1,0 +1,122 @@
+﻿<!-- Scroll with content modal -->
+<form id="detectImageForm" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" @*style="max-width:950px"*@>
+            <div class="modal-content modal-content-demo" style="width:1250px;height:1250px;">
+                <div class="modal-header">
+                    <h6 class="modal-title">นำเข้าสลิปเงินโอน</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group ">
+                                <div class="row">
+                                    @*<div class="col-md-3">
+                                        <label class="form-label">ไฟล์สลิปเงินโอน <span class="tx-danger">*</span></label>
+                                    </div>*@
+                                    <div class="col-md-12">
+                                        <label class="form-label">ไฟล์สลิปเงินโอน <span class="tx-danger">*</span></label>
+                                        <div class="custom-file mt-2">
+                                            @*<input class="custom-file-input" id="imageFile" type="file"> <label class="custom-file-label" for="customFile">Choose file</label>*@
+                                            <input type="file" class="dropify" accept=".jpg, .png, image/jpeg, image/png" data-height="380" id="imageFile" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">วัน/เวลา โอน <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="ref_datetime" name="ref_datetime" placeholder="" required="" disabled>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">รหัสอ้างอิง <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="ref_code" name="ref_code" placeholder="" required="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">จาก <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="ref_start" name="ref_start" placeholder="" required="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">ไปยัง <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="ref_target" name="ref_target" placeholder="" required="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">จำนวน/บาท <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="ref_total" name="ref_total" placeholder="" required="" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">ข้อความทั้งหมด <span class="tx-danger"></span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="text_raw" name="text_raw" rows="7"  placeholder="" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group d-none">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">verified <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="result" rows="20"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form" data-action="save_exit" type="button">Save</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--End Scroll with content modal -->
+</form>

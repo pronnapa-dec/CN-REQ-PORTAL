@@ -1,0 +1,63 @@
+﻿@page "/ivc/opt/tr_check_job"
+
+@{
+    ViewData["Script"] = "apps/ivc/opt-check_tr-job.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "IVC";
+    ViewData["Content-Title-Page"] = "ตรวจสอบเอกสาร TR";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+        <div class="d-flex my-xl-auto right-content">
+            @*<div class="mb-3 mb-xl-0 mg-r-10">
+                    <button id="btn-packing-job" class="btn btn-warning btn-with-icon btn-block"><i class="las la-box-open"></i>Packing Job</button>
+                </div>
+                <div class="mb-3 mb-xl-0">
+                    <button id="btn-print" class="btn btn-primary btn-with-icon btn-block"><i class="mdi mdi-printer mr-1"></i>Print</button>
+                </div>*@
+        </div>
+
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-job/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* datatables *@
+    <div id="card-datatables">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-job/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-job/Modal_Remark.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-job/Modal_Edit.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

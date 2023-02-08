@@ -1,0 +1,58 @@
+﻿@page "/ivc/opt/tr_check_list"
+
+@{
+    ViewData["Script"] = "apps/ivc/opt-check_tr-list.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "TR";
+    ViewData["Content-Title-Page"] = "รายการใบตรวจรับสินค้า";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto"> 
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        <div class="d-flex my-xl-auto right-content">
+            @*<div class="mb-6 mb-xl-0 mg-r-10">
+                    <button id="btn-report_loscan" class="btn btn-dark btn-with-icon btn-block"><i class="las la-barcode"></i> Report Loscan </button>
+                </div>*@
+            <div class="mb-6 mb-xl-0 mg-r-10">
+                <button id="btn-report_check_tr" class="btn btn-dark btn-with-icon btn-block"><i class="las la-barcode"></i> Report CheckTR </button>
+            </div>
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-item_create" class="btn btn-primary btn-with-icon btn-block"><i class="typcn typcn-document-add"></i>สร้าง</button>
+            </div>
+        </div>
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-list/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-list/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-check_tr-list/Modal_Remark.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

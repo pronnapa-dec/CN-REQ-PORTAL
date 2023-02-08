@@ -1,0 +1,183 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <div class="row">
+                <div class="col-sm-6 mg-t-10">
+                    <h5 class="card-title" id="tiltle-table">Detail CarModel</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" data-parsley-validate="" autocomplete="off">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="search_vehicle_brand" class="form-label tx-left">
+                                Vehicle Brand
+                                <span class="tx-danger">*</span>
+                            </label>
+                            <select id="search_vehicle_brand" class="form-control" required="">
+                                <option value="">---select---</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="search_vehicle_segments" class="form-label tx-left">
+                                Vehicle Segments
+                                <span class="tx-danger"> *</span>
+                            </label>
+                            <select id="search_vehicle_segments" class="form-control select2 search_vehicle_segments" disabled>
+                                <option value="">---select---</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="search_vehicle_model" class="form-label tx-left">
+                                Vehicle Name
+                            </label>
+                            <select id="search_vehicle_model" class="form-control" disabled>
+                                <option value="">---select---</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="reset" class="btn btn-danger float-right mg-l-6" onClick="window.location.reload();" style="width: 100px;">Reset</button>
+                            <button type="submit" class="btn btn-primary float-right mg-l-6" id="btn-search" style="width: 100px;">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div aria-multiselectable="true" class="accordion accordion-dark d-none" id="accordion" role="tablist">
+                    <div class="card mb-2">
+                        <div class="card-header tx-center" id="headingOne" role="tab">
+                            <a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne">DETAIL CARMODEL</a>
+                        </div>
+                        <div aria-labelledby="headingOne" class="collapse" data-parent="#accordion" id="collapseOne" role="tabpanel">
+                            <div class="card-body">
+                                <div class="form-group ">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <label for="search_model_id" class="form-label tx-left">Model ID</label>
+                                            <input type="text" id="col3_filter" class="form-control search_model_id column_filter" data-column="3">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_modelmix" class="form-label tx-left">Model Mix</label>
+                                            <input type="text" id="col3_filter" class="form-control search_model_modelmix column_filter" data-column="4">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_model_change" class="form-label tx-left">Model Change</label>
+                                            <input type="text" id="col10_filter" class="form-control search_model_change column_filter" data-column="10">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_minor_change" class="form-label tx-left">Minor Change</label>
+                                            <input type="text" id="col11_filter" class="form-control column_filter" data-column="11">
+                                        </div>
+                                        @*<div class="col-sm-2">
+                                                <label for="search_cartype" class="form-label tx-left">Cartype</label>
+                                                <input type="text" id="col8_filter" class="form-control column_filter" data-column="8">
+                                            </div>*@
+                                        <div class="col-sm-2">
+                                            <label for="search_lik" class="form-label tx-left">Lik</label>
+                                            <input type="text" id="col9_filter" class="form-control column_filter" data-column="9">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_fuel_type" class="form-label tx-left">Fuel Type</label>
+                                            <input type="text" id="col12_filter" class="form-control column_filter" data-column="12">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_engine_displacement" class="form-label tx-left">Engine Displacement</label>
+                                            <input type="text" id="col13_filter" class="form-control column_filter" data-column="13">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_transmission_type" class="form-label tx-left">Transmission Type</label>
+                                            <input type="text" id="col14_filter" class="form-control column_filter" data-column="14">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_transmission" class="form-label tx-left">Transmission</label>
+                                            <input type="text" id="col23_filter" class="form-control column_filter" data-column="23">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_body_type" class="form-label tx-left">Body type</label>
+                                            <input type="text" id="col15_filter" class="form-control column_filter" data-column="15">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_horsepower" class="form-label tx-left">Horse Power</label>
+                                            <input type="text" id="col16_filter" class="form-control column_filter" data-column="16">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_high_stant" class="form-label tx-left">High Stant</label>
+                                            <input type="text" id="col17_filter" class="form-control column_filter" data-column="17">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_engine_code" class="form-label tx-left">Engine Code</label>
+                                            <input type="text" id="col118_filter" class="form-control column_filter" data-column="15">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_wheel_drive" class="form-label tx-left">Wheel Drive</label>
+                                            <input type="text" id="col19_filter" class="form-control column_filter" data-column="19">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_wheel" class="form-label tx-left">Wheel</label>
+                                            <input type="text" id="col20_filter" class="form-control column_filter" data-column="20">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_chassis_code" class="form-label tx-left">Chassis Code</label>
+                                            <input type="text" id="col21_filter" class="form-control column_filter" data-column="21">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_chassis_model" class="form-label tx-left">Chassis Model</label>
+                                            <input type="text" id="col22_filter" class="form-control column_filter" data-column="22">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_street_name" class="form-label tx-left">Street Name</label>
+                                            <input type="text" id="col25_filter" class="form-control column_filter" data-column="25">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_gross_vehicle_weight" class="form-label tx-left">G V W</label>
+                                            <input type="text" id="col17_filter" class="form-control column_filter" data-column="24">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="search_model_code" class="form-label tx-left">Model Code</label>
+                                            <input type="text" id="col26_filter" class="form-control column_filter" data-column="26">
+                                        </div>
+                                        <div class="col-sm-6 search_global_filter">
+                                            <label for="global_filter" class="form-label tx-left">Keyword</label>
+                                            <input type="text" class="form-control global_filter" placeholder="Search for anything..." id="global_filter">
+                                        </div>
+                                    </div>
+                                </div>
+                                @*<div class="form-group ">
+                                        <div class="row search_global_filter">
+                                            <div class="col-sm-1">
+                                                <label for="global_filter" class="form-label tx-left">Keyword</label>
+                                            </div>
+                                            <div class="col-sm-11">
+                                                <input type="text" class="form-control global_filter" placeholder="Search for anything..." id="global_filter">
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- accordion -->
+
+                <div class="clearfix"></div>
+
+            </form>
+
+            <div class="border-top my-3"></div>
+
+            <div class="table-responsive mg-t-20" @*style="overflow-x:visible"*@>
+
+                <div id="image_search_car" class=""><img alt="Responsive image" class="img-fluid" src="../../assets/img/image search car.png"></div>
+
+                <table id="tbl-carmodel_list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" width="100%"></table>
+
+            </div>
+        </div>
+    </div>
+</div>
+

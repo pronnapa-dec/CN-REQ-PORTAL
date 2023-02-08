@@ -1,0 +1,109 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+            <!-- 1 -->
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="form-group form-group-sm row">
+                    <label class="col-md-1 col-form-label">วันที่รายงาน : </label>
+                    <div class="col-md-3">
+                        <div class="input-group date">
+                            <input class="form-control" id="slip_job_datetime" name="slip_job_datetime" type="text" value="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="la la-calendar-check-o"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    @*<label class="col-md-1 col-form-label">วันที่โอน : </label>
+                        <div class="col-md-3">
+                            <div class="input-group date">
+                                <input class="form-control date-picker" id="slip_datetime" name="slip_datetime" type="text" value="" disabled>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>*@
+                    <label class="col-sm-1 col-form-label">เลขที่อ้างอิง : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="slip_refno" name="slip_refno" placeholder="xxx-xxxx-xxxx">
+                    </div>
+                    <label class="col-sm-1 col-form-label">ยอดเงิน : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="slip_total" name="slip_total" placeholder="0000.00">
+                    </div>
+                </div>
+
+                <!-- 2 -->
+
+                <div class="form-group form-group-sm row">
+
+                    <label class="col-sm-1 col-form-label">ธนาคาร : </label>
+                    <div class="col-sm-3">
+                        <select class="form-control select2" id="slip_bank" name="slip_bank" data-width="100%" placeholder="เลือกธนาคาร">
+                            <option value="">--select--</option>
+                            <option value="ธ.กสิกรไทย">ธ.กสิกรไทย</option>
+                            <option value="ธ.ทหารไทยธนชาต">ธ.ทหารไทยธนชาต</option>
+                            <option value="ธ.กรุงศรีอยุธยา">ธ.กรุงศรีอยุธยา</option>
+                            <option value="ธ.ออมสิน">ธ.ออมสิน</option>
+                            <option value="ธ.กรุงเทพ">ธ.กรุงเทพ</option>
+                            <option value="ธ.กรุงไทย">ธ.กรุงไทย</option>
+                            <option value="ธ.ไทยพาณิชย์">ธ.ไทยพาณิชย์</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-1 col-form-label">ลูกค้า : </label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="slip_cusname" name="slip_cusname" data-width="100%" placeholder="เลือกลูกค้า">
+                            <option value="">--select--</option>
+                        </select>
+                    </div>
+                    <label class="col-md-1 col-form-label">ผู้สร้างเอกสาร : </label>
+                    <div class="col-md-3">
+                        <select class="form-control rt_createby" id="slip_user" name="slip_user" data-width="100%"  placeholder="เลือกเจ้าหน้าที่">
+                            <option value="">--select--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm row">
+
+                    <label class="col-md-1 col-form-label">เลขที่บิล : </label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" id="bill_no" name="bill_no" placeholder="IVxxxxxxxxxx">
+                    </div>
+                    <label class="col-md-1 col-form-label">สาขา : </label>
+                    <div class="col-md-3">
+                        <select class="form-control" id="branch" name="branch" data-width="100%" placeholder="เลือกสาขา">
+                            <option value="" selected>--select--</option>
+                            <option value="VSK">VSM & VSK</option>
+                            <option value="VSF">VSF</option>
+                            <option value="KLH">KLH</option>
+                            <option value="LLK">LLK</option>
+                            <option value="NWM">NWM</option>
+                            <option value="LKS">LKS & KSW</option>
+                            <option value="SNK">SNK</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <hr />
+                <div class="tablekk-responsive">
+                    <table id="tbl-slip" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="overflow-x:visible"></table>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

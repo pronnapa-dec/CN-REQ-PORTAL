@@ -1,0 +1,73 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 id="card-title-pages" class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            <div class="main-dashboard-header-right d-none">
+                <div>
+                    <label class="tx-13">จำนวนสินค้า</label>
+                    <div><h5 id="sum_qty_item">0</h5>รายการ</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนปัจจุบัน</label>
+                    <div><h5 id="sum_qty_current">0</h5> หน่วย</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนทั้งหมด</label>
+                    <div><h5 id="sum_qty_total">0</h5> หน่วย</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+                <div class="row row-sm">
+                    <div class="form-group col-3">
+                        <label for="pck_number" class="col-form-label">วันที่จัดส่ง</label>
+                        <div class="input-group date">
+                            <input class="form-control date-picker" id="job_date" name="job_date" type="text" value="" required>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="la la-calendar-check-o"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-3">
+                        <label for="inv_date" class="col-form-label">สายส่ง</label>
+                        <select type="text" class="form-control" id="route_no" name="route_no">
+                            <option value="">- เลือกสายส่ง -</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="inv_date" class="col-form-label">ทะเบียนรถ</label>
+                        <select type="text" class="form-control" id="job_plate" name="job_plate">
+                            <option value="">- เลือกทะเบียนรถ -</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label class="col-form-label">พนักงานขับรถ</label>
+                        <select type="text" class="form-control" id="driver_id" name="driver_id">
+                            <option value="">- เลือกพนักงานขับรถ -</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        @*<button type="button" class="btn btn-primary" id="btn-export" data-toggle="dropdown">Export <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>
+                <div class="dropdown-menu">
+                    <a href="" class="dropdown-item btn-tbl_export" data-export="excel">Export as XLS</a>
+                    <a href="" class="dropdown-item btn-tbl_export" data-export="print">Print</a>
+                    <a href="" class="dropdown-item btn-tbl_export" data-export="copy">Copy to clipboard</a>
+                </div>*@
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">Cancel</button>
+                    </div>
+                </div>
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0"></table>
+            </div>
+        </div>
+    </div>
+</div>

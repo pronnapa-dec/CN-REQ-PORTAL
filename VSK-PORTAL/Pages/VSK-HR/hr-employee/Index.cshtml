@@ -1,0 +1,62 @@
+﻿@page "/hr/employee"
+
+@{
+    ViewData["Script"] = "apps/hr/hr-employee.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "HR";
+    ViewData["Content-Title-Page"] = "Employee information";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        <div class="d-flex my-xl-auto right-content">
+            <div class="pr-2 mb-6 mb-xl-0">
+                <button id="btn-emp_create" class="btn-emp_create btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_data"><i class="fas fa-user-plus"></i> Register Employee</button>
+            </div>
+            <div class="mb-6 mb-xl-0">
+                <button id="btn-emp_import" class="btn btn-primary btn-with-icon btn-block" data-toggle="modal" data-target="#modal-import"><i class="typcn typcn-upload"></i> Template Register</button>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-HR/hr-employee/Search.cshtml" />
+        <partial name="~/Pages/VSK-HR/hr-employee/List.cshtml" />
+
+    </div>
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-HR/hr-employee/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-HR/hr-employee/Import.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

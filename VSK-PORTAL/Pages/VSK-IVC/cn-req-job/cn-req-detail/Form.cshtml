@@ -1,0 +1,184 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:690px">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"] Form</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="kt-portlet__body">
+
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-sm-3 col-form-label">วันที่/เวลา :</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="cn_datetime" name="cn_datetime" type="text" value="" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-sm-3 col-form-label">สถานะ :</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="job_status" name="job_status" placeholder="" value="" style="font-weight:bold;">
+
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-sm-3 col-form-label">ผู้รับผิดชอบ :</label>
+                            <div class="col-sm-9">
+                                @*<input class="form-control" id="job_assige" name="job_assige" type="text" value="" required disabled>*@
+                                <select class="form-control" id="job_assige" name="job_assige" required disabled >
+                                    <option value="">-- เลือกผู้รับผิดชอบ --</option>
+                                    <option value="ADM">ADM</option>
+                                    <option value="TRP">TRP</option>
+                                    <option value="IVC">IVC</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-md-3 col-form-label">เลขที่ใบเสร็จ :</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="salefile_number" name="salefile_number" value="">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-md-3 col-form-label">ข้อมูลสินค้า :</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" id="saletra_item_name" name="saletra_item_name" value="" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">QTY. :</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="cn_qty" name="cn_qty" value="" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">การรับแจ้ง :</label>
+                            <div class="col-sm-9">
+                                @*<input class="form-control" id="source_site_code" name="source_site_code" type="text" value="" disabled>*@
+                                <select class="form-control" id="source_site_code" name="source_site_code" data-width="100%" required="" disabled>
+                                    <option value="">-- เลือกการรับแจ้ง --</option>
+                                    <option value="1">รับคืน</option>
+                                    <option value="2">หน้างาน</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">บันทึกโดย :</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="created_by" name="created_by" type="text" value="" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row">
+                            <label class="col-sm-3 col-form-label">สาเหตุ : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control cn_comment" id="job_comment" name="job_comment" data-width="100%" required="">
+                                    <option value="">-- เลือกสาเหตุการรับคืน --</option>
+                                    @*<option value="EXT_CUS_01">EXT_CUS_01 : ลูกค้ายกเลิก สั่งซ้ำ ไม่ได้ใช้งาน </option>
+                                        <option value="EXT_CUS_02">EXT_CUS_02 : ลูกค้าสั่งผิดรุ่น เปลี่ยนยี่ห้อใหม่ ไม่เหมือนตัวอย่าง</option>
+                                        <option value="EXT_CUS_03">EXT_CUS_03 : ลูกค้าเปลี่ยนเอาแท้/เทียบ เปลี่ยนเอาแบบชุด</option>
+                                        <option value="EXT_CUS_04">EXT_CUS_04 : รับคืนแบตเก่า</option>
+                                        <option value="INT_SAL_01">INT_SAL_01 : เซลล์จัดผิด ผิดรุ่น ผิดตำแหน่ง จัดเกิน จัดซ้ำ จัดไปเผื่อ</option>
+                                        <option value="INT_SAL_02">INT_SAL_02 : คืนสินค้าตัวอย่าง</option>
+                                        <option value="INT_SUP_01">INT_SUP_01 : คืนซัพพลาย</option>
+                                        <option value="INT_SUP_02">INT_SUP_02 : ชำรุด เป็นรอย เสียหาย แตกหัก รั่ว</option>*@
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">วันที่เข้ารับของ :</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" id="pick_up_date" name="pick_up_date" type="text" value="" disabled>
+
+                            </div>
+                        </div>
+                        @*<div class="form-group form-group-sm row hide-driver">
+                                <label class="col-sm-3 col-form-label">คนขับรถ :</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control " id="driver_name" name="driver_name" type="text" value="">
+                                </div>
+                            </div>*@
+                        <div class="form-group form-group-sm row hide-driver">
+                            <label class="col-sm-3 col-form-label">คนขับรถ :</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="driver_id" name="driver_id">
+                                    <option value="">-- เลือกคนขับรถ --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">สภาพสินค้า :</label>
+                            @*<div class="col-sm-9 item_condition">
+                                    <input class="col-sm-2" type="radio" id="item_good" name="item_condition" value="1" disabled="">
+                                    <label for="good">สมบูรณ์</label><br>
+                                    <input class="col-sm-2" type="radio" id="item_bad" name="item_condition" value="2" disabled="">
+                                    <label for="bad">ไม่สมบูรณ์</label><br>
+                                </div>*@
+                            <div class="col-sm-9">
+                                <select class="form-control" id="item_condition" name="item_condition">
+                                    <option value="">-- เลือกสถานะสินค้า --</option>
+                                    <option value="1">สมบูรณ์</option>
+                                    <option value="2">ไม่สมบูรณ์</option>
+                                    <option value="3">PT ตรวจสอบ</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group form-group-sm row hide_job_status d-none">
+                            <label class="col-sm-3 col-form-label">สถานะ : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="job_status_edit" name="job_status_edit">
+                                    <option value="">-- เลือกสถานะ --</option>
+                                    <option value="1">Open</option>
+                                    <option value="2">On Process</option>
+                                    <option value="3">Receive</option>
+                                    <option value="4">Complete</option>
+                                    <option value="5">Reject</option>
+                                    <option value="0">Cancel</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        @*<div class="form-group form-group-sm row hide_job_status d-none">
+                            <label class="col-sm-3 col-form-label">ผู้รับผิดชอบ : </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="job_assige_edit" name="job_assige_edit">
+                                    <option value="">-- เลือกผู้รับผิดชอบ --</option>
+                                    <option value="ADM">ADM</option>
+                                    <option value="TRP">TRP</option>
+                                    <option value="IVC">IVC</option>
+                                </select>
+                            </div>
+                        </div>*@
+                        <div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">หมายเหตุ :</label>
+                            <div class="col-sm-9">
+                                <input class="form-control " id="pick_up_remark" name="pick_up_remark" type="text" value="">
+                            </div>
+                        </div>
+                        @*<div class="form-group form-group-sm row remark_trp">
+                                <label class="col-sm-3 col-form-label">หมายเหตุ ขนส่ง :</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control " id="cn_pre_job_remark_trp" name="cn_pre_job_remark_trp" type="text" value="">
+                                </div>
+                            </div>*@
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save-status" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button id="btn-save-souce" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button id="btn-save-driver" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button id="btn-save-assige" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button id="btn-save-condition" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

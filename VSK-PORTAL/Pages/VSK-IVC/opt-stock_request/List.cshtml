@@ -1,0 +1,58 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="form-group">
+                    <div class="row row-sm ">
+                        <div class="col-lg-3">
+                            <label for="job_date" class="col-form-label">วันที่รายงาน : </label>
+                            <div class="input-group date">
+                                <input class="form-control date-rangepicker" id="search_job_date" name="search_job_date" type="text" value="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="job_no" class="col-form-label">เลขที่อ้างอิง : </label>
+                            <input type="text" class="form-control" id="search_job_no" name="search_job_no" placeholder="">
+                        </div>
+                        @*<div class="col-lg-3">
+                            <label for="tr_user" class="col-form-label">ผู้ตรวจสอบ : </label>
+                            <select class="form-control select2 user_scan" id="tr_user" name="tr_user" data-width="100%">
+                                <option value="" selected="">--เลือกผู้ตรวจสอบ--</option>
+                            </select>
+                        </div>*@
+                        <div class="col-lg-3">
+                            <label for="job_status" class="col-form-label">สถานะ : </label>
+                            <select class="form-control select2-no-search" id="search_job_status" name="search_job_status" data-width="100%">
+                                <option value="" selected>- เลือกสถานะ -</option>
+                                <option value="OPEN">OPEN</option>
+                                <option value="ON_PROCESS">ON PROCESS</option>
+                                <option value="RECEIVE">RECEIVE</option>
+                                <option value="APPROVAL">APPROVAL</option>
+                                <option value="CANCEL">CANCEL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">ค้นหา</button>
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">ปิด</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <hr />
+                <div class="table-responsive">
+                    <table id="table-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="overflow-x:visible"></table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

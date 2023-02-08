@@ -1,0 +1,648 @@
+﻿<div class="col-12 col-sm-12 d-none" id="page_manage">
+    <div class="card">
+
+        <div class="card-header pb-0 border-bottom">
+            <h1 class="text-center">ระดับบริหาร</h1>
+        </div>
+
+        <div class="card-body">
+            <form class="form-horizontals" id="frm_manage" name="frm_manage" autocomplete="off">
+                @*<div class="card-portlet_body">*@
+                <div class="col-xl-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>&emsp;&emsp;<i class='fas fa-book-open'></i> เกณฑ์การให้คะแนน</h4>
+                            <hr>
+                            <div class="main-criterion">
+                                <p style="font-size:13px;"> 5 = ผลงานโดดเด่นและเป็นแบบอย่างในการปฎิบัติงาน&emsp;4 = ผลงานเหนือกว่าเป้าหมายและความคาดหวัง&emsp; 3 = ผลงานประสบผลสำเร็จตรงตามเป้าหมาย&emsp; 2 = ต่ำกว่าเป้าหมาย&emsp; 1 = ต่ำกว่าเป้าหมายและสร้างผลกระทบเชิงลบ </p>
+                                <hr />
+                            </div>
+                            <div class="card-portlet__body">
+                                <div class="row">
+                                    <table class="table table-head-bg-brand table-bordered table-hover" id="tbl-list">
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle;">
+                                            <th class="text-center" rowspan="2" valign="middle" style="vertical-align:middle; width:40%;">ปัจจัยการประเมินผลงาน</th>
+                                            <th class="text-center custom-hide" rowspan="2" valign="middle" style="vertical-align:middle; width:5%;">น้ำหนัก</th>
+                                            <th class="text-center quarter" colspan="6" valign="middle" style="vertical-align:middle; width:17%;">คะแนนการประเมิน</th>
+                                        </tr>
+
+                                        <tr class="text-center">
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <th class="text-center" width="6%"> คะแนน 1 - 10</th>
+                                            <th class="text-center" width="22%">ความคิดเห็น</th>
+                                        </tr>
+
+                                        <tr style="background-color:#7cBBFA; font-weight:bold" class="choice">
+                                            <td align="center" style="font-weight:bold" id="h_1_1">ภาค 1 ผลการปฎิบัติงานตาม KPIs</td>
+                                            <td class="text-center card-font-bold custom-hide" id="w_1_1">50%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_1"></span></td>
+                                        </tr>
+
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_1_1">1.1 คะแนนรวม KPI</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_1_1">30%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_1_1" id="s_1_1_1" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_1_1 text-center" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_1_1 comment" id="c_1_1_1" required /></td>
+                                        </tr>
+
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_1_2">1.2 คุณภาพงาน</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_1_2">10%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_1_2" id="s_1_1_2" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_1_2" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_1_2 comment" id="c_1_1_2" required /></td>
+                                        </tr>
+
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_1_3">1.3 ปริมาณงาน</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_1_3">10%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_1_3" id="s_1_1_3" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_1_3" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_1_3 comment" id="c_1_1_3" required /></td>
+                                        </tr>
+
+                                        <tr style="background-color:#7cBBFA; font-weight:bold" class="choice">
+                                            <td align="center" style="font-weight:bold" id="h_1_2">ภาค 2 คุณสมบัติเฉพาะตัว</td>
+                                            <td class="text-center custom-hide">50%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_2"></span></td>
+                                        </tr>
+                                        <tr style="background-color:#c2DFFc; font-weight:bold;" class="choice">
+                                            <td align="center" id="t_1_2_1">2.1 ความรู้ ความสามารถ(Knowledge, Ability)</td>
+                                            <td class="text-center card-font-bold custom-hide" id="w_1_2_1">10%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_2_1"></span></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_1_1">2.1.1 ความรู้ในงาน : สามารถบริหารและควบคุมงานให้เกิดประสิทธิผล</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_1_1">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_1_1" id="s_1_2_1_1" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_1_1" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_1_1 comment" id="c_1_2_1_1" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_1_2">2.1.2 การวางแผนและจัดรูปแบบงาน : กำหนดเป้าหมายและแผนงาน รวมทั้งการจัดการทีมงานได้อย่างเหมาะสม</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_1_2">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_1_2" id="s_1_2_1_2" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_1_2" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_1_2 comment" id="c_1_2_1_2" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_1_3">2.1.3 การวิเคราะห์ : การวิเคราะห์ปัญหาอย่างรอบคอบทุกแง่มุม และมีข้อยุติหรือทางเลือกที่เหมาะสม</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_1_3">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_1_3" id="s_1_2_1_3" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_1_3" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_1_3 comment" id="c_1_2_1_3" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_1_4">2.1.4 การสื่อสาร : สามารถสื่อสารและถ่ายทอดนโยบาย รวมถึงเป้าหมายให้แก่ทีมงานได้อย่างมีประสิทธิภาพ</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_1_4">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_1_4" id="s_1_2_1_4" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_1_4" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_1_4 comment" id="c_1_2_1_4" required /></td>
+                                        </tr>
+                                        <tr style="background-color:#c2DFFc; font-weight:bold" class="choice">
+                                            <td align="center" style="font-weight:bold" id="h_2_2">2.2 การบังคับบัญชา (Command)</td>
+                                            <td class="text-center card-font-bold custom-hide" id="w_2_2">10%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_2_2"></span></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_2_1">2.2.1 การแบ่งงานและมอบหมายงาน : สามารถแบ่งงานและมอบหมายงาน รวมถึงสั่งการให้ทีมงานรับไปปฏิบัติอย่างเหมาะสม</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_2_1">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_2_1" id="s_1_2_2_1" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_2_1" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_2_1 comment" id="c_1_2_2_1" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_2_2">2.2.2 การควบคุมและติดตามผล : การกำหนดวิธีการหรือมาตรฐานในการควบคุมงานและดูแลให้งานที่มอบหมายบรรลุเป้าหมายตามกำหนดเวลาที่ตั้งไว้</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_2_2">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_2_2" id="s_1_2_2_2" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_2_2" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_2_2 comment" id="c_1_2_2_2" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_2_3">2.2.3 การใช้และพัฒนาทรัพยากรมนุษย์ : ความสามารรถในการวางแผนพัฒนาทีมงานรวมถึงการสอนงานทีมงานได้อย่างมีเป้าหมาย</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_2_3">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_2_3" id="s_1_2_2_3" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_2_3" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_2_3 comment" id="c_1_2_2_3" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_2_4">2.2.4 การมีส่วนร่วมทางธุรกิจ (participation) : การบริหารงานโดยคำนึงถึงต้นทุนการผลิต สินค้า และค่าตอบแทน</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_2_4">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_2_4" id="s_1_2_2_4" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_2_4" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_2_4 comment" id="c_1_2_2_4" required /></td>
+                                        </tr>
+                                        <tr style="background-color:#c2DFFc; font-weight:bold" class="choice">
+                                            <td align="center" style="font-weight:bold" id="h_2_3">2.3 การทำงานร่วมกันเป็นทีม (collaboration)</td>
+                                            <td class="text-center card-font-bold custom-hide" id="w_2_3">10%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_2_3"></span></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_3_1">2.3.1 ประสานให้เกิดความร่วมมือ การช่วยเหลือซึ่งกันและกันทั้งภายใน-ภายนอกทีมงาน โดยคำนึงถึงความสำเร็จบนเป้าหมายร่วมกันของ VSK ไม่ใช่เฉพาะหน่วยงานของตน</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_3_1">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_3_1" id="s_1_2_3_1" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_3_1" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_3_1 comment" id="c_1_2_3_1" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_3_2">2.3.2 ใช้การสื่อสารและผสมผสานการปฏิสัมพันธ์ที่หลากหลายเพี่อให้เกิดผลลัพธ์ร่วมกัน และส่งเสริมบรรยากาศการทำงาน</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_3_2">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_3_2" id="s_1_2_3_2" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_3_2" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_3_2 comment" id="c_1_2_3_2" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_3_3">2.3.3 เป็นแบบอย่างที่ดีในการให้เกียรติและเคารพในบทบาทหน้าที่ของผู้อื่นโดยไม่คำนึงถึงระดับตำแหน่งงาน ถึงแม้จะเป็นระดับตำแหน่งงานที่ต่ำกว่า</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_3_3">2.5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_3_3" id="s_1_2_3_3" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_3_3" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_3_3 comment" id="c_1_2_3_3" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_3_4">2.3.4 การประสานความร่วมมือและลดความขัดแย้ง (Mediating)ทั้งภายในและภายนอก</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_3_4">2.5%</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_3_4" id="s_1_2_3_4" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_3_4" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_3_4 comment" id="c_1_2_3_4" required /></td>
+                                        </tr>
+                                        <tr style="background-color:#c2DFFc; font-weight:bold" class="choice">
+                                            <td align="center" style="font-weight:bold" id="h_1_2_4">2.4 ภาวะผู้นำ (Leadership)</td>
+                                            <td class="text-center card-font-bold custom-hide" id="w_1_2_4">20%</td>
+                                            <td colspan="6" class="text-center" data-toggle="tooltip" data-placement="top"><span id="sum_1_2_4"></span></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_4_1">2.4.1 ความคิดริเรื่ม : สามารถคิด ริเริ่ม และนำมาลงมือทำได้จริง อย่างเป็นรูปธรรม</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_4_1">5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_4_1" id="s_1_2_4_1" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_4_1" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_4_1 comment" id="c_1_2_4_1" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_4_2">2.4.2 การตัดสินใจ : ตัดสินใจอย่างรอบคอบและทันเหตุการณ์</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_4_2">5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_4_2" id="s_1_2_4_2" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_4_2" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_4_2 comment" id="c_1_2_4_2" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_4_3">2.4.3 แสดงถึงความเป็นเจ้าของในงานที่ได้รับมอบหมาย (Ownership) รวมถึงกล้าตัดสินใจบนความเสี่ยง (Calculated Risk) ที่ผ่านการไตร่ตรองมาเป็นอย่างดีแล้วเพื่อยกระดับการทำงานของตนเอง ทีมงานและองค์กร</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_4_3">5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_4_3" id="s_1_2_4_3" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_4_3" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_4_3 comment" id="c_1_2_4_3" required /></td>
+                                        </tr>
+                                        <tr valign="middle" style="vertical-align:middle;" class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" id="t_1_2_4_4">2.4.4 Empowerment : มีความกล้าในการให้อำนาจและร่วมรับผิดชอบในการตัดสินใจหรือผลลัพธ์ร่วมกับผู้ที่เรามอบอำนาจให้</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="w_1_2_4_4">5%</td>
+                                            <!-- ธ.ค.-มี.ค. -->
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center asses_1">
+                                                <div class="form-group">
+                                                    <select name="s_1_2_4_4" id="s_1_2_4_4" style="text-align: center; text-align-last: center;" class="form-control custom-select 1_2_4_4" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control c_1_2_4_4 comment" id="c_1_2_4_4" required /></td>
+                                        </tr>
+                                        <tr style="background-color:#43A1FF;" valign="middle" @*class="d-none"*@>
+                                            <td align="center" style="font-weight:bold; vertical-align:middle" valign="middle">รวม</td>
+                                            <td class="text-center card-font-bold" style="vertical-align:middle" valign="middle">100%</td>
+                                            <td colspan="6" class="text-center card-font-bold">
+                                                <div><span id="asse_total_1">0</span> คะแนน</div>
+                                                <div><span id="asse_percent_1">0</span> %</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="row">
+                                    <table class="table table-sm table-head-bg-brand table-bordered" style="border:1px solid #000 !important">
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle; background-color:#c2DFFc">
+                                            <th valign="middle" style="vertical-align:middle; width:40%;" width="50%">ความสำเร็จและจุดเด่น</th>
+                                            <th valign="middle" style="vertical-align:middle; width:40%;" width="50%">สิ่งที่ควรปรับปรุงและจุดอ่อน</th>
+                                        </tr>
+                                        <tr class="text-center card-valign-middle" style="vertical-align:middle;">
+                                            <td><textarea class="form-control" id="comment_1_1" name="comment_1_1" style="width:100%" required></textarea></td>
+                                            <td><textarea class="form-control" id="comment_1_2" name="comment_1_2" style="width:100%" required></textarea></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="row">
+                                    <table class="table table-head-bg-brand table-bordered table-hover" id="">
+                                        <tr class="kt-align-center kt-valign-middle" style="vertical-align:middle;">
+                                            <th class="text-center" rowspan="2" valign="middle" style="vertical-align:middle; width:40%; background-color:#0349AF; font-weight:bold; color:white;">แบบสอบถามเพิ่มเติม</th>
+
+                                        </tr>
+                                        <tr class="kt-align-center">
+                                            <th class="text-center" width="7%" style="background-color:#0349AF; font-weight:bold; color:white;">คะแนน 1-10</th>
+                                            <th class="text-center" width="26%" style="background-color:#0349AF; font-weight:bold; color:white;">ความคิดเห็น</th>
+                                        </tr>
+                                        <tr class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" align="left" class="choice_names " name="m_t_1" id="m_t_1">1. การทำความเข้าใจและจับใจความสำคัญและนำไปสื่อสารได้อย่างชัดเจนและถูกต้อง</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="">NaN</td>
+                                            <td valign="middle" style="vertical-align:middle; text-align:center;" class="ans_scoce">
+                                                <div class="form-group">
+                                                    <select name="m_s_1" id="m_s_1" style="text-align: center; text-align-last: center;" class="form-control custom-select ans_scoce1" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control comment" name="m_c_1" id="m_c_1" required /></td>
+                                        </tr>
+                                        <tr class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" align="left" class="choice_names " name="m_t_2" id="m_t_2">2. การมีมนุษยสัมพันธ์ที่ดีและมีใจพร้อมบริการทั้งภายในและภายนอกองค์กร</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="">NaN</td>
+                                            <td valign="middle" style="vertical-align:middle;  text-align:center;" class="ans_scoce">
+                                                <div class="form-group">
+                                                    <select name="m_s_2" id="m_s_2" style="text-align: center; text-align-last: center;" class="form-control custom-select ans_scoce2 text-center" required>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" class="form-control comment" name="m_c_2" id="m_c_2" required /></td>
+                                        </tr>
+                                        <tr class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" align="left" class="choice_names " name="m_t_3" id="m_t_3">3. รักความก้าวหน้าและพร้อมรับความท้าทายอยู่เสมอ</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="">NaN</td>
+                                            <td valign="middle" style="vertical-align:middle; text-align:center;" class="ans_scoce">
+                                                <select name="m_s_3" id="m_s_3" style="text-align: center; text-align-last: center;" class="form-control custom-select ans_scoce3 text-center">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control comment" name="m_c_3" id="m_c_3" required /></td>
+                                        </tr>
+                                        <tr class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" align="left" class="choice_names " name="m_t_4" id="m_t_4">4. การเปิดรับฟังความคิดเห็น การเรียนรู้สิ่งใหม่ๆและพัฒนาตนเองอยู่ตลอดเวลา</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="">NaN</td>
+                                            <td valign="middle" style="vertical-align:middle; text-align:center;" class="ans_scoce">
+                                                <select name="m_s_4" id="m_s_4" style="text-align: center; text-align-last: center;" class="form-control custom-select ans_scoce4 text-center">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control comment" name="m_c_4" id="m_c_4" required /></td>
+                                        </tr>
+                                        <tr class="choice">
+                                            <td valign="middle" style="vertical-align:middle;" align="left" class="choice_names " name="m_t_5" id="m_t_5">5. การมีทัศนะคติในเชิงบวก การควบคุมภาวะทางอารมณ์และรับมือกับการเปลี่ยนแปลง</td>
+                                            <td valign="middle" style="vertical-align:middle;" class="text-center custom-hide" id="">NaN</td>
+                                            <td valign="middle" style="vertical-align:middle; text-align:center;" class="ans_scoce">
+                                                <select name="m_s_5" id="m_s_5" style="text-align: center; text-align-last: center;" class="form-control custom-select ans_scoce5 text-center">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control comment" name="m_c_5" id="m_c_5" required /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                            @*<div class="shopping-cart-footer">
+                                    <div class="column"><a class="btn btn-secondary" href="#">Back to Shopping</a></div>
+                                    <div class="column"><a class="btn btn-primary" href="#" data-toast="" data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update cart</a><a class="btn btn-success" href="#">checkout</a></div>
+                                </div>*@
+
+                            <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                                <div>
+                                    @*<button type="submit" id="btn-save_form" class="btn btn-md btn-primary">บันทึก</button>*@
+                                </div>
+                            </div>
+
+                            <div class="mb-3 mb-xl-0">
+                                <button id="btn-save_form" type="submit" class="btn-emp_create btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_data"><i class="far fa-save"></i>บันทึก</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+            </form>
+
+        </div>
+
+    </div>
+</div>

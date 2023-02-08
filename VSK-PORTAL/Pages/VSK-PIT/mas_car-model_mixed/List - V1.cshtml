@@ -1,0 +1,652 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0 ">
+            <div class="row">
+                <div class="col-sm-6 mg-t-10">
+                    <h5 class="card-title" id="tiltle-table">Detail CarModel</h5>
+                </div>
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <select class="form-control select2" id="search_vehicle_brand" name="search_vehicle_brand" data-width="100%">
+                            <option value="0">
+                                --- Select Vehicle Brand ---
+                            </option>
+                        </select>
+                    </div><!-- input-group -->
+                </div>
+            </div>
+        </div>
+        <form id="frm_item" name="frm_item" autocomplete="off" data-parsley-validate="">
+
+            <div class="col-sm-12 mg-t-20">
+                <div class="panel panel-primary tabs-style-2">
+                    <div class=" tab-menu-heading">
+                        <div class="tabs-menu1">
+                            <!-- Tabs -->
+                            <ul class="nav panel-tabs main-nav-line">
+                                <li><a href="#tab4" class="nav-link active" data-toggle="tab">สินค้า</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body tabs-menu-body main-content-body-right border">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab4">
+                                <div class="row">
+                                    <div class="col-sm-6 ">
+                                        <div class="card card-secondary">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">ข้อมูลสินค้า</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="search_code3" class="col-form-label tx-left">ยี่ห้อสินค้า</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="search_lov_disgroup" class="col-form-label tx-left">กลุ่มสินค้า</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="search_code1" class="col-form-label tx-left">CODE1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_code3" class="form-control" required><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_lov_disgroup" class="form-control"><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_code1" class="form-control"><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-primary">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">ST</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-success">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">EO</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-info">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">SP</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-warning">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">Z4</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-danger">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">Z5</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card">
+                                            <div class="card-header pb-0" style="margin-top:20px;">
+                                                <span class="card-title mb-0 pb-0"> </span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="vat" class="col-form-label tx-left">VAT</label>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <label for="" class="col-form-label tx-left"></label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="vat" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-2"> </div>
+                                                    <div class="d-flex flex-row justify-content-center">
+                                                        <button style="margin: 0 .125rem; " class="col-sm-8 btn btn-outline-primary btn-block btn-icon btn-ediscount-action" data-action="create" id="pril_create_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                                        <button style="margin: 0 .125rem; " class="col-sm-8 btn btn-outline-secondary btn-icon btn-action btn-reset" data-action="reset" id="btn-reset" type="reset"><i class="fas fa-undo"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr style="margin-top:0px">
+
+                                <table id="tbl-ediscount_list" class="table mg-b-0 text-md-nowrap">
+                                    <thead style="font-size:10px; text-align:center">
+                                        <tr>
+                                            <th rowspan="2">#</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">ยี่ห้อสินค้า</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">กลุ่มสินค้า</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">Code1</th>
+                                            <th valign="middle" class="tx-center table-primary" colspan="3">ST</th>
+                                            <th valign="middle" class="tx-center table-success" colspan="3">EO</th>
+                                            <th valign="middle" class="tx-center table-info" colspan="3">SP</th>
+                                            <th valign="middle" class="tx-center table-warning" colspan="3">Z4</th>
+                                            <th valign="middle" class="tx-center table-danger" colspan="3">Z5</th>
+                                        </tr>
+                                        <tr>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="12%" class="tx-center">Vat</th>
+
+                                            <th valign="middle" width="6%" class="tx-center"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="max-height: 500px; overflow-y: scroll; font-size: 11px; text-align: center" class="ediscount_list"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-sm-12 mg-t-20 mg-b-20">
+            <div class="panel panel-success tabs-style-2">
+                <div class=" tab-menu-heading">
+                    <div class="tabs-menu1">
+                        <!-- Tabs -->
+                        <ul class="nav panel-tabs main-nav-line">
+                            <li><a href="#tab4" class="nav-link active" data-toggle="tab">ลูกค้า</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body tabs-menu-body main-content-body-right border">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab4">
+                            <table id="tbl-emmas_list" class="table mg-b-0 text-md-nowrap">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th width="3%" class="tx-center">#</th>
+                                        <th class="tx-center">รหัส</th>
+                                        <th class="tx-center">ลูกค้า</th>
+                                        <th width="20%" class="tx-center">ที่อยู่</th>
+                                        <th width="12%" class="tx-center">ตำบล</th>
+                                        <th width="12%" class="tx-center">อำเภอ</th>
+                                        <th width="12%" class="tx-center">จังหวัด</th>
+                                        <th width="12%" class="tx-center">รหัสไปษณีย์</th>
+                                        <th valign="middle" width="6%" class="tx-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size:11px; text-align:center">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0 ">
+            <div class="row">
+                <div class="col-sm-6 mg-t-10">
+                    <h5 class="card-title" id="tiltle-table">Detail CarModel</h5>
+                </div>
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <select class="form-control select2" id="search_vehicle_brand" name="search_vehicle_brand" data-width="100%">
+                            <option value="0">
+                                --- Select Vehicle Brand ---
+                            </option>
+                        </select>
+                    </div><!-- input-group -->
+                </div>
+            </div>
+        </div>
+        <form id="frm_item" name="frm_item" autocomplete="off" data-parsley-validate="">
+
+            <div class="col-sm-12 mg-t-20">
+                <div class="panel panel-primary tabs-style-2">
+                    <div class=" tab-menu-heading">
+                        <div class="tabs-menu1">
+                            <!-- Tabs -->
+                            <ul class="nav panel-tabs main-nav-line">
+                                <li><a href="#tab4" class="nav-link active" data-toggle="tab">สินค้า</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body tabs-menu-body main-content-body-right border">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab4">
+                                <div class="row">
+                                    <div class="col-sm-6 ">
+                                        <div class="card card-secondary">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">ข้อมูลสินค้า</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="search_code3" class="col-form-label tx-left">ยี่ห้อสินค้า</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="search_lov_disgroup" class="col-form-label tx-left">กลุ่มสินค้า</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="search_code1" class="col-form-label tx-left">CODE1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_code3" class="form-control" required><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_lov_disgroup" class="form-control"><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <select id="search_code1" class="form-control"><option value=""> ---select item---</option></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-primary">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">ST</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="st_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="st_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-success">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">EO</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="eo_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="eo_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-info">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">SP</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="sp_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="sp_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-warning">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">Z4</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z4_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z4_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card card-danger">
+                                            <div class="card-header pb-0">
+                                                <span class="card-title mb-0 pb-0">Z5</span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis1" class="col-form-label tx-left">%ลด1</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis2" class="col-form-label tx-left">%ลด2</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <label for="z5_dis3" class="col-form-label tx-left">%ลด3</label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis1" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis2" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-4 sel2 div_prodpurplan_cartype">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="z5_dis3" placeholder="0" step="1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <div class="card">
+                                            <div class="card-header pb-0" style="margin-top:20px;">
+                                                <span class="card-title mb-0 pb-0"> </span>
+                                            </div>
+                                            <div class="card-body" style="margin-top:-15px;">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label for="vat" class="col-form-label tx-left">VAT</label>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <label for="" class="col-form-label tx-left"></label>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="number" min="0" max="100" class="form-control tx-right" id="vat" placeholder="0" step="1">
+                                                    </div>
+                                                    <div class="col-sm-2"> </div>
+                                                    <div class="d-flex flex-row justify-content-center">
+                                                        <button style="margin: 0 .125rem; " class="col-sm-8 btn btn-outline-primary btn-block btn-icon btn-ediscount-action" data-action="create" id="pril_create_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                                        <button style="margin: 0 .125rem; " class="col-sm-8 btn btn-outline-secondary btn-icon btn-action btn-reset" data-action="reset" id="btn-reset" type="reset"><i class="fas fa-undo"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr style="margin-top:0px">
+
+                                <table id="tbl-ediscount_list" class="table mg-b-0 text-md-nowrap">
+                                    <thead style="font-size:10px; text-align:center">
+                                        <tr>
+                                            <th rowspan="2">#</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">ยี่ห้อสินค้า</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">กลุ่มสินค้า</th>
+                                            <th valign="middle" class="tx-center" rowspan="2">Code1</th>
+                                            <th valign="middle" class="tx-center table-primary" colspan="3">ST</th>
+                                            <th valign="middle" class="tx-center table-success" colspan="3">EO</th>
+                                            <th valign="middle" class="tx-center table-info" colspan="3">SP</th>
+                                            <th valign="middle" class="tx-center table-warning" colspan="3">Z4</th>
+                                            <th valign="middle" class="tx-center table-danger" colspan="3">Z5</th>
+                                        </tr>
+                                        <tr>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="10%" class="tx-left">%ลด1</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด2</th>
+                                            <th valign="middle" width="10%" class="tx-left">%ลด3</th>
+
+                                            <th valign="middle" width="12%" class="tx-center">Vat</th>
+
+                                            <th valign="middle" width="6%" class="tx-center"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="max-height: 500px; overflow-y: scroll; font-size: 11px; text-align: center" class="ediscount_list"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-sm-12 mg-t-20 mg-b-20">
+            <div class="panel panel-success tabs-style-2">
+                <div class=" tab-menu-heading">
+                    <div class="tabs-menu1">
+                        <!-- Tabs -->
+                        <ul class="nav panel-tabs main-nav-line">
+                            <li><a href="#tab4" class="nav-link active" data-toggle="tab">ลูกค้า</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body tabs-menu-body main-content-body-right border">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab4">
+                            <table id="tbl-emmas_list" class="table mg-b-0 text-md-nowrap">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th width="3%" class="tx-center">#</th>
+                                        <th class="tx-center">รหัส</th>
+                                        <th class="tx-center">ลูกค้า</th>
+                                        <th width="20%" class="tx-center">ที่อยู่</th>
+                                        <th width="12%" class="tx-center">ตำบล</th>
+                                        <th width="12%" class="tx-center">อำเภอ</th>
+                                        <th width="12%" class="tx-center">จังหวัด</th>
+                                        <th width="12%" class="tx-center">รหัสไปษณีย์</th>
+                                        <th valign="middle" width="6%" class="tx-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size:11px; text-align:center">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,437 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+
+                <div class="form-group form-group-sm row">
+                    <label class="col-md-2 col-form-label tx-right-f">วันที่ : </label>
+                    <div class="col-md-3">
+                        <div class="row row-sm ">
+                            <div class="input-group col-md-12">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                    </div>
+                                </div><input class="form-control chk_data_input fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="job_date" name="job_date" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <label class="col-md-2 col-form-label tx-right-f">สาขา : </label>
+                    <div class="col-md-3">
+                        <select type="text" class="form-control chk_data_input tx-center tx-bold bd bd-4 bd-gray-500" id="branch" name="branch" required="">
+                            <option value="" selected>--- เลือกสาขา ---</option>
+                            <option value="VSK">VSK</option>
+                            <option value="VSF">VSF</option>
+                            <option value="KLH">KLH</option>
+                            <option value="LLK">LLK</option>
+                            <option value="NWM">NWM</option>
+                            <option value="LKS">LKS</option>
+                            <option value="SNK">SNK</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2" align="right">
+                        <input class="form-control tx-center tx-bold tx-uppercase tx-primary bd-primary bg-primary-transparent" type="text" id="text_user" name="text_user" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm row mg-b-5">
+                    <label class="col-md-2 col-form-label tx-right-f">เงินสด : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary keyup-format" type="number" min="0" step="0.01" id="cash" name="cash" required>
+                            <div class="input-group-append cashier-save">
+                                <span class="input-group-text bg-primary"><span class="tx-right-f"><a id="save-cash" href="#" title="บันทึกเงินสด"><i class="las la-save tx-16 tx-white"></i></a></span></span>
+                            </div>
+                            <div class="input-group-append cashier-history">
+                                <span class="input-group-text bg-gray-900"><span class="tx-right-f"><a id="history-cash" href="#" title="ประวัติเงินสด" data-toggle="modal" data-target="#modal-history_cash"><i class="fas fa-history tx-white"></i></a></span></span>
+                            </div>
+                        </div><!-- เงินสด -->
+                    </div>
+                    <label class="col-md-2 col-form-label tx-right-f">เงินโอน : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary update-def" type="number" min="0" step="0.01" id="transfer_payment" name="transfer_payment" disabled="" required="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">บาท</span>
+                            </div>
+                        </div><!-- เงินโอน -->
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm row mg-b-5">
+                    <label class="col-md-2 col-form-label tx-right-f">EDC : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary keyup-format" type="number" min="0" step="0.01" id="edc" name="edc" required>
+                            <div class="input-group-append cashier-save">
+                                <span class="input-group-text bg-primary"><span class="tx-right-f"><a id="save-edc" href="#" title="บันทึกเงินedc"><i class="las la-save tx-16 tx-white"></i></a></span></span>
+                            </div>
+                            <div class="input-group-append cashier-history">
+                                <span class="input-group-text bg-gray-900"><span class="tx-right-f"><a id="history-edc" href="#" title="ประวัติ EDC" data-toggle="modal" data-target="#modal-history_edc"><i class="fas fa-history tx-white"></i></a></span></span>
+                            </div>
+                        </div><!-- EDC -->
+                    </div>
+                    <label class="col-md-2 col-form-label tx-right-f">ค้างรับ : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary update-def" type="number" min="0" id="accrued" name="accrued" disabled="" required="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">บาท</span>
+                            </div>
+                        </div><!-- ค้างรับ -->
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm row mg-b-5">
+                    <label class="col-md-2 col-form-label tx-right-f">คูปอง : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary keyup-format" type="number" min="0" id="coupons" name="coupons" required>
+                            <div class="input-group-append cashier-save">
+                                <span class="input-group-text bg-primary"><span class="tx-right-f"><a id="save-coupons" href="#" title="บันทึกคูปอง"><i class="las la-save tx-16 tx-white"></i></a></span></span>
+                            </div>
+                            <div class="input-group-append cashier-history">
+                                <span class="input-group-text bg-gray-900"><span class="tx-right-f"><a id="history-coupons" href="#" title="ประวัติคูปอง" data-toggle="modal" data-target="#modal-history_coupons"><i class="fas fa-history tx-white"></i></a></span></span>
+                            </div>
+                        </div><!-- รับคูปอง -->
+                    </div>
+                    <label class="col-md-2 col-form-label tx-right-f">รับชำระ ค้างรับ : </label>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">฿</span>
+                            </div><input aria-label="Amount (to the nearest dollar)" class="form-control tx-right tx-primary update-def" type="number" min="0" id="accrued_receive" name="accrued_receive" disabled="" required="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">บาท</span>
+                            </div>
+                        </div><!-- รับชำระ ค้างรับ -->
+                    </div>
+
+                </div>
+
+                <div class="form-group form-group-sm row csh_description">
+                    <label class="col-md-2 col-form-label tx-right-f">หมายเหตุ/แคชเชียร์ : </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" placeholder="รายละเอียด" rows="2" id="csh_description" name="csh_description"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm row acc_description">
+                    <label class="col-md-2 col-form-label tx-right-f">หมายเหตุ/บัญชี : </label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" placeholder="รายละเอียด" rows="2" id="acc_description" name="acc_description"></textarea>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="border-top my-3"></div>
+
+            <div class="card-body">
+
+                <div class="tabs-menu">
+                    <ul class="nav nav-tabs profile navtab-custom panel-tabs">
+                        <li class="">
+                            <a href="#invoice_accrued" class="bg-success-transparent" data-toggle="tab" aria-expanded="true"> <span class="visible-xs"><i class="las la-coins tx-16 mr-1"></i></span> <span class="hidden-xs">ค้างชำระ</span> </a>
+                        </li>
+                        <li class="">
+                            <a href="#invoice_accrued_receive" class="bg-primary-transparent" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-money-check-alt tx-16 mr-1"></i></span> <span class="hidden-xs">รับชำระ ค้างรับ</span> </a>
+                        </li>
+                        <li class="">
+                            <a href="#receive_bill" class="bg-danger-transparent" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-receipt tx-16 mr-1"></i></span> <span class="hidden-xs">บันทึกรายการใบเสร็จประจำวัน</span> </a>
+                        </li>
+                        <li class="">
+                            <a href="#document_all" class="bg-warning-transparent" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-file-invoice-dollar tx-16 mr-1"></i></span> <span class="hidden-xs">เอกสาร</span> </a>
+                        </li>
+                        @*<li class="" disabled>
+            <a href="#slip_list" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-credit-card tx-16 mr-1"></i></span> <span class="hidden-xs">รายการสลิป</span> </a>
+        </li>*@
+                    </ul>
+                </div>
+                <div class="tab-content border-left border-bottom border-right border-top-0 p-4" id="loading-tabs">
+                    <div class="tab-pane active" id="invoice_accrued">
+                        <div class="form-group form-group-sm row d-flex">
+                            <label for="keywords_accrued" class="col-md-1 col-form-label tx-left pd-t-45">เลขที่บิล :</label>
+                            <div class="col-md-4 pd-t-35">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control col-11 select2 tx-center tx-success tx-bold bg-success-transparent bd-success" id="branch_accrued" name="branch_accrued" data-width="100%" required="">
+                                            <option value="" selected>--เลือกสาขา--</option>
+                                            <option value="VSK">VSK</option>
+                                            <option value="VSF">VSF</option>
+                                            <option value="KLH">KLH</option>
+                                            <option value="LLK">LLK</option>
+                                            <option value="NWM">NWM</option>
+                                            <option value="LKS">LKS</option>
+                                            <option value="SNK">SNK</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="keywords_accrued" name="keywords_accrued" value="">
+                                </div>
+
+                            </div>
+                            <div class="d-flex action pd-t-35">
+                                <button class="btn btn-success btn-with-icon btn-block mg-r-10" id="btn-accrued" style="width: 100px;"><i class="typcn typcn-document-add"></i> เพิ่ม</button>
+                                <button style="width:100px" class="add-to-cart btn btn-teal btn-with-icon" id="btn-customer_accrued" type="button" data-toggle="modal" data-target="#modal-frm_cus"><i class="las la-users"></i> ลูกค้า</button>
+                            </div>
+                            <div class="col-sm-3 mg-l-auto">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="counter-status d-flex md-mb-0">
+                                            <div class="counter-icon bg-warning-transparent accrued_cilck">
+                                                <a href="#" class="accrued_warning" id="accrued_warning" data-toggle="tooltip" title="" data-original-title="บิลที่ค้างชำระ"><i class="las la-money-check-alt text-warning"></i></a>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h5 class="tx-13 tx-right">ค้างชำระ วันนี้</h5>
+                                                <h2 class="mb-0 tx-22 mb-1 mt-1 tx-right" id="accrued_today">0</h2>
+                                                <p class="text-muted mb-0 tx-11 tx-right"><i class="si si-arrow-up-circle text-warning mr-1"></i>ทั้งหมด <span class="accrued_bill_today"></span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive" style="margin-top: -20px; overflow-x: visible;">
+                            <table id="tbl-accrued" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="invoice_accrued_receive">
+                        <div class="form-group form-group-sm row d-flex">
+                            <label for="keywords_accrued_receive" class="col-md-1 col-form-label tx-left pd-t-45">เลขที่บิล :</label>
+                            <div class="col-md-3 pd-t-35">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control col-11 select2 tx-center tx-primary tx-bold bg-primary-transparent bd-primary" id="branch_accrued_receive" name="branch_accrued_receive" data-width="100%" required="">
+                                            <option value="" selected>--เลือกสาขา--</option>
+                                            <option value="VSK">VSK</option>
+                                            <option value="VSF">VSF</option>
+                                            <option value="KLH">KLH</option>
+                                            <option value="LLK">LLK</option>
+                                            <option value="NWM">NWM</option>
+                                            <option value="LKS">LKS</option>
+                                            <option value="SNK">SNK</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="keywords_accrued_receive" name="keywords_accrued_receive" value="">
+                                </div>
+
+                            </div>
+                            <div class="d-flex action pd-t-35">
+                                <button style="width:100px" id="btn-accrued_receive" class="mg-r-10 btn btn-info btn-with-icon" type="button"><i class="typcn typcn-document-add"></i> เพิ่ม</button>
+                                <button style="width:100px" class="add-to-cart btn btn-teal btn-with-icon" id="btn-customer_accrued_receive" type="button" data-toggle="modal" data-target="#modal-frm_cus_acr"><i class="las la-users"></i> ลูกค้า</button>
+                            </div>
+                            <div class="col-sm mg-l-auto">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="counter-status d-flex md-mb-0">
+                                            <div class="counter-icon bg-primary-transparent accrued_receive-cilck">
+                                                <a href="#" class="accrued_receive-primary" id="accrued_receive-primary" data-toggle="tooltip" title="" data-original-title="บิลที่ค้าง"><i class="las la-wallet text-primary"></i></a>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h5 class="tx-13 tx-right">รอชำระค้างรับ</h5>
+                                                <h2 class="mb-0 tx-22 mb-1 mt-1 tx-right" id="accrued_receive_total">0</h2>
+                                                <p class="text-muted mb-0 tx-11 tx-right"><i class="si si-arrow-up-circle text-primary mr-1"></i>ทั้งหมด<span class="accrued_receive_total_bill"></span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="counter-status d-flex md-mb-0">
+                                            <div class="counter-icon bg-success-transparent accrued_receive-cilck">
+                                                <a href="#" class="accrued_receive-success" id="accrued_receive-success" data-toggle="tooltip" title="" data-original-title="บิลที่จ่ายแล้ว"><i class="las la-money-bill text-success"></i></a>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h5 class="tx-13 tx-right">ยอดชำระค้างรับ วันนี้</h5>
+                                                <h2 class="mb-0 tx-22 mb-1 mt-1 tx-right" id="accrued_receive_today">0</h2>
+                                                <p class="text-muted mb-0 tx-11 tx-right"><i class="si si-arrow-up-circle text-success mr-1"></i><span class="show-today"> วันที่</span> ทั้งหมด <span class="accrued_receive_today_bill"></span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive" style="margin-top: -20px; overflow-x: visible;">
+                            <table id="tbl-accrued_receive" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="document_all">
+                        <div class="form-group form-group-sm row d-flex">
+                            <div class="col-md-2">
+                                <button style="width:100px" id="document_upload" class="btn bg-orange btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_upload"><i class="typcn typcn-folder"></i> อัพโหลด</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive" style="margin-top:-35px;">
+                            <table id="tbl-file" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="receive_bill">
+
+                        <div class="row row-sm">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-order">
+                                            <h6 class="mb-2">เงินสด</h6>
+                                            <h4 class="text-right ">
+                                                <i class="las la-money-bill icon-size float-left text-primary text-primary-shadow pd-t-8"></i>
+                                                <span id="receive_bill_cash_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_cash_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-widget">
+                                            <h6 class="mb-2">โอนเงิน</h6>
+                                            <h4 class="text-right">
+                                                <i class="las la-money-check icon-size float-left text-success text-success-shadow pd-t-8"></i>
+                                                <span id="receive_bill_transfer_payment_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_transfer_payment_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-widget">
+                                            <h6 class="mb-2">บัตรเครดิต</h6>
+                                            <h4 class="text-right">
+                                                <i class="icon-size las la-credit-card float-left text-warning text-warning-shadow pd-t-8"></i>
+                                                <span id="receive_bill_credit_card_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_credit_card_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-widget">
+                                            <h6 class="mb-2">อื่นๆ</h6>
+                                            <h4 class="text-right">
+                                                <i class="las la-hand-holding-usd icon-size float-left text-danger text-danger-shadow pd-t-8"></i>
+                                                <span id="receive_bill_other_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_other_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-widget">
+                                            <h6 class="mb-2">เครดิต</h6>
+                                            <h4 class="text-right">
+                                                <i class="las la-receipt icon-size float-left text-purple pd-t-8"></i>
+                                                <span id="receive_bill_credit_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_credit_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
+                                <div class="card ">
+                                    <div class="card-body">
+                                        <div class="card-widget">
+                                            <h6 class="mb-2">รวม</h6>
+                                            <h4 class="text-right">
+                                                <i class="las la-wallet icon-size float-left text-inverse pd-t-8"></i>
+                                                <span id="receive_bill_sum_total">0</span>
+                                            </h4>
+                                            <p class="mb-0">ทั้งหมด <span class="float-right" id="receive_bill_sum_bill"> 0 บิล</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                        </div>
+
+                        <div class="form-group form-group-sm row d-flex">
+
+                            <label for="keywords_receive_bill" class="col-md-1 col-form-label tx-left">สถานะ :</label>
+                            <div class="col-md-1">
+                                <select class="form-control select2 tx-center tx-bold bg-primary-transparent bd-primary" id="status_receive_bill" name="status_receive_bill" style="width: 90px" required="">
+                                    <option value="">--เลือกสถานะ--</option>
+                                    <option value="1" selected>สำเร็จ</option>
+                                    <option value="2">ยกเลิก</option>
+                                </select>
+                            </div>
+
+                            <label for="keywords_receive_bill" class="col-md-1 col-form-label tx-right">เลขที่บิล :</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control col-11 select2 tx-center tx-bold bg-danger-transparent bd-danger" id="branch_receive_bill" name="branch_receive_bill" data-width="100%" required="" disabled>
+                                            <option value="" selected>--เลือกสาขา--</option>
+                                            <option value="VSK">VSK</option>
+                                            <option value="VSF">VSF</option>
+                                            <option value="KLH">KLH</option>
+                                            <option value="LLK">LLK</option>
+                                            <option value="NWM">NWM</option>
+                                            <option value="LKS">LKS</option>
+                                            <option value="SNK">SNK</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="keywords_receive_bill" name="keywords_receive_bill" value="">
+                                </div>
+
+                            </div>
+                            <div class="d-flex action">
+                                <button style="width:100px" id="btn-receive_bill" class="mg-r-10 btn btn-danger btn-with-icon" type="button"><i class="typcn typcn-document-add"></i> เพิ่ม</button>
+                                @*<button style="width:100px" class="add-to-cart btn btn-teal btn-with-icon" id="btn-customer_accrued_receive" type="button" data-toggle="modal" data-target="#modal-frm_cus_acr"><i class="las la-users"></i> ลูกค้า</button>*@
+                            </div>
+                           
+                            <div class="mg-l-auto btn-icon-list mg-r-15">
+                                <button class="btn btn-success btn-icon" type="button" id="btn-export-receive_bill" data-placement="top" data-toggle="tooltip-success" title="ส่งออกสำเร็จ">
+                                    <i class="las la-file-excel"></i>
+                                </button>
+                                <button class="btn btn-warning tx-dark btn-icon" type="button" id="btn-export-non-receive_bill" data-placement="top" data-toggle="tooltip-dark" title="ส่งออกรอตรวจสอบ">
+                                    <i class="las la-file-prescription"></i>
+                                </button>
+                                <button class="btn btn-primary btn-icon" type="button" id="btn-export-report_1" data-placement="top" data-toggle="tooltip-dark" title="รายงาน">
+                                    <i class="las la-print"></i>
+                                </button>
+                                <button class="btn btn-indigo btn-with-icon"  data-toggle="modal" data-target="#modal-bill_receive_verify" type="button" id="btn-bill_receive_verify" data-placement="top" title="วิเคราะห์ข้อมูล">
+                                    <i class="las la-cloud-upload-alt"></i>
+                                    ตรวจสอบ
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive" style="overflow-x: visible;">
+                            <table id="tbl-receive_bill" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

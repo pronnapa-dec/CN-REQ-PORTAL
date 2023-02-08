@@ -1,0 +1,65 @@
+﻿@page "/csh/opt/accrued_list"
+
+@{
+    ViewData["Script"] = "apps/ca/opt-accrued-list.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "บันทึกยอด-บิลค้างรับ";
+    ViewData["Content-Title-Page"] = "รายการสรุปยอดประจำวัน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+    <div class="d-flex my-xl-auto right-content">
+        @*<div class="mb-xl-0 mg-r-10">
+            <button id="btn-report_daily_cashier_today" class="btn btn-dark btn-with-icon btn-block"><i class="las la-file-alt"></i> รายงานประจำวัน-</button>
+        </div>*@
+        <div class="mb-3 mb-xl-0">
+            <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-document-add"></i>สร้าง</button>
+        </div>
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* advance search *@
+    @*<div id="card-adv_search" class="row">
+            <partial name="~/Pages/Auth/Application/Search.cshtml" />
+        </div>*@
+    @* advance search *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-list/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-list/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-list/Modal_Box.cshtml" />
+    </div>
+    @* modal form *@
+
+
+</div>
+@* Container closed *@

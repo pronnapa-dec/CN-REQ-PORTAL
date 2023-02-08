@@ -1,0 +1,70 @@
+﻿<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:900px">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">การอนุมัติผลการประเมิน</h6><span id="title_assess_pms" class="modal-title ml-1 tx-primary"></span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group form-group-sm  row">
+                        <label class="col-sm-2 col-form-label">Assess date/time : </label>
+                        <div class="col-sm-4">
+                            <label style="font-weight:bold;" id="data_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Quarter :</label>
+                        <div class="col-sm-4 input-group">
+                            <label style="font-weight:bold;" id="quarter_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm  row">
+                        <label class="col-sm-2 col-form-label">Assessor :</label>
+                        <div class="col-sm-4">
+                            <label style="font-weight:bold;" id="assessor_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Assess :</label>
+                        <div class="col-sm-4 input-group">
+                            <label style="font-weight:bold;" id="assess_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm  row">
+                        <label class="col-sm-2 col-form-label">Score PMS :</label>
+                        <div class="col-sm-2">
+                            <label style="font-weight:bold;" id="score_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Percentage PMS :</label>
+                        <div class="col-sm-2 input-group">
+                            <label style="font-weight:bold;" id="percentage_pms" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Score Time :</label>
+                        <div class="col-sm-2 input-group">
+                            <label style="font-weight:bold;" id="score_time" class="col-form-label tx-left tx-value"></label>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm  row">
+                        <label class="col-sm-2 col-form-label">Status :</label>
+                        <div class="col-auto col-sm-2 mt-1">
+                            <label class="rdiobox"><input type="radio" id="update_status_0" class="update_status" name="update_status" value="0"> <span class="tx-warning">WAIT</span></label>
+                        </div>
+                        <div class="col-auto col-sm-2 mt-1">
+                            <label class="rdiobox"><input type="radio" id="update_status_1" class="update_status" name="update_status" value="1" checked="" required> <span class="tx-success">SUCCESS</span></label>
+                        </div>
+                        <div class="col-auto col-sm-2 mt-1">
+                            <label class="rdiobox"><input type="radio" id="update_status_2" class="update_status" name="update_status" value="2" checked="" required> <span class="tx-danger">CANCEL</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-sm row ">
+                        <label class="col-sm-2 col-form-label">Remarks :</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control " id="remark_pms" name="remark_pms"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save_exit" class="btn ripple btn-danger btn-save_form" data-action="save_exit" type="submit">Delete</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

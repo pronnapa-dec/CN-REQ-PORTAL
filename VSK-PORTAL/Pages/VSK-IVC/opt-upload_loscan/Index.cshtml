@@ -1,0 +1,63 @@
+﻿@page "/ivc/opt/upload_loscan"
+
+@{
+    ViewData["Script"] = "apps/ivc/opt-upload_loscan.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "อัพโหลดไฟล์สแกน";
+    ViewData["Content-Title-Page"] = "รายการไฟล์สแกน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+    <div class="d-flex my-xl-auto right-content">
+        <div class="mb-6 mb-xl-0 mg-r-10">
+            <button id="btn-report_loscan" class="btn btn-dark btn-with-icon btn-block"><i class="las la-barcode"></i> Report Loscan </button>
+        </div>
+        <div class="mb-6 mb-xl-0 mg-r-10">
+            <button id="btn-report_verify" class="btn btn-dark btn-with-icon btn-block"><i class="las la-file-invoice"></i> Report Verify </button>
+        </div>
+        <div class="mb-6 mb-xl-0">
+            <button id="btn-item_import" class="btn btn-primary btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_upload"><i class="typcn typcn-upload"></i> Template Upload </button>
+        </div>
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-upload_loscan/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-upload_loscan/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/opt-upload_loscan/Modal_Upload.cshtml" />
+    </div>
+    @* modal form *
+
+        </div>
+        @* Container closed *@
+
+</div>

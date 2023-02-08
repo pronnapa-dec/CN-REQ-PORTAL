@@ -1,0 +1,92 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">สร้างรายการรับคืนสินค้า</h5>
+        </div>
+        <div class="card-body">
+
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+
+                <div class="row row-sm">
+                    <div class="col-lg-3">
+                        <label for="salefile_number">เลขที่ใบเสร็จ: <span class="tx-right-f"><a href="#" title="ประวัติการรับคืนสินค้า" data-toggle="modal" data-target="#modal-frm_history"><i class="fas fa-history"></i></a></span></label>
+                        <input type="text" class="form-control" id="salefile_number" name="salefile_number" placeholder="" required data-parsley-error-message="เลขที่ใบเสร็จ">
+                    </div>
+
+                    <div class="col-lg-7">
+                        <label for="saletra_item_list">รายการสินค้า:</label>
+                        <select class="form-control select2-no-search" id="saletra_item_list" name="saletra_item_list" required data-parsley-error-message="">
+                            <option value="">-- เลือกสินค้า --</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <label for="saletra_qty">จำนวน:</label>
+                        <input type="number" class="form-control" id="saletra_qty" name="saletra_qty" placeholder="" min="0" step="1" required data-parsley-error-message="">
+                    </div>
+
+
+                </div>
+
+                <div class="row row-sm mg-t-15">
+                    <div class="col-lg-3">
+                        <label for="salefile_invcode">รหัสลูกค้า:</label>
+                        <input type="text" class="form-control" id="salefile_invcode" name="salefile_invcode" placeholder="" disabled required data-parsley-error-message="">
+                    </div>
+
+                    <div class="col-lg-7">
+                        <label for="salefile_invname">ลูกค้า:</label>
+                        <input type="text" class="form-control" id="salefile_invname" name="salefile_invname" placeholder="" disabled required data-parsley-error-message="">
+                    </div>
+
+                    <div class="col-lg-2">
+                        <label for="job_status">สถานะ:</label>
+                        <input type="text" class="form-control" id="job_status" name="job_status" placeholder="" value="OPEN" disabled style="color:red; font-weight:bold;">
+                    </div>
+
+                </div>
+
+                <div class="row row-sm mg-t-15">
+                    <div class="col-lg-3">
+                        <label for="cn_pre_job_type">การแจ้งรับ:</label>
+                        <select class="form-control select2-no-search" id="cn_pre_job_type" name="cn_pre_job_type" data-width="100%" required data-parsley-error-message="กรุณาระบุการแจ้งรับ"> </select>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <label for="job_comment">สาเหตุ</label>
+                        <select class="form-control select2" id="job_comment" name="job_comment" data-width="100%" required="" data-parsley-error-message="สาเหตุ">
+                            <option value="">-- เลือกสาเหตุการรับคืน --</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <label for="created_by">บันทึกโดย:</label>
+                        <input type="text" class="form-control" id="created_by" name="created_by" placeholder="" disabled>
+                    </div>
+
+                </div>
+                <div class="row row-sm mg-t-15">
+                    <div class="col-lg-12">
+                        <label for="cn_pre_job_type">หมายเหตุ:</label>
+                        <input type="text" class="form-control" id="cn_pre_job_detail_remark" name="cn_pre_job_detail_remark" placeholder="">
+                    </div>
+                </div>
+
+
+                <div class="table-responsive mg-t-20">
+                    <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                </div>
+                <div class="border-top my-3"></div>
+
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div>
+                        <button type="submit" id="btn-save-form" class="btn btn-md btn-primary">บันทึก</button>
+                        <button type="reset" class="btn btn-md btn-secondary" onClick="window.location.reload();">ยกเลิก</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

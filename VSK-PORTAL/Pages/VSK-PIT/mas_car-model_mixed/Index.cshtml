@@ -1,0 +1,81 @@
+﻿@page "/mas/carmodelmixed"
+
+@{
+    ViewData["Script"] = "apps/pit/pit-mas_car-model_mixed.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "CarModel";
+    ViewData["Content-Title-Page"] = "ตาราง Master CarModel";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="pr-2 mb-6 mb-xl-0">
+                <button id="btn-report" class="btn btn-success btn-with-icon btn-block" @*data-toggle="modal" data-target="#modal-report"*@><i class="fas fa-car-side"></i> Report CarmodelMix </button>
+            </div>
+            <div class="pr-2 mb-6 mb-xl-0">
+                <button id="btn-upload_photo" class="btn btn-warning btn-with-icon btn-block d-none " data-toggle="modal" data-target="#modal-upload_photo"><i class="fas fa-camera"></i>Upload Photo</button>
+            </div>
+            <div class="pr-2 mb-6 mb-xl-0">
+                <button id="btn-item_import" class="btn btn-primary btn-with-icon btn-block " data-toggle="modal" data-target="#modal-carmodel_upload"><i class="typcn typcn-upload"></i> Template Upload CarModel </button>
+            </div>
+        </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row scrollbar-ripe-malinka">
+        <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/List.cshtml" />
+    </div>
+    @* datatables *@
+    <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Modal_CarModel_Photo.cshtml" />
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal gallry *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Gallery.cshtml" />
+    </div>-->
+    @* modal gallry  *@
+
+    @* modal gallry-main *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Gallery_Main.cshtml" />
+    </div>-->
+    @* modal gallry-main  *@
+
+    @* modal report *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Report.cshtml" />
+    </div>
+    @* modal report*@
+
+</div>
+@* Container closed *@
+
+
+
+
+@**<partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Modal_Prnetfile.cshtml" />*@
+
+<partial name="~/Pages/VSK-PIT/mas_car-model_mixed/Modal_CarModel_import.cshtml" />
+

@@ -1,0 +1,130 @@
+﻿<form id="frm_search" name="frm_data" autocomplete="off">
+    <div class="main-content horizontal-content">
+        <!-- container opened -->
+        @*<div class="container">*@
+        <!-- row -->
+        <div class="row row-sm">
+            <div class="col-xl-3 col-lg-3 col-md-12 mb-3 mb-md-0">
+
+                <div class="card">
+                    <div class="card-header border-bottom pt-3 pb-3 mb-0 font-weight-bold text-uppercase">YOUR VEHICLES</div>
+                    <div class="card-body pb-0">
+                        <div class="form-group">
+                            <label class="form-label">Vehicle Brand</label>
+                            <select name="search_vehicle_brand" id="search_vehicle_brand" class="form-control select2 select-main" required>
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Vehicle Segments</label>
+                            <select name="search_vehicle_segments" id="search_vehicle_segments" class="form-control select2 search_vehicle_segments select-main">
+                                <option value="">---ทั้งหมด---</option>
+                                @*<option value="CAR">CAR</option>
+                                <option value="TRUCK">TRUCK</option>*@
+                            </select>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label class="form-label">Vehicle Name</label>
+                            <select name="search_vehicle_model" id="search_vehicle_model" class="form-control select2 select-main">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2 filter_show">
+                            <label class="form-label">Model Year</label>
+                            <select name="search_model_year" id="search_model_year" class="form-control select2 vehicle_truck filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-2 filter_show">
+                            <label class="form-label">Minor Year</label>
+                            <select name="search_minor_year" id="search_minor_year" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <span class="input-group-append">
+                                <button class="btn btn-sm btn-dark col-8 btn-search" type="button" id="btn-search-main">Search</button>
+                                <button class="btn btn-sm col-4 btn-secondary btn-reset btn-block ml-1" style="float: right;" id="reset-main" type="button">Reset</button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="card-header border-bottom border-top pt-3 pb-3 mb-0 font-weight-bold text-uppercase filter_show">Filter</div>
+                    <div class="card-body filter_show">
+                        <div class="form-group">
+                            <label>Body Type</label>
+                            <select name="search_body_type" id="search_body_type" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>High Stant</label>
+                            <select name="search_high_stant" id="search_high_stant" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Wheel</label>
+                            <select name="search_wheel" id="search_wheel" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Wheel Drive</label>
+                            <select name="search_wheel_drive" id="search_wheel_drive" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Chassis Model</label>
+                            <select name="search_chassis_model" id="search_chassis_model" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Street Name</label>
+                            <select name="search_street_name" id="search_street_name" class="form-control select2 filter_sub">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <span class="input-group-append">
+                                <button class="btn btn-sm btn-dark col-8 btn-search" type="button" id="btn-search-detail">Search</button>
+                                <button class="btn btn-sm col-4 btn-secondary btn-reset btn-block ml-1" style="float: right;" id="reset-detail" type="button">Reset</button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control global_filter" placeholder="Search ..." id="global_filter" disabled>
+                            <span class="input-group-append">
+                                <button class="btn btn-dark btn-search" type="button" id="btn-search">Search</button>
+                                <button class="btn btn-secondary" type="button" onclick="window.location.reload();">Reset</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <div id="image_search_car" class=""><img alt="Responsive image" class="img-fluid" src="../../assets/img/image search car.png"></div>
+                        <div class="product-details table-responsive text-nowrap" style="overflow-x:visible">
+                            <table id="tbl-main_list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        @*</div>*@
+        <!-- Container closed -->
+    </div>
+
+</form>

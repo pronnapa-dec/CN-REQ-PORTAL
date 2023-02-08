@@ -1,0 +1,65 @@
+﻿@page "/trp/packing_list"
+
+@{
+    ViewData["Script"] = "apps/trp/opt-packing-list.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "TRP";
+    ViewData["Content-Title-Page"] = "รายงานการแพคสินค้า";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+        @* action *@
+    <div class="d-flex my-xl-auto right-content">
+        <div class="mb-3 mb-xl-0">
+            <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-document-add"></i>สร้าง</button>
+        </div>
+        @*<div class="pd-l-10 mb-6 mb-xl-0">
+            <button id="btn-export" class="btn btn-primary btn-with-icon btn-block"><i class="las la-file-pdf"></i>ฟอร์มนำส่งเงิน</button>
+        </div>
+        <div class="pd-l-10 mb-6 mb-xl-0">
+            <button id="btn-report_verify" class="btn btn-warning tx-dark btn-with-icon btn-block"><i class="las la-clipboard-check"></i> รายงานตรวจสอบ</button>
+        </div>*@
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-packing-list/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-packing-list/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/opt-packing-list/Modal_Box.cshtml" />
+    </div>
+    @* modal form *@
+
+    <partial name="~/Pages/VSK-TRP/opt-packing-list/Modal_Cancel_Job.cshtml" />
+    <partial name="~/Pages/VSK-TRP/opt-packing-list/Modal_Description.cshtml" />
+
+</div>
+@* Container closed *@

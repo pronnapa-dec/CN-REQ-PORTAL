@@ -1,0 +1,52 @@
+﻿@page "/cn_req/job_detail"
+
+@{
+    ViewData["Script"] = "apps/ivc/cn-req-detail.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "CN";
+    ViewData["Content-Title-Page"] = "รายการใบคืนสินค้า";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/cn-req-job/cn-req-detail/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-IVC/cn-req-job/cn-req-detail/List_history.cshtml" />
+    </div>
+    @* modal form *@
+
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-IVC/cn-req-job/cn-req-detail/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@

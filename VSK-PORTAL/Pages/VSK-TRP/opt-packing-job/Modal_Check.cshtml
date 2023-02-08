@@ -1,0 +1,97 @@
+﻿@*<form id="frm_chk" name="frm_chk" autocomplete="off">*@
+    <div class="modal effect-flip-vertical" id="modal-frm_chk" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:90%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ตรวจสอบการแพ็คสินค้า</h6>
+                    <span class="tx-15 tx-primary pd-t-3 mg-l-10 time-today">เวลา</span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-sm row">
+                                <label for="pck_number" class="col-md-1 col-form-label tx-right">ครั้งที่ :</label>
+                                <div class="col-md-1">
+                                    <div class="input-group">
+                                        <select class="form-control select2" id="chk_round" name="chk_round" required="">
+                                            <option value="1" selected="">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="col-md-1 col-form-label tx-right">วันที่ : </label>
+                                <div class="col-md-3">
+                                    <div class="input-group date">
+                                        <input class="form-control" id="chk_jobdate" name="chk_jobdate" type="text" value="" disabled="">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="la la-calendar-check-o"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="pck_number" class="col-md-1 col-form-label tx-right">เลขที่อ้างอิง :</label>
+                                <div class="col-md-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="chk_number" name="chk_number" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-dark" id="btn-chk"><i class="las la-search-location mr-1"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="form-group form-group-sm row d-flex">
+                                <label for="keywords" class="col-md-1 col-form-label ">บาร์โค้ดอ้างอิง</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="keywords" name="keywords" value="">
+                                </div>
+                                <div class="mg-l-auto">
+                                    <button type="button" class="btn btn-success d-none" id="btn-add">บันทึก</button>
+                                    <button type="reset" class="btn btn-danger" onclick="window.location.reload();">ยกเลิก</button>
+                                </div>
+                            </div>*@
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row row-sm mg-t-25 d-none">
+                        <div class="col-lg-12">
+                            <table id="tbl-check" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th valign="middle" class="tx-center">ลำดับ</th>
+                                        <th valign="middle" class="tx-center">วันที่ PCK</th>
+                                        <th valign="middle" class="tx-center">ใบงาน</th>
+                                        <th valign="middle" class="tx-center">รหัสลูกค้า</th>
+                                        <th valign="middle" class="tx-center">ชื่อลูกค้า</th>
+                                        <th valign="middle" class="tx-center">ที่อยู่จัดส่ง</th>
+                                        <th valign="middle" class="tx-center">กล่อง</th>
+                                        <th valign="middle" class="tx-center">บิล</th>
+                                        <th valign="middle" class="tx-center">บริษัทขนส่ง</th>
+                                        <th valign="middle" class="tx-center">ผู้บันทึก</th>
+                                        <th valign="middle" class="tx-center">สถานะ</th>
+                                        <th valign="middle" class="tx-center">ตรวจสอบ</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                    <button id="btn-save_new" class="btn ripple btn-success btn-save_form d-none" data-action="save_new" type="submit">Save & New</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@*</form>*@

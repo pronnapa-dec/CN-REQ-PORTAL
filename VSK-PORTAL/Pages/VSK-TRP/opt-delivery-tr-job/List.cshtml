@@ -1,0 +1,161 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 id="card-title-pages" class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            <div class="main-dashboard-header-right d-none">
+                <div>
+                    <label class="tx-13">จำนวนสินค้า</label>
+                    <div><h5 id="sum_qty_item">0</h5>รายการ</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนปัจจุบัน</label>
+                    <div><h5 id="sum_qty_current">0</h5> หน่วย</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนทั้งหมด</label>
+                    <div><h5 id="sum_qty_total">0</h5> หน่วย</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+                <div class="kt-portlet__body">
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">วันที่จัดส่ง : </label>
+                        <div class="col-md-3">
+                            @*<div class="input-group">
+                                    <input class="form-control chk_data_input fc-datepicker" id="job_date" name="job_date" type="text" value="" required>
+                                </div>*@
+                            <div class="row row-sm ">
+                                <div class="input-group col-md-12">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                        </div>
+                                    </div><input class="form-control chk_data_input fc-datepicker" placeholder="MM/DD/YYYY" id="job_date" name="job_date" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label tx-right-f">สายส่ง : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control chk_data_input" id="route_no" name="route_no" required>
+                                <option value="">--- เลือกสายส่ง ---</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">ทะเบียนรถ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control select2 chk_data_input" id="job_plate" name="job_plate" required>
+                                <option value="">--- เลือกทะเบียนรถ ---</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label tx-right-f">พนักงานขับรถ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control select2 chk_data_input" id="driver_id" name="driver_id" required>
+                                <option value="">--- เลือกพนักงาน ---</option>
+                            </select>
+                            @*<input type="text" class="form-control" id="driver_id" name="driver_id" value="" required>
+                                <input type="text" class="form-control d-none" id="driver_name" name="driver_name" value="">*@
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">สถานะ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control select2 chk_data_input" id="job_status" name="job_status" @*style="width: 100%;"*@ required>
+                                <option value="">-เลือกจัดส่ง-</option>
+                                <option value="delivery" selected>ส่งสินค้า</option>
+                                <option value="receive">รับสินค้า</option>
+                                <option value="branch">ส่งสาขา</option>
+                            </select>
+                        </div>
+
+                        <label class="col-md-1 col-form-label tx-right-f d-none" style="margin-right:-15px;">การชำระ : </label>
+                        <div class="col-md-1 d-none">
+                            <select class="form-control select2 chk_data_input" id="freight" name="freight" style="width: 120%;">
+                                <option value="">-เลือกชำระ-</option>
+                                <option value="DC01" selected>ต้นทาง</option>
+                                <option value="DC02">ปลายทาง</option>
+                                @* <option value="DC03">COD</option>*@
+                            </select>
+                        </div>
+
+                        <label class="col-md-2 col-form-label tx-right-f" @*style="margin-right:15px;"*@>เลขที่บิล : </label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <span class="input-group-prepend" style="width:25%;">
+                                    <select type="text" class="form-control chk_data_input" id="inv_branch" name="inv_branch" disabled="">
+                                        <option value="">--- เลือกสาขา ---</option>
+                                        <option value="VSK" selected="">VSK</option>
+                                        <option value="VSF">VSF</option>
+                                        <option value="KLH">KLH</option>
+                                        <option value="LLK">LLK</option>
+                                        <option value="NWM">NWM</option>
+                                        <option value="LKS">LKS</option>
+                                        <option value="SNK">SNK</option>
+                                    </select>
+                                </span>
+                                <input class="form-control chk_data_input job_inv" placeholder="ระบุเลขที่" type="text" id="job_inv" name="job_inv" disabled="" required="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" id="btn-job_inv" type="button">
+                                        <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="reset" id="btn-reset" class="btn btn-dark btn-block col-6" onclick="window.location.reload();" style="float: right;">RESET</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+            <div class="border-top my-3"></div>
+            @*<div class="mg-t-20">
+                    <table id="tbl-job-detail" class="table table-sm table-head-bg-brand" style="font-size:12px;">
+                        <tbody>
+                            <tr class="table-primary row">
+                                <th class="d-none">uuid</th>
+                                <th class="tx-center col-sm-1">วันที่จัดส่ง</th>
+                                <th class="tx-center col-sm-1">ใบงาน</th>
+                                <th class="tx-center col-sm-1">เลขที่บิล</th>
+                                <th class="tx-center col-sm-1">ใบสั่งจัด</th>
+                                <th class="tx-left col-sm-2">ชื่อลูกค้า</th>
+                                <th class="tx-left col-sm-1">ชำระ</th>
+                                <th class="tx-left col-sm-1">COD</th>
+                                <th class="tx-left col-sm-1">สายส่ง</th>
+                                <th class="tx-center col-sm-1">สถานะ</th>
+                                <th class="tx-center col-sm-1">ผู้บันทึก</th>
+                                <th class="tx-center col-sm-2">วัน/เวลา บันทึก</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>*@
+            <div class="col-lg-12">
+                <table id="tbl-job-detail" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                    <thead style="font-size:11px; text-align:center">
+                        <tr>
+                            <th valign="middle" class="tx-center">ลำดับ</th>
+                            <th valign="middle" class="tx-center">เลขที่บิล</th>
+                            <th valign="middle" class="tx-center">วันที่บิล</th>
+                            <th valign="middle" class="tx-center">ใบสั่งจัด</th>
+                            <th valign="middle" class="tx-center">สินค้า</th>
+                            <th valign="middle" class="tx-center">รหัสลูกค้า</th>
+                            <th valign="middle" class="tx-center">ชื่อลูกค้า</th>
+                            <th valign="middle" class="tx-center">ที่อยู่ลูกค้า</th>
+                            <th valign="middle" class="tx-center">COD</th>
+                            <th valign="middle" class="tx-center">ผู้บันทึก</th>
+                            <th valign="middle" class="tx-center">จัดการ</th>
+                            <th valign="middle" class="tx-center d-none">ที่อยู่ลูกค้า</th>
+                            <th valign="middle" class="tx-center d-none">หมายเหตุ</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

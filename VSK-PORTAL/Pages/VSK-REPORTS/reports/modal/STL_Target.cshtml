@@ -1,0 +1,67 @@
+﻿<form id="frm_stl_target" name="frm_stl_target" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-stl_target" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:1400px">
+            <div class="modal-content modal-content-demo" @*style="width: 120%"*@>
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="modal-title">Detail CarModelMix</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        <div class="mb-6 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label for="search_area" class="col-form-label tx-left">Area<span class="tx-danger"> *</span></label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="search_sale" class="col-form-label tx-left">Sale</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="search_year" class="col-form-label tx-left">Year</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="search_channel" class="col-form-label tx-left">Channel</label>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <select id="search_area" class="form-control"><option value="">---select item---</option></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="search_sale" class="form-control"><option value="">---select item---</option></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="search_year" class="form-control"><option value="">---select item---</option></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="search_channel" class="form-control"><option value="">---select item---</option></select>
+                        </div>
+                        
+                        <div class="col-sm-4">
+                            <div align="right">
+                                <button id="btn-save" type="submit" class="btn btn-primary">Search</button>
+                                <button id="btn-reset" type="reset" class="btn btn-secondary">Cancel</button>
+                                @*<button type="button" id="btn-export" class="btn btn-success">&nbsp;&nbsp;Export&nbsp;&nbsp;</button>&nbsp;*@
+                            </div>
+                     </div>
+                    </div>
+
+                    <div class="row mg-t-20">
+                        <div class="col-sm-12">
+                            <iframe id="url_report" src="" frameborder="0" width="100%" height="900px"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" style="width: 100px;" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

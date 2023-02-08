@@ -1,0 +1,34 @@
+﻿<div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:1300px !important;max-height: 400px !important;">
+        <div class="modal-content modal-content-demo">
+            <form id="frm_data" name="frm_data" autocomplete="off">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"]</h6><span id="title_detail" class="modal-title ml-1 tx-primary"></span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Job Type</label>
+                            <select class="form-control form-control" id="job_type" name="job_type" required>
+                                <option value="">-ระบุประเภท-</option>
+                                <option value="1">ฝ่าย</option>
+                                <option value="2">แผนก</option>
+                                <option value="3">ตำแหน่ง</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-8">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Job Name</label>
+                            <input class="form-control form-control" placeholder="ระบุชื่อพนักงาน" id="job_name" name="job_name" type="text" value="" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="btn-submit" class="btn btn-primary btn-save_form">Save</button>
+                    <button type="button" id="btn-delete" class="btn btn-primary hide">Delete</button>
+                    <button type="button" id="btn-cancel" class="btn btn-secondary" data-dismiss="modal">Cancal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

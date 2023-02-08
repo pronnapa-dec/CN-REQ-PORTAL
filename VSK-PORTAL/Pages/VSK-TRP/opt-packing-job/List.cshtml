@@ -1,0 +1,179 @@
+﻿<div class="col-12 col-sm-12">
+    <div id="alert_action" class="alert alert-warning d-none" role="alert">
+        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong id="alert_head">Warning!</strong><span id="alert_body"> Better check yourself, you're not looking too good.</span>
+    </div>
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">
+                @ViewData["Content-Title-Page"]
+                <strong class="tx-primary mg-l-5" id="packing_round"></strong>
+                <span class="tx-right tx-15 tx-primary time-today mg-r-10" style="float: right;">เวลา</span>
+            </h5>
+            <div class="main-dashboard-header-right d-none" style="margin-top:-25px;">
+                <div>
+                    <label class="tx-13">จำนวนสินค้า</label>
+                    <div><h5 id="sum_qty_item">0</h5>รายการ</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนปัจจุบัน</label>
+                    <div><h5 id="sum_qty_current">0</h5> หน่วย</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนทั้งหมด</label>
+                    <div><h5 id="sum_qty_total">0</h5> หน่วย</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_job" data-parsley-validate="" name="frm_job" autocomplete="off" novalidate="">
+                @*<div class="col-sm-12">*@
+                @*<div class="form-group form-group-sm row">
+            <label for="pck_number" class="col-md-1 col-form-label">เลขที่ PCK</label>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="pck_number" name="pck_number" value="" disabled="">
+                </div>
+            </div>
+            <label for="inv_date" class="col-md-1 col-form-label">วันที่ PCK</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="inv_date" name="inv_date" value="" disabled="">
+            </div>
+            <label for="pck_user" class="col-md-1 col-form-label">ผู้ตรวจสอบ</label>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="pck_user" name="pck_user" value="" disabled="">
+                </div>
+            </div>
+        </div>*@
+                <div class="row row-sm">
+                    <div class="form-group col-4">
+                        <label for="pck_number" class="form-label">เลขที่ PCK</label>
+                        <input type="text" class="form-control" id="pck_number" name="pck_number" disabled="">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="inv_date" class="form-label">วันที่ PCK</label>
+                        <input type="text" class="form-control" id="inv_date" name="inv_date" disabled="">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="pck_user" class="form-label">ผู้ตรวจสอบ</label>
+                        <input type="text" class="form-control" id="pck_user" name="pck_user" disabled="">
+                    </div>
+                </div>
+
+                <div class="row row-sm">
+                    <div class="form-group col-1">
+                        <label for="customer_code" class="form-label">รหัสลูกค้า</label>
+                        <input type="text" class="form-control" id="customer_code" name="customer_code" disabled="">
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="transport_end" class="form-label">ชื่อผู้รับ</label>
+                        <input type="text" class="form-control" id="transport_end" name="transport_end" disabled="">
+                    </div>
+                    <div class="form-group col-8">
+                        <label for="delivery_address" class="form-label">ที่อยู่จัดส่ง</label>
+                        <select class="form-control select2" id="delivery_address" name="delivery_address" required="">
+                            <option value="">--SELECT--</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row row-sm">
+                    <div class="form-group col-3">
+                        <label for="transport_start" class="form-label">ผู้ส่ง</label>
+                        <select class="form-control select2" id="transport_start" name="transport_start" required="">
+                            <option value="">--SELECT--</option>
+                            <option value="KLH">KLH</option>
+                            <option value="VSK" selected="">VSK</option>
+                            <option value="VSF">VSF</option>
+                            <option value="LLK">LLK</option>
+                            <option value="NWM">NWM</option>
+                            <option value="KSW">KSW</option>
+                            <option value="CPS">CPS</option>
+                            <option value="ONL">ONL</option>
+                            <option value="MW">MW</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="shipping_company" class="form-label">บริษัทขนส่ง</label>
+                        <select class="form-control select2" id="shipping_company" name="shipping_company" required="">
+                            <option value="" selected="">--SELECT--</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="freight" class="form-label">ชำระค่าขนส่ง</label>
+                        <select class="form-control select2" id="freight" name="freight" required="" style="width: 100%;">
+                            <option value="">--SELECT--</option>
+                            <option value="DC01" selected="">ต้นทาง</option>
+                            <option value="DC02">ปลายทาง</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="keywords" class="form-label">บาร์โค้ดอ้างอิง</label>
+                        <input type="text" class="form-control bd-primary bg-primary-transparent" id="keywords" name="keywords" value="">
+                    </div>
+                </div>
+
+                <div class="form-group mb-0 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="button" class="btn btn-primary d-none" id="btn-packing-check" style="width: 120px;">ตรวจสอบ</button>
+                        <button type="button" class="btn btn-primary d-none" id="btn-add" style="width: 120px;">บันทึก</button>
+                        <button type="button" class="btn btn-warning d-none" id="btn-edit" style="width: 120px;">แก้ไข</button>
+                        @*<button type="reset" class="btn btn-danger" onclick="window.location.reload();">ยกเลิก</button>*@
+                        <button type="button" class="btn btn-danger" id="btn-main" style="width: 120px;">ยกเลิก</button>
+                    </div>
+                </div>
+
+                <!--<div class="row row-sm">
+    <div class="form-group col-4">
+        <label for="keywords" class="form-label">บาร์โค้ดอ้างอิง</label>
+        <input type="text" class="form-control" id="keywords" name="keywords" value="">
+    </div>
+    <div class="form-group col-8">
+        <button type="button" class="btn btn-primary d-none" id="btn-packing-check" style="width: 120px;">ตรวจสอบ</button>
+        <button type="button" class="btn btn-primary d-none" id="btn-add" style="width: 120px;">บันทึก</button>
+        <button type="button" class="btn btn-warning d-none" id="btn-edit" style="width: 120px;">แก้ไข</button>-->
+                @* <button type="reset" class="btn btn-danger" onclick="window.location.reload();">ยกเลิก</button>*@
+                <!--<button type="button" class="btn btn-danger" id="btn-main" style="width: 120px;">ยกเลิก</button>
+        </div>
+    </div>-->
+                @*<div class="form-group form-group-sm row d-flex">
+            <label for="keywords" class="col-md-1 col-form-label ">บาร์โค้ดอ้างอิง</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="keywords" name="keywords" value="">
+            </div>
+            <div class="col-md-8 tx-right">
+                <button type="button" class="btn btn-primary d-none" id="btn-packing-check" style="width: 120px;">ตรวจสอบ</button>
+                <button type="button" class="btn btn-primary d-none" id="btn-add" style="width: 120px;">บันทึก</button>
+                <button type="button" class="btn btn-warning d-none" id="btn-edit" style="width: 120px;">แก้ไข</button>
+                <button type="reset" class="btn btn-danger" onclick="window.location.reload();">ยกเลิก</button>
+                <button type="button" class="btn btn-danger" id="btn-main" style="width: 120px;">ยกเลิก</button>
+            </div>
+        </div>*@
+                @*</div>*@
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="table-responsive mg-t-20">
+                <table id="tbl-inv" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                    <thead>
+                        <tr>
+                            <th><div style="text-align:center;">id</div></th>
+                            <th><div style="text-align:center;">#</div></th>
+                            <th><div style="text-align:center;">วันที่บิล</div></th>
+                            <th><div style="text-align:center;">เลขที่บิล</div></th>
+                            <th><div style="text-align:center;">ใบสั่งจัด</div></th>
+                            <th><div style="text-align:center;">จำนวน</div></th>
+                            <th><div style="text-align:center;">ผู้ออกใบเสร็จ</div></th>
+                            <th><div style="text-align:center;">ผู้บันทึก-เวลา</div></th>
+                            <th><div style="text-align:center;">จัดการ</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

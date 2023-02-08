@@ -1,0 +1,164 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="row row-sm">
+                            <label class="form-label tx-left">ไฟล์สลิปเงินโอน</label>
+                            <div class="col-lg-12 tx-center">
+                                @*<img alt="Responsive image" class="img-fluid" id="bankslip_image" style="max-height:200px !important" src="../../assets/img/photos/1.jpg">*@
+                                <div class="img-gallery" data-rel="imageGallery">
+                                    <div data-src="../../assets/img/photos/1.jpg" id="bankslip_gallery">
+                                        <img src="../../assets/img/photos/1.jpg" id="bankslip_image" class="img-fluid" style="max-height:300px !important" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="main-dashboard-header-right">
+                            <div>
+                                <label class="tx-13" id="text_qty_item">ยอดคงเหลือ</label>
+                                <div><h5 id="sum_qty_item">0</h5>บาท</div>
+                            </div>
+                            <div>
+                                <label class="tx-13" id="text_qty_current">ยอดตามบิล</label>
+                                <div><h5 id="sum_qty_current">0</h5> บาท</div>
+                            </div>
+                            <div>
+                                <label class="tx-13" id="text_qty_total">ยอดเงินโอน</label>
+                                <div><h5 id="sum_qty_total">0</h5> บาท</div>
+                            </div>
+                        </div>
+                        <div class="row row-sm mt-2">
+                            <div class="col-lg-3">
+                                <label for="bankslip_date">วันที่:</label>
+                                @*<input type="text" class="form-control" id="bankslip_date" name="bankslip_date" placeholder="" required="" disabled>*@
+                                <div class="input-group date">
+                                    <input class="form-control" id="bankslip_date" name="bankslip_date" type="text" value="">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="la la-calendar-check-o"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label for="bankslip_jobnov">ใบงาน :</label>
+                                <input type="text" class="form-control" id="bankslip_jobno" name="bankslip_jobno" placeholder="" required="" disabled>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="bankslip_ref">รหัสอ้างอิง (ref) :</label>
+                                <input type="text" class="form-control" id="bankslip_ref" name="bankslip_ref" placeholder="" required="" disabled>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-sm mg-t-15">
+
+                            <div class="col-lg-4">
+                                <label for="bankslip_number">เลขที่บัญชี :</label>
+                                <input type="text" class="form-control" id="bankslip_number" name="bankslip_number" placeholder="" required="" disabled>
+
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label for="bankslip_payindate">วัน/เวลา โอนเงิน :</label>
+                                <input type="text" class="form-control" id="bankslip_payindate" name="bankslip_payindate" placeholder="" required="" disabled>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <label for="bankslip_emmas">ยอดสลิปเงินโอน/บาท :</label>
+                                <input type="text" class="form-control " id="bankslip_total" name="bankslip_total" placeholder="0.00" required="" disabled>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="bankslip_billno">สาขา:</label>
+                                @*<select class="form-control select2 bd-primary" id="bankslip_branch" name="bankslip_branch" data-width="100%" required="">*@
+                                <select class="form-control nice-select bd-primary" id="bankslip_branch" name="bankslip_branch" data-width="100%" required="">
+                                    <option value="" selected>--select--</option>
+                                    <option value="VSK">VSK</option>
+                                    <option value="VSF">VSF</option>
+                                    <option value="KLH">KLH</option>
+                                    <option value="LLK">LLK</option>
+                                    <option value="NWM">NWM</option>
+                                    <option value="LKS">LKS</option>
+                                    <option value="SNK">SNK</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row row-sm mg-t-15">
+
+                            <div class="col-lg-4">
+                                <label for="bankslip_emmas">ลูกค้า :</label>
+                                <input type="text" class="form-control text-uppercase" id="bankslip_emmas" name="bankslip_emmas" placeholder="" disabled>
+                                @*<select class="form-control select2" id="bankslip_emmas" name="bankslip_emmas" data-width="100%" required="">
+                                        <option value="">--- Select ---</option>
+                                    </select>*@
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label for="bankslip_billno">เลขที่บิล   :</label>
+                                <input type="text" class="form-control text-uppercase" id="bankslip_billno" name="bankslip_billno" placeholder="" required="">
+                                @*<select class="form-control select2" id="bankslip_billno" name="bankslip_billno" data-width="100%" required="">
+                                        <option value="">--- Select ---</option>
+                                    </select>*@
+                            </div>
+                            @*<div class="col-lg-1">
+                                    <label for="bankslip_billno">สาขา   :</label>
+                                    <select class="form-control select2" id="branch" name="branch" data-width="100%" required="">
+                                        <option value="" selected>--select--</option>
+                                        <option value="VSK">VSK</option>
+                                        <option value="VSF">VSF</option>
+                                        <option value="KLH">KLH</option>
+                                        <option value="LLK">LLK</option>
+                                        <option value="NWM">NWM</option>
+                                        <option value="LKS">LKS</option>
+                                    </select>
+                                </div>*@
+                            <div class="col-lg-4 mg-t-25">
+                                <button type="button" class="btn btn-primary d-none" id="btn-add"><i class="typcn typcn-document-add"></i>เพิ่ม</button>
+                                <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">รีเซต</button>
+                                <button type="button" class="btn btn-danger" id="btn-main" onClick="window.location.href" style="float: right;">หลัก</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+            <div class="row row-sm mg-t-25">
+                <div class="col-lg-12">
+                    <table id="tbl-bill" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                        <thead style="font-size:11px; text-align:center">
+                            <tr>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">ลำดับ</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">วันที่ INV</th>
+                                <th valign="middle" @*width="40%"*@ class="tx-center">เลขที่บิล</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">รหัสลูกค้า</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">ชื่อลูกค้า</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">ยอดเงิน</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">ประเภท</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">ผู้ออกบิล</th>
+                                <th valign="middle" @*width="5%"*@ class="tx-center">สาขาบิล</th>
+                                <th valign="middle" @*width="15%"*@ class="tx-center">ผู้บันทึก</th>
+                                <th valign="middle" @*width="20%"*@ class="tx-center">วันที่สรุป</th>
+                                <th valign="middle" @*width="15%"*@ class="tx-center">จัดการ</th>
+                                <th valign="middle" class="tx-center d-none">ID</th>
+                                <th valign="middle" class="tx-center d-none">REF</th>
+                                <th valign="middle" class="tx-center d-none">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+﻿<div class="modal effect-flip-vertical" id="modal-frm_close_job" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo">
+            @* <form id="frm_close_job" name="frm_close_job">*@
+            <div class="modal-header">
+                <h6 class="modal-title">ปิดงาน</h6>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group row">
+                                <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+                                    <div class="input-group">
+                                        <input id="number-close_job" class="form-control" placeholder="MO.. , JM.." type="text">
+                                        <span class="input-group-btn">
+                                            <button id="btn-submit_close_job" class="btn btn-dark" type="button">
+                                                <span class="input-group-btn"><i class="las la-motorcycle"></i></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+            </div>
+            @* </form>*@
+        </div>
+    </div>
+</div>
+
+
+<div class="modal effect-flip-vertical" id="modal-frm_add_job" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo">
+            <form id="frm_add_job" name="frm_add_job" autocomplete="off">
+                <div class="modal-header">
+                    <h6 class="modal-title">เปิดงาน</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-12">
+                            <label class="col-form-label">พนักงานขับรถ</label>
+                            <div class="input-group">
+                                <input class="form-control driver_id" placeholder="ระบุเบอร์พนักงาน" type="text" id="md_driver_id" name="md_driver_id">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" id="btn-driver_id" type="button">
+                                        <span class="input-group-btn"><i class="fa fa-motorcycle"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="inv_branch" class="col-form-label">สาขา</label>
+                            <select type="text" class="form-control" id="md_inv_branch" name="md_inv_branch" disabled="">
+                                <option value="">--- เลือกสาขา ---</option>
+                                <option value="VSK" selected="">VSK</option>
+                                <option value="VSF">VSF</option>
+                                <option value="KLH">KLH</option>
+                                <option value="LLK">LLK</option>
+                                <option value="NWM">NWM</option>
+                                <option value="LKS">LKS</option>
+                                <option value="SNK">SNK</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-9">
+                            <label class="col-form-label">เลขที่อ้างอิง</label>
+                            <div class="input-group">
+                                <input class="form-control job_inv" placeholder="ระบุเลขที่" type="text" id="md_job_inv" name="md_job_inv" disabled="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" id="md_btn-job_inv" type="button">
+                                        <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

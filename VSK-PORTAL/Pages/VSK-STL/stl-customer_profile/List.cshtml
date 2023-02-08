@@ -1,0 +1,54 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="mg-t-20 panel-group1" id="accordion11">
+        <div class="panel panel-default mb-2">
+            <div class="panel-heading1 bg-primary ">
+                <h4 class="panel-title1">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion11" href="#collapseFour1" aria-expanded="true"><i class="fa fa-search mr-2"></i>ค้นหาข้อมูลลูกค้า</a>
+                </h4>
+            </div>
+            <div id="collapseFour1" class="panel-collapse" role="tabpanel" aria-expanded="false" style="background-color: white;">
+                <div class="panel-body border">
+                    <form class="form-horizontal" id="frm_search2" name="frm_search2" autocomplete="off">
+                        <div class="col-sm-12 sel2 div_search_customer">
+                            <select class="search_customer tx-left" id="search_customer" name="search_customer" style="width: 100%;"><option value="">ค้นหาลูกค้า เช่น ค้นหาด้วยรหัสลูกค้า, ชื่อลูกค้า, สาขา(Branch), Sale group หรือ Sale Channel</option></select>
+                        </div>
+
+                        <div class="row col-sm-12 mg-t-15">
+                            <label class="col-sm-3" for="search_salechannel">&nbsp;Sale Channel</label>
+                            <label class="col-sm-3" for="search_salegroup">&nbsp;Sale Group</label>
+                            <label class="col-sm-3" for="search_saleperson">&nbsp;Sale Person</label>
+                        </div>
+
+                         <div class="row col-sm-12 mg-b-5">
+                            <div class="col-sm-3 sel2 div_search_salechannel">
+                                <select class="search_salechannel tx-left" id="search_salechannel" name="search_salechannel" style="width: 100%;"><option value="">Please select..</option></select>
+                            </div>
+                            <div class="col-sm-3 sel2 div_search_salegroup">
+                                <select class="search_salegroup tx-left" id="search_salegroup" name="search_salegroup" style="width: 100%;"><option value="">Please select..</option></select>
+                            </div>
+                            <div class="col-sm-3 sel2 div_search_saleperson">
+                                <select class="search_saleperson tx-left" id="search_saleperson" name="search_saleperson" style="width: 100%;"><option value="">Please select..</option></select>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                                <button type="reset" id="btn_reset" name="btn_reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        @*        <div class="card-header pb-0">
+        <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"] List</h5>
+        </div>*@
+        <div class="card-body">
+            <div class="mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

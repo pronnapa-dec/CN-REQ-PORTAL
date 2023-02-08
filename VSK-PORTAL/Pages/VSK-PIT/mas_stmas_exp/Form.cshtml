@@ -1,0 +1,260 @@
+﻿<div id="card-form" class="row">
+    <form id="frm_data" name="frm_data" autocomplete="off" class="parsley-style-1">
+        <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:990px">
+                <div class="modal-content modal-content-demo">
+                    <div class="modal-header">
+                        <h6 class="modal-title">Item Setup Form</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning d-none" role="alert">
+                            <span class="alert-inner--icon"><i class="fe fe-info"></i></span>
+                            <span class="alert-inner--text"><strong>Warning!</strong> <span class="tx-alert"></span></span>
+                        </div>
+
+                        <div class="row mg-t-6">
+                            <div class="col-sm-12 main_product_action">
+                                <label for="sm_code" class="col-form-label tx-left">Main Product Code - รหัสสินค้าหลัก</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 main_product_action">
+                                <select class="form-control sm_code select2" id="sm_code" name="sm_code" style="width: 100%;" required>
+                                    <option>Please select..</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mg-t-6">
+
+                            <div class="col-sm-4">
+                                <label for="gbarcode" class="col-form-label tx-left">Barcode - บาร์โค้ด</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="spcodes" class="col-form-label tx-left">Spcodes - เลขอะไหล่</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="chrcode" class="col-form-label tx-left">Chrcode - คำย่อสินค้า</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-lg gbarcode text-center" id="gbarcode" name="gbarcode" placeholder="" disabled>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-lg spcodes text-center" id="spcodes" name="spcodes" placeholder="" disabled>
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-lg chrcode text-center" id="chrcode" name="chrcode" placeholder="" disabled>
+                            </div>
+                        </div>
+
+
+                        <div class="details">
+                            <div class="row mg-t-6">
+
+                                <div class="col-sm-4 d-flex flex-row justify-content-between">
+                                    <div class="col-form ">
+                                        <label for="sm_e_code" class="col-form-label tx-left">Item Code - รหัสสินค้า</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 d-flex flex-row justify-content-between">
+                                    <div class="col-form ">
+                                        <label for="sm_e_name" class="col-form-label tx-left">Item Name - ชื่อสินค้า</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-lg sm_e_code tx-primary tx-bold text-center" id="sm_e_code" name="sm_e_code" placeholder="Code1-Code5-Code3-Code2-Code4" required disabled>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control form-control-lg sm_e_name tx-dark tx-bold text-center" id="sm_e_name" name="sm_e_name" placeholder="ชื่อสินค้า-รุ่นรถ-เกรดสินค้า-รายละเอียดสินค้า-จัดชุด/ของแถม" required disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-4">
+                                    <label for="gcode_a" class="col-form-label tx-left">Code 1 - ชื่อสินค้า</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="gcode_e" class="col-form-label tx-left">Code 5 - รุ่นรถ</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="gcode_c" class="col-form-label tx-left">Code 3 - เกรดสินค้า</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <select class="form-controlc gcode gcode_a select2" id="gcode_a" name="gcode_a" style="width: 100%;" required>
+                                        <option>Please select..</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-control gcode gcode_e select2" id="gcode_e" name="gcode_e" style="width: 100%;" required>
+                                        <option>Please select..</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-control gcode gcode_c select2" id="gcode_c" name="gcode_c" style="width: 100%;" required>
+                                        <option>Please select..</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-4">
+                                    <label for="gcode_b" class="col-form-label tx-left">Code 2 - รายละเอียดสินค้า</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="gcode_d" class="col-form-label tx-left">Code 4 - จัดชุด/ของแถม</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="epc" class="col-form-label tx-left">OEM Search</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <select class="form-control gcode gcode_b select2" id="gcode_b" name="gcode_b" style="width: 100%;" required>
+                                        <option>Please select..</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <select class="form-control gcode gcode_d select2" id="gcode_d" name="gcode_d" style="width: 100%;" required>
+                                        <option>Please select..</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control form-control-lg oem text-center" id="oem" name="oem" placeholder="" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-2">
+                                    <label for="car_brand" class="col-form-label tx-left">Car brand - ยี่ห้อรถ</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_model" class="col-form-label tx-left">Car model - รุ่นรถยนตร์</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_year" class="col-form-label tx-left">Service Year - ปีบริการ</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_type" class="col-form-label tx-left">Car type - สถานะ</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="qty" class="col-form-label tx-left">QTY - จำนวน</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="uom" class="col-form-label tx-left">UOM - หน่วย</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_brand text-center" maxlength="25" id="car_brand" name="car_brand" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_model text-center" maxlength="25" id="car_model" name="car_model" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_year text-center" id="car_year" name="car_year" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_type text-center" maxlength="25" id="car_type" name="car_type" placeholder="">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg text-center" id="qty" name="qty" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg uom text-center" id="uom" name="uom" placeholder="" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-2">
+                                    <label for="g_model" class="col-form-label tx-left">Others - อื่นๆ</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_fmyear" class="col-form-label glb_code_e tx-left">Car Year Start - ปีรถเริ่มต้น</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_toyear" class="col-form-label glb_code_e tx-left">Car Year End - ปีรถสิ้นสุด</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_generation" class="col-form-label glb_code_e tx-left">Car Generation - ปีรถ</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_engine" class="col-form-label glb_code_e tx-left">CC Engine - เครื่องยนต์</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="car_body" class="col-form-label glb_code_e tx-left">Body Code - รหัสตัวถัง</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg g_model text-center" maxlength="50" id="g_model" name="g_model" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="number" class="form-control form-control-lg glb_code_e carfmyear text-center" maxlength="4" id="car_fmyear" name="car_fmyear" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="number" class="form-control form-control-lg glb_code_e cartoyear text-center" maxlength="4" id="car_toyear" name="car_toyear" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_generation text-center" maxlength="30" id="car_generation" name="car_generation" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_engine text-center" id="car_engine" maxlength="30" name="car_engine" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e car_body text-center" id="car_body" maxlength="40" name="car_body" placeholder="" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-2">
+                                    <label for="ussage_per_car" class="col-form-label glb_code_e tx-left">UssagePerCar - จำนวน/คัน</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="item_group" class="col-form-label glb_code_e tx-left">Item Group - กลุ่มสินค้า</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="group_name" class="col-form-label glb_code_e tx-left">Group Name - ชื่อกลุ่ม</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <input type="number" class="form-control form-control-lg ussage_per_car text-center" step="0.1" min="0" value="0" id="ussage_per_car" name="ussage_per_car" placeholder="">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e item_group text-center" id="item_group" name="item_group" placeholder="" disabled>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control form-control-lg glb_code_e group_name text-center" id="group_name" name="group_name" placeholder="" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mg-t-6">
+                                <div class="col-sm-12">
+                                    <label for="remarks" class="col-form-label tx-left">Remarks - คำอธิบายลักษณะการใช้งาน</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <textarea type="text" class="form-control form-control-lg remarks" id="remarks" name="remarks" placeholder="" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form btn-action btn-create" data-action="save_exit"  style="width: 100px;">Save</button>
+                        <button id="btn-update" class="btn ripple btn-primary btn-update btn-action d-none" data-action="update" type="submit" style="width: 100px;">Update</button>
+                        <button class="btn ripple btn-secondary " data-dismiss="modal" type="button" style="width: 100px;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

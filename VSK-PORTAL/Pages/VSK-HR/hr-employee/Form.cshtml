@@ -1,0 +1,128 @@
+﻿<div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:1300px !important;max-height: 400px !important;">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">@ViewData["Content-Title-Page"]</h6><span id="title_detail" class="modal-title ml-1 tx-primary"></span>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form id="frm_data" class="row" name="frm_data" autocomplete="off">
+                    @*0*@
+                    <div class="col-2 d-flex justify-content-center">
+                        <div class="" style="width:210px !important ; height:100px !important;">
+                            <img src="../../assets/img/ecommerce/01.jpg" alt="img" class="img-fluid" id="employee_photo">
+                        </div>
+                    </div>
+                    <div class="row col-10">
+                        <div class="col-sm-2">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Prefix (TH)</label>
+                            <select class="form-control form-control" id="employee_prefix_th" name="employee_prefix_th" required>
+                                <option value="">-ระบุคำนำหน้าชื่อ-</option>
+                                <option value="คุณ">คุณ</option>
+                                <option value="นาย">นาย</option>
+                                <option value="นาง">นาง</option>
+                                <option value="นางสาว">นางสาว</option>
+                                <option value="ว่าที่ร้อยตรีหญิง">ว่าที่ร้อยตรีหญิง</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">First Name (TH)</label>
+                            <input class="form-control form-control" placeholder="ระบุชื่อพนักงาน" id="employee_first_name_th" name="employee_first_name_th" type="text" value="" required>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Last Name (TH)</label>
+                            <input class="form-control form-control" placeholder="ระบุชื่อพนักงาน" id="employee_last_name_th" name="employee_last_name_th" type="text" value="" required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Nickname (TH)</label>
+                            <input class="form-control" id="employee_nickname_th" placeholder="ระบุชื่อเล่น" name="employee_nickname_th" type="text" value="" >
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Code</label>
+                            <input class="form-control form-control" id="employee_code" placeholder="ระบุรหัสพนักงาน" name="employee_code" type="number" value="" required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Prefix (EN)</label>
+                            <select class="form-control form-control" id="employee_prefix_en" name="employee_prefix_en" required>
+                                <option value="">-ระบุคำนำหน้าชื่อ-</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Mrs.">Mrs.</option>
+                                <option value="Miss">Miss</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">First Name (EN)</label>
+                            <input class="form-control form-control" placeholder="ระบุชื่อพนักงาน" id="employee_first_name_en" name="employee_first_name_en" type="text" value="" required>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Last Name (EN)</label>
+                            <input class="form-control form-control" placeholder="ระบุนามสกุลพนักงาน" id="employee_last_name_en" name="employee_last_name_en" type="text" value="" required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Nickname (EN)</label>
+                            <input class="form-control" id="employee_nickname_en" placeholder="ระบุชื่อเล่น" name="employee_nickname_en" type="text" value="">
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Section<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_sec" id="employee_sec_id" name="employee_sec" placeholder="กรุณาเลือก" required>
+                                <option value="">-ระบุผ่าย-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Department<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_dept" id="employee_dept_id" name="employee_dept" placeholder="กรุณาเลือก" required>
+                                <option value="">-ระบุแผนก-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Position<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_pos" id="employee_pos_id" name="employee_pos" placeholder="กรุณาเลือก" required>
+                                <option value="">-ระบุตำแหน่ง-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Start Date</label><br />
+                            <input class="form-control form-control fc-datepicker" id="employee_job_startdate" name="employee_job_startdate" placeholder="ระบุวันที่เริ่มงาน" type="text" value="" autocomplete="off" required>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Assessor No: 1<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_leader_asses1" id="employee_leader_asses1" name="employee_leader_asses1" placeholder="กรุณาเลือก">
+                                <option value="">-ผู้ทำการประเมิน-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Assessor No: 2<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_leader_asses2" id="employee_leader_asses2" name="employee_leader_asses2" placeholder="กรุณาเลือก">
+                                <option value="">-ผู้ทำการประเมิน-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Assessor No: 3<span style="color: red;"></span></label>
+                            <select class="form-control form-control-sm custom-select employee_leader_asses3" id="employee_leader_asses3" name="employee_leader_asses3" placeholder="กรุณาเลือก">
+                                <option value="">-ผู้ทำการประเมิน-</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-form-label" style="text-align: left;font-weight: bold;">Assessment Form<span style="color: red;"></span></label>
+                            <select class="form-control form-control" style="width: 100%;" id="employee_form_id" name="employee_form">
+                                <option value="">-ระบุแบบฟอร์ม-</option>
+                                <option value="1">ระดับปฏิบัติการ</option>
+                                <option value="2">ระดับหัวหน้างาน</option>
+                                <option value="3">ระดับบริหาร</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="btn-submit" class="btn btn-primary btn-save_form">บันทึก</button>
+                <button type="button" id="btn-delete" class="btn btn-primary hide">Delete</button>
+                <button type="button" id="btn-cancel" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+</div>

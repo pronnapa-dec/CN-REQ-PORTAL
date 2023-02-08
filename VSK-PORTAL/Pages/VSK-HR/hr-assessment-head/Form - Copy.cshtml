@@ -1,0 +1,100 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-center mb-0"><i class='fas fa-users'></i> แบบประเมินระดับหัวหน้า</h1>
+            <br />
+            <br />
+        </div>
+        <div class="alert alert-warning justify-content-center chkdup text-center d-none" role="alert">
+            <span class="alert-inner--icon"><i class="fe fe-info"></i></span>
+            <span class="alert-inner--text"><strong>ท่านได้ทำแบบประเมินแล้ว!</strong>&nbsp;เมื่อวันที่&nbsp;</span><span class="alert-inner--text" id="alert"></span>
+        </div>
+        <div class="card-body">
+            <form class="col-sm" id="frm_detail" name="frm_detail" autocomplete="off">
+                <div class="kt-portlet__body">
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">ผู้ทำการประเมิน :</label>
+                        <div class="col-md-4 col-form-label">
+                            <span id="emp_assessor" name="emp_assessor" class="tx-bold"></span>
+                        </div>
+                        <label class="col-md-2 col-form-label in_emp_assess">ผู้ถูกประเมิน :</label>
+                        <div class="col-md-4 in_emp_assess">
+                            <select type="text" class="form-control bd-primary" id="emp_assess" name="emp_assess">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row empdetail" id="empdetail">
+                        <div class="border-top my-3"></div>
+
+                        <label class="col-md-1 col-form-label">รหัสพนักงาน :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_employee_code" name="h_employee_code" class="tx-bold tx-detail"></span>
+                        </div>
+
+                        <label class="col-md-1 col-form-label">ฝ่าย :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_employee_sec" name="h_employee_sec" class="tx-bold tx-detail"></span>
+                        </div>
+
+                        <label class="col-md-1 col-form-label">แผนก :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_employee_dept" name="h_employee_dept" class="tx-bold tx-detail"></span>
+                        </div>
+
+                        <label class="col-md-1 col-form-label">ตำแหน่งงาน :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_employee_pos" name="h_employee_pos" class="tx-bold tx-detail"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row empdetail">
+
+                        <label class="col-md-1 col-form-label">วันที่เริ่มงาน :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_employee_job_startdate" name="h_employee_job_startdate" class="tx-bold tx-detail"></span>
+                        </div>
+
+                        <label class="col-md-1 col-form-label">อายุงาน :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_job_old" name="h_job_old" class="tx-bold tx-detail"></span>
+                        </div>
+
+                        <label class="col-md-1 col-form-label">รอบประเมิน :</label>
+                        <div class="col-md-2 col-form-label">
+                            <span id="h_data_quarter" name="h_data_quarter" class="tx-bold tx-detail"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="table-responsive mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap d-none">
+                    <thead>
+                        <tr>
+                            <th class="d-none">id</th>
+                            <th><div style="text-align:center;">สาย<br><span style="font-size: 10px; font-weight: bold; color: black;">ครั้ง</span></div></th>
+                            <th><div style="text-align:center;" class="">สาย<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ขาดงาน<br><span style="font-size: 10px; font-weight: bold; color: black;">ครั้ง</span></div></th>
+                            <th><div style="text-align:center;" class="">ขาดงาน<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลาป่วย<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลากิจ<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลาคลอด<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลาบวช<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลาหักค่าจ้าง<br><span style="font-size: 10px; font-weight: bold; color: black;">เวลา</span></div></th>
+                            <th><div style="text-align:center;" class="">ลางานศพ<br><span style="font-size: 10px; font-weight: bold; color: black;">งานแต่ง</span></div></th>
+                            <th><div style="text-align:center;" class="">ใบเตือน<br><span style="font-size: 10px; font-weight: bold; color: black;"></span> </div></th>
+                            <th><div style="text-align:center;" class="">ใบภาคทัณฑ์<br><span style="font-size: 10px; font-weight: bold; color: black;"></span> </div></th>
+                            <th><div style="text-align:center;" class="">รอบประเมิน<br><span style="font-size: 10px; font-weight: bold; color: black;"></span> </div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

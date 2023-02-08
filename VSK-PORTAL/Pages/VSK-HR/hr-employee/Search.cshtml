@@ -1,0 +1,55 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="form-group">
+                    <div class="row row-sm ">
+                        <div class="col-lg-3">
+                            <label for="job_date" class="col-form-label tx-bold">Employee name</label>
+                            <select type="text" class="form-control" id="employee_name" name="employee_name">
+                                <option value="" selected>-เลือกพนักงาน-</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tr_number" class="col-form-label tx-bold">Assessment form</label>
+                            <select type="text" class="form-control" id="employee_form" name="employee_form">
+                                <option value="" selected>-เลือกฟอร์ม-</option>
+                                <option value="1">ระดับปฏับัติการ</option>
+                                <option value="2">ระดับหัวหน้างาน</option>
+                                <option value="3">ระดับบริหาร</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tr_user" class="col-form-label tx-bold">Section</label>
+                            <select class="form-control select2 employee_sec" id="employee_sec" name="employee_sec" data-width="100%">
+                                <option value="" selected="">-เลือกฝ่าย-</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tr_user" class="col-form-label tx-bold">Department</label>
+                            <select class="form-control select2 employee_dept" id="employee_dept" name="employee_dept" data-width="100%">
+                                <option value="" selected="">-เลือกแผนก-</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tr_user" class="col-form-label tx-bold">Position</label>
+                            <select class="form-control select2 employee_pos" id="employee_pos" name="employee_pos" data-width="100%">
+                                <option value="" selected="">-เลือกตำแหน่ง-</option>
+                            </select>
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static" tabindex="-1" >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:990px">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"] Form</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group row">
+                        <label for="source_site_code" class="col-sm-2 col-form-label">Source Site <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="source_site_code" name="source_site_code" disabled />
+                        </div>
+
+                        <label for="destination_code" class="col-sm-2 col-form-label">Destination Site <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="destination_site_code" name="destination_site_code" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group row item_select2">
+                        <label for="item_barcode" class="col-sm-2 col-form-label">Item Name <span class="tx-danger">*</span></label>
+                        <div class="col-sm-10">  
+                            <select class="form-control" id="item_barcode" name="item_barcode" disabled></select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="item_formula" class="col-sm-2 col-form-label">Formula <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <select class="form-control select2" id="item_formula" name="item_formula" data-width="100%" required>
+                                <option value="">--- Select Formula ---</option>
+                            </select>
+                        </div>
+                        <label for="PackCodeRounding" class="col-sm-2 col-form-label">Pack Code Rounding  <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="PackCodeRounding" name="PackCodeRounding" placeholder="" value="1" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Onhand" class="col-sm-2 col-form-label">Stock On Hand <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="Onhand" name="Onhand" placeholder="" value="0" readonly />
+                        </div>
+                        <label for="item_pending_po" class="col-sm-2 col-form-label">Transfer In Pending Destination <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item_pending_po" name="item_pending_po" placeholder="" value="0" disabled />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lead_time" class="col-sm-2 col-form-label">Lead Time(Day)  <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="lead_time" name="lead_time" placeholder="" value="" min="0" step="1" disabled />
+                        </div>
+                        <label for="ManualSafetyStockQty" class="col-sm-2 col-form-label">Safety Stock </label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="ManualSafetyStockQty" name="ManualSafetyStockQty" placeholder="" value="0" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="StockStatus" class="col-sm-2 col-form-label">Stock Status  <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="StockStatus" name="StockStatus" placeholder="" value="" disabled>
+                        </div>
+
+                        <label for="item_status_site_setting" class="col-sm-2 col-form-label">Stock Status Site Setting</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item_status_site_setting" name="item_status_site_setting" placeholder="" value="" disabled>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="MinQty" class="col-sm-2 col-form-label">Min <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="MinQty" name="MinQty" placeholder="0" value="" min="0" step="1" disabled>
+                        </div>
+                        <label for="MaxQty" class="col-sm-2 col-form-label">Max <span class="tx-danger">*</span></label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="MaxQty" name="MaxQty" placeholder="0" value="" min="0" step="1" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row d-none">
+                        <label for="item_reorder_point" class="col-sm-2 col-form-label">Reorder Point </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item_reorder_point" name="item_reorder_point" placeholder="" value="" disabled>
+                        </div>
+                        <label for="item_reorder_qty" class="col-sm-2 col-form-label">Reorder QTY.</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="item_reorder_qty" name="item_reorder_qty" placeholder="" value="" min="0" step="1" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="item_result_final" class="col-sm-2 col-form-label">Transfer Qty Required </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item_result_final" name="item_result_final" placeholder="" value="0" disabled>
+                        </div>
+                        <label for="item_result_final" class="col-sm-2 col-form-label">Good Sales Flag </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item_goodsalesflag" name="item_goodsalesflag" placeholder="" value="0" disabled>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <label for="item_spare_1" class="col-sm-4 col-form-label">Spare 1</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="item_spare_1" name="item_spare_1" placeholder="" value="" disabled />
+                                </div>
+                                <label for="item_spare_2" class="col-sm-4 col-form-label mg-t-15">Spare 2</label>
+                                <div class="col-sm-8 mg-t-15">
+                                    <input type="text" class="form-control" id="item_spare_2" name="item_spare_2" placeholder="" value="" disabled />
+                                </div>
+                                <label for="item_spare_3" class="col-sm-4 col-form-label mg-t-15">Spare 3</label>
+                                <div class="col-sm-8 mg-t-15">
+                                    <input type="text" class="form-control" id="item_spare_3" name="item_spare_3" placeholder="" value="" disabled/>
+                                </div>
+                            </div>
+                            <fieldset class="form-group">
+                                <div class="row">
+
+                                    <label class="col-form-label col-sm-4 pt-0">Active Status</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input record_status" type="radio" name="recode_status" id="recode_status_yes" value="Y" checked disabled>
+                                            <label class="form-check-label tx-success" for="recode_status_yes">
+                                                Enabled
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input record_status" type="radio" name="recode_status" id="recode_status_no" value="N" disabled>
+                                            <label class="form-check-label tx-danger" for="recode_status_no">
+                                                Disabled
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <div class="row">
+
+                                    <label for="item_backlog_ctrl" class="col-form-label col-sm-4 pt-0">Backlog Control</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input item_backlog_ctrl" type="radio" name="item_backlog_ctrl" id="item_backlog_ctrl_yes" value="Y" disabled>
+                                            <label class="form-check-label tx-success" for="item_backlog_ctrl_yes">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input item_backlog_ctrl" type="radio" name="item_backlog_ctrl" id="item_backlog_ctrl_no" value="N" disabled>
+                                            <label class="form-check-label tx-danger" for="item_backlog_ctrl_no">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                            <div class="row form-group">
+                                <label for="remark" class="col-sm-4 col-form-label">Remark</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" id="site_remark" name="site_remark" rows="5" disabled></textarea>
+                                </div>
+                                @*<label for="information" class="col-sm-4 col-form-label md-b">System Information</label>
+                    <div></div>*@
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form d-none" data-action="save_exit" type="submit">Save</button>
+                        <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

@@ -1,0 +1,56 @@
+﻿@page "/stl/netprice"
+
+@{
+    ViewData["Script"] = "apps/stl/stl-opt-netprice.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "Net Price";
+    ViewData["Content-Title-Page"] = "ตารางกำหนดราคาสินค้า NET";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+    <div class="d-flex my-xl-auto right-content">
+        @*<div class="pr-2 mb-6 mb-xl-0">
+            <button type="button" id="btn-master_netprice" target="_blank" class="btn btn-warning btn-with-icon btn-block"><i class="las la-money-check-alt"></i>Master NetPrice</button>
+        </div>*@
+        <div class="pr-2 mb-6 mb-xl-0">
+            <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-prnetfile"><i class="typcn typcn-document-add"></i> ตารางราคา NET </button>
+        </div>
+        <div class="mb-6 mb-xl-0">
+            <button id="btn-item_import" class="btn btn-primary btn-with-icon btn-block d-none" data-toggle="modal" data-target="#modal-prnettra_import"><i class="typcn typcn-upload"></i> Template วางราคา NET </button>
+        </div>
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-STL/stl-opt-netprice/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@
+
+
+<partial name="~/Pages/VSK-STL/stl-opt-netprice/Modal_Prnetfile.cshtml" />
+
+<partial name="~/Pages/VSK-STL/stl-opt-netprice/Modal_Prnettra.cshtml" />

@@ -1,0 +1,61 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            <span class="tx-right tx-15 tx-primary time-today mg-r-10" style="float: right; margin-top:-20px;"></span>
+        </div>
+        <div class="card-body">
+            <!-- 1 -->
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="form-group form-group-sm row">
+                    <label class="col-md-1 col-form-label">วันที่รายงาน : </label>
+                    <div class="col-md-3">
+                        <div class="input-group date">
+                            <input class="form-control date-rangepicker" id="job_date" name="job_date" type="text" value="">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="la la-calendar-check-o"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="col-md-1 col-form-label tx-right">ผู้ตรวจสอบ : </label>
+                    <div class="col-md-3">
+                        <select type="text" class="form-control tx-center user_scan" id="user_scan" name="user_scan">
+                            <option value="" selected>--เลือกผู้ตรวจสอบ--</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 col-form-label tx-right">คลัง : </label>
+                    <div class="col-md-3">
+                        <select class="form-control tx-center select2" id="wh" name="wh" data-width="100%" placeholder="เลือกคลัง">
+                            <option value="" selected>--เลือกคลัง--</option>
+                            <option value="F1">F1</option>
+                            <option value="F2">F2</option>
+                            <option value="F3">F3</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- 2 -->
+
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">ค้นหา</button>
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">ยกเลิก</button>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <hr />
+                <div class="tablekk-responsive">
+                    <table id="table_loscan_list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="overflow-x:visible"></table>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

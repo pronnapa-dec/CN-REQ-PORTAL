@@ -1,0 +1,126 @@
+﻿<form class="form-horizontal row" id="frm_search" name="frm_search" autocomplete="off">
+
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header pb-1 border-bottom">
+                <h3 class="card-title mb-2">&emsp;&emsp;<i class="fas fa-search"></i> Search</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="search_employee" class="col-form-label tx-left">Employee</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_leader" class="col-form-label tx-left">Leader</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_assess_by" class="col-form-label tx-left">Evaluator form</label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_employee" name="search_employee">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_leader" name="search_leader">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_assess_by" name="search_assess_by">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="search_form" class="col-form-label tx-left">Assessment form</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_quarter" class="col-form-label tx-left">Quarter</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_status" class="col-form-label tx-left">Status</label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_form" name="search_form">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_quarter" name="search_quarter">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_status" name="search_status">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="search_section" class="col-form-label tx-left">Section</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_department" class="col-form-label tx-left">Department</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="search_position" class="col-form-label tx-left">Position </label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_section" name="search_section">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_department" name="search_department">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control select2" id="search_position" name="search_position">
+                            <option value="" selected>--SELECT ALL--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="btn-search">Search</button>
+                <button type="reset" class="btn btn-secondary reset" id="btn-reset">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header pb-1 border-bottom">
+                <h3 class="card-title mb-2">&emsp;&emsp;<i class="fas fa-tasks"></i> Verify</h3>
+            </div>
+            <div class="card-body" style="height: 330px;">
+                <div class="alert alert-primary alert-verify tx-center" role="alert">
+                   กรุณาเลือกรายชื่อหัวหน้างานในการดูสถานะ
+                </div>
+                <div class="tablekk-responsive">
+                    <table id="tbl-verify" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap tbl-verify" style="overflow-x:visible"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header pb-1 border-bottom">
+                <h3 class="card-title tx-center mb-2">&emsp;&emsp;<i class="fas fa-poll"></i> Results</h3>
+            </div>
+            <div class="card-body">
+                <div class="tablekk-responsive">
+                    <table id="tbl-results" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="overflow-x:visible"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

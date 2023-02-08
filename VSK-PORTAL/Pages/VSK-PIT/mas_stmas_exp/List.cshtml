@@ -1,0 +1,56 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+
+                <div class="row row-sm mg-t-15">
+                    <div class="col-lg-3 d-none">
+                        <label for="part_number">Part Number - หมายเลขสินค้า :</label>
+                        <select class="form-control select2 search_part_number" id="search_part_number" name="search_part_number" data-width="100%">
+                            <option value="">--- Select Search Part number ---</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <label for="item_code">Item Code - รหัสสินค้า :</label>
+                        <select class="form-control select2 search_item_code bd-primary" id="search_item_code" name="search_item_code" data-width="100%">
+                            <option value="">--- Select Search Code, Barcode, SPcode, Name ---</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3 d-none">
+                        <label for="item_name">Item Name - ชื่อสินค้า :</label>
+                        <input type="text" class="form-control search_item_name" id="search_item_name" name="search_item_name" />
+                    </div>
+
+                    <div class="col-lg-3 d-none">
+                        <label for="barcode">Barcode - บาร์โค้ด :</label>
+                        <input type="text" class="form-control" id="search_barcode" name="search_barcode" />
+                    </div>
+
+                </div>
+
+                <div class="form-group mb-0 mt-3 justify-content-end float-right">
+                    <div>
+                        <button type="submit" class="btn btn-dark" id="btn-search" style="width: 100px;">Search</button>
+                        <button type="reset" class="btn btn-danger" onClick="window.location.reload();" style="width: 100px;">Reset</button>
+                        @* <button type="button" class="btn btn-primary" id="btn-export" data-toggle="dropdown">Export <i class="icon ion-ios-arrow-down tx-11 mg-l-3"></i></button>*@
+                        @*<div class="dropdown-menu">
+                                <a href="http://192.168.1.159/ReportServer/Pages/ReportViewer.aspx?%2fReport+Project1%2fRPT_MRP_ItemSetup_GetAll&rs:Command=Render&rs:Format=excel" class="dropdown-item" target="_blank">Export(SSRS) as XLS</a>
+                                <a href="" class="dropdown-item btn-tbl_export" data-export="excel">Export as XLS</a>
+                                <a href="" class="dropdown-item btn-tbl_export" data-export="csv">Export as CSV</a>
+                            </div>*@
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+            </div>
+        </div>
+    </div>
+</div>

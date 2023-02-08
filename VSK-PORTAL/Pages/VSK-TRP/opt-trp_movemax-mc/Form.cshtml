@@ -1,0 +1,244 @@
+﻿<div class="modal effect-flip-vertical" id="modal-frm_close_job" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo">
+            @* <form id="frm_close_job" name="frm_close_job">*@
+            <div class="modal-header">
+                <h6 class="modal-title">ปิดงาน</h6>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group row">
+                            <div class="col-lg-12 mg-t-20 mg-lg-t-0">
+                                <div class="input-group">
+                                    <input id="number-close_job" class="form-control" placeholder="MO.. , JM.." type="text">
+                                    <span class="input-group-btn">
+                                        <button id="btn-submit_close_job" class="btn btn-dark" type="button">
+                                            <span class="input-group-btn"><i class="las la-motorcycle"></i></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+            </div>
+            @* </form>*@
+        </div>
+    </div>
+</div>
+
+
+<div class="modal effect-flip-vertical" id="modal-frm_job_multi" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content"> 
+            <form id="frm_job_multi" name="frm_job_multi" data-parsley-validate="" novalidate="" autocomplete="off">
+                <div class="modal-header">
+                    <h6 class="modal-title">เปิดงาน</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+
+                        <div class="form-group col-3">
+                            <label for="mt_job_date" class="col-form-label">วันที่จัดส่ง</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                    </div>
+                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="mt_job_date" name="mt_job_date" required disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="mt_route_no" class="col-form-label">สายส่ง</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_route_no" name="mt_route_no" required disabled>
+                                <option value="">- เลือกสายส่ง -</option>
+                                <option value="00/0" selected>ส่งสินค้าด่วน</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="mt_job_status" class="col-form-label">สถานะ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_job_status" name="mt_job_status" required disabled>
+                                <option value="">- เลือกสถานะ -</option>
+                                <option value="delivery" selected>ส่งสินค้า</option>
+                                <option value="receive">รับสินค้า</option>
+                                <option value="branch">ส่งสาขา</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center">
+
+                        <div class="form-group col-3">
+                            <label for="mt_job_plate" class="col-form-label">พนักงานขับรถ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_driver_id" name="mt_driver_id" required>
+                                <option value="">- เลือกพนักงานขับรถ -</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label for="mt_job_plate" class="col-form-label">ทะเบียนรถ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_job_plate" name="mt_job_plate" required disabled>
+                                <option value="">- เลือกทะเบียนรถ -</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-1">
+                            <label for="mt_inv_branch" class="col-form-label">สาขา</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_inv_branch" name="mt_inv_branch" disabled>
+                                <option value="VSK" selected="">VSK</option>
+                                <option value="VSF">VSF</option>
+                                <option value="KLH">KLH</option>
+                                <option value="LLK">LLK</option>
+                                <option value="NWM">NWM</option>
+                                <option value="LKS">LKS</option>
+                                <option value="SNK">SNK</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label class="col-form-label">เลขที่อ้างอิง</label>
+                            <div class="input-group">
+                                <input class="form-control mt_job_inv" placeholder="ระบุเลขที่" type="text" id="mt_job_inv" name="mt_job_inv" disabled>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" id="btn-mt_job_inv" type="button">
+                                        <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex">
+                        <div>
+                            <button type="reset" class="btn btn-dark " onClick="window.location.reload();">RESET</button>
+                        </div>
+                        <div class="mg-l-auto">
+                            <button type="button" id="btn-modal-add_job" class="btn btn-primary btn-modal" disabled>ADD JOB</button>
+                            <button type="button" id="btn-print" class="btn btn-dark btn-modal d-none" disabled>PRINT</button>
+                        </div>
+                    </div>
+                    <div class="border-top my-3 mb-1"></div>
+                    <div class="table-responsive">
+                        <table id="table-multi_list" class="table table-hover mg-b-0 text-md-nowrap" width="100%">
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="modal effect-flip-vertical" id="modal-frm_job_multi" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form id="frm_job_multi" name="frm_job_multi" data-parsley-validate="" novalidate="" autocomplete="off">
+                <div class="modal-header">
+                    <h6 class="modal-title">เปิดงาน</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-3">
+                            <label for="mt_job_date" class="col-form-label">วันที่จัดส่ง</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                    </div>
+                                </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="mt_job_date" name="mt_job_date" required disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="mt_route_no" class="col-form-label">สายส่ง</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_route_no" name="mt_route_no" required disabled>
+                                <option value="">- เลือกสายส่ง -</option>
+                                <option value="00/0" selected>ส่งสินค้าด่วน</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="mt_job_plate" class="col-form-label">พนักงานขับรถ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_driver_id" name="mt_driver_id" required>
+                                <option value="">- เลือกพนักงานขับรถ -</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="mt_job_plate" class="col-form-label">ทะเบียนรถ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_job_plate" name="mt_job_plate" required disabled>
+                                <option value="">- เลือกทะเบียนรถ -</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-2">
+                            <label for="mt_job_status" class="col-form-label">สถานะ</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_job_status" name="mt_job_status" required disabled>
+                                <option value="">- เลือกสถานะ -</option>
+                                <option value="delivery" selected>ส่งสินค้า</option>
+                                <option value="receive">รับสินค้า</option>
+                                <option value="branch">ส่งสาขา</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-1">
+                            <label for="mt_inv_branch" class="col-form-label">สาขา</label>
+                            <select type="text" class="form-control chk_data_input" id="mt_inv_branch" name="mt_inv_branch" disabled>
+                                <option value="VSK" selected="">VSK</option>
+                                <option value="VSF">VSF</option>
+                                <option value="KLH">KLH</option>
+                                <option value="LLK">LLK</option>
+                                <option value="NWM">NWM</option>
+                                <option value="LKS">LKS</option>
+                                <option value="SNK">SNK</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label class="col-form-label">เลขที่อ้างอิง</label>
+                            <div class="input-group">
+                                <input class="form-control mt_job_inv" placeholder="ระบุเลขที่" type="text" id="mt_job_inv" name="mt_job_inv" disabled>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-dark" id="btn-mt_job_inv" type="button">
+                                        <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div>
+                            <button type="reset" class="btn btn-dark " onClick="window.location.reload();">RESET</button>
+                        </div>
+                        <div class="mg-l-auto">
+                            <button type="button" id="btn-modal-add_job" class="btn btn-primary btn-modal" disabled>ADD JOB</button>
+                            <button type="button" id="btn-print" class="btn btn-dark btn-modal" disabled>PRINT</button>
+                        </div>
+                    </div>
+                    <div class="border-top my-3 mb-1"></div>
+                    <div class="table-responsive">
+                        <table id="table-multi_list" class="table table-hover mg-b-0 text-md-nowrap" width="100%">
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>*@

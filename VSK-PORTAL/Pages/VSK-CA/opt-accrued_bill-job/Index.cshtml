@@ -1,0 +1,126 @@
+﻿@page "/csh/opt/accrued_job"
+
+@{
+    ViewData["Script"] = "apps/ca/opt-accrued-job.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "บันทึกยอด-บิลค้างรับ";
+    ViewData["Content-Title-Page"] = "ข้อมูลการขายประจำวัน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+
+        </div>
+        @* breadcrumb *@
+        @* action *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-6 mb-xl-0 pd-l-10">
+                <button id="btn-update_appove" class="btn btn-primary btn-with-icon btn-block d-none"><i class="las la-check-circle"></i> ผ่าน อนุมัติ</button>
+            </div>
+            <div class="mb-6 mb-xl-0 pd-l-10">
+                <button id="btn-update_unappove" class="btn btn-danger btn-with-icon btn-block d-none"><i class="las la-times-circle"></i> ไม่ผ่าน อนุมัติ</button>
+            </div>
+            <div class="mb-3 mb-xl-0 pd-l-10">
+                <button id="btn-update_status" class="btn btn-success btn-with-icon btn-block"><i class="las la-share"></i> ส่งยอด</button>
+            </div>
+            @*<div class="mb-6 mb-xl-0 pd-l-10">
+                    <button id="btn-update_retrospect" class="btn btn-warning btn-with-icon btn-block tx-dark d-none"><i class="las la-undo"></i> ย้อนกลับ</button>
+                </div>*@
+        </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* advance alert *@
+    <div class="alert alert-success d-none tx-center tx-dark" role="alert">
+        <span class="alert-inner--icon"><i class="fe fe-check-square"></i></span>
+        <span class="alert-inner--text"><strong id="alert_head">Success!</strong> <span id="alert_detail"></span></span>
+    </div>
+    @* advance alert *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Bill_Receive_Verify.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Upload.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Customer.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Customer_Accrued.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal history cash *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_History_Cash.cshtml" />
+    </div>
+    @* modal history cash *@
+
+    @* modal history edc *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_History_Edc.cshtml" />
+    </div>
+    @* modal history edc *@
+
+    @* modal history coupons *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_History_Coupons.cshtml" />
+    </div>
+    @* modal history coupons *@
+
+    @* modal remark *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Remark.cshtml" />
+    </div>
+    @* modal remark *@
+
+    @* modal check upload bill coupons *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Check_Upload_Bill.cshtml" />
+    </div>
+    @* modal check upload bill coupons *@
+
+    @* modal history retrospect *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-accrued_bill-job/Modal_Retrospect.cshtml" />
+    </div>-->
+    @* modal history retrospect *@
+
+</div>
+@* Container closed *@

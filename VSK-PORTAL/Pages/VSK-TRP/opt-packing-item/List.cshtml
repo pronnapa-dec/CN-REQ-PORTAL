@@ -1,0 +1,153 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            <div class="main-dashboard-header-right" style="margin-top:-20px;">
+                <div>
+                    <label class="tx-13">จำนวนบิล</label>
+                    <div><h5 id="sum_qty_inv">0</h5>บิล</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนสินค้า</label>
+                    <div><h5 id="sum_qty_item">0</h5>รายการ</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนปัจจุบัน</label>
+                    <div><h5 id="sum_qty_current">0</h5> หน่วย</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนทั้งหมด</label>
+                    <div><h5 id="sum_qty_total">0</h5> หน่วย</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_job" name="frm_job" autocomplete="off">
+                <div class="kt-portlet__body">
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-1 col-form-label">เลขที่ PCK</label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="job_number" name="job_number" value=""> <span class="input-group-btn"><button class="btn btn-dark" type="reset" id="btn-main" onClick="window.location.reload();"><span class="input-group-btn"><i class="fas fa-redo-alt"></i></span></button></span>
+                            </div>
+                        </div>
+                        <label class="col-md-1 col-form-label">วันที่ PCK</label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="job_date" name="job_date" value="" disabled>
+                            </div>
+                        </div>
+                        <label class="col-md-1 col-form-label">ผู้จัดส่ง</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="transport_start" name="transport_start" value="" disabled>
+                        </div>
+                    </div>
+                    <!-- 1 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-1 col-form-label">ลูกค้า</label>
+                        <div class="col-md-1">
+                            <input type="text" class="form-control" id="emmas_code" name="emmas_code" value="" disabled>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="emmas_name" name="emmas_name" value="" disabled>
+                        </div>
+                        <label class="col-md-1 col-form-label">ที่อยู่/จัดส่ง</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="emmas_address" name="emmas_address" value="" disabled>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="form-group form-group-sm row hideny d-none">
+                        <label class="col-md-1 col-form-label">บาร์โค้ด</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="keywords" name="keywords" value="">
+                        </div>
+                        <label class="col-md-1 col-form-label">จำนวน</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" id="job_detail_qty" name="job_detail_qty" value="1" min="0" step="1" required data-parsley-error-message="">
+                        </div>
+                        <label class="col-md-1 col-form-label">ผู้ตรวจสอบ</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="user" name="user" value="" disabled>
+                        </div>
+                    </div>
+
+                    <div class="border-top my-3"></div>
+
+                    <div id="pck_list" class="form-group form-group-sm row d-none">
+
+                        <label for="pck_qty" class="col-md-1 col-form-label">จำนวน/กล่อง</label>
+                        <div class="col-md-1">
+                            <input type="number" class="form-control tx-center" id="pck_qty" name="pck_qty" min="0" step="1" required="" value="0" disabled="">
+                        </div>
+                        <label class="col-form-label mr-3">ขนาด</label>
+
+                        <label for="size_a" class="col-form-label">A</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_A" name="size_A" value="0">
+                        </div>
+                        <label for="size_b" class="col-form-label">B</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_B" name="size_B" value="0">
+                        </div>
+                        <label for="size_c" class="col-form-label">C</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_C" name="size_C" value="0">
+                        </div>
+                        <label for="size_d" class="col-form-label">D</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_D" name="size_D" value="0">
+                        </div>
+                        <label for="size_e" class="col-form-label">E</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_E" name="size_E" value="0">
+                        </div>
+                        <label for="size_f" class="col-form-label">F</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_F" name="size_F" value="0">
+                        </div>
+                        <label for="size_more" class="col-form-label">อื่นๆ</label>
+                        <div class="col-md">
+                            <input type="number" min="0" class="form-control tx-center size_box" id="size_Z" name="size_Z" value="0">
+                        </div>
+
+                        <div class="col-md main-toggle-group-demo mg-t-10">
+                            <div class="default-switches main-toggle main-toggle-dark on" id="packing-switches">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-md tx-right">
+                            <button type="button" class="btn btn-dark" id="btn-packing_box" style="width: 120px;">บรรจุกล่อง</button>
+                        </div>
+                        <div class="col-md tx-right">
+                            <button type="button" class="btn btn-warning tx-dark" id="btn-share_box" style="width: 120px;">ใช้กล่องรวม</button>
+                        </div>
+                        <div class="col-md tx-right">
+                            <button type="button" class="btn btn-danger" id="btn-delete_box" style="width: 120px;">ลบกล่อง</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="table-responsive mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                    <thead>
+                        <tr>
+                            <th class="d-none">id</th>
+                            <th><div style="text-align:center;">ลำดับ</div></th>
+                            <th><div style="text-align:center;">บาร์โค้ด</div></th>
+                            <th><div style="text-align:center;">ชื่อสินค้า</div></th>
+                            <th><div style="text-align:center;">เลขอะไหล่</div></th>
+                            <th><div style="text-align:center;">จำนวนย่อย</div></th>
+                            <th class="d-none"><div style="text-align:center;">จำนวนหลัก</div></th>
+                            <th><div style="text-align:center;">หน่วยนับ</div></th>
+                            <th><div style="text-align:center;">ผู้ตรวจสอบ</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 id="card-title-pages" class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            <div class="main-dashboard-header-right d-none">
+                <div>
+                    <label class="tx-13">จำนวนสินค้า</label>
+                    <div><h5 id="sum_qty_item">0</h5>รายการ</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนปัจจุบัน</label>
+                    <div><h5 id="sum_qty_current">0</h5> หน่วย</div>
+                </div>
+                <div>
+                    <label class="tx-13">จำนวนทั้งหมด</label>
+                    <div><h5 id="sum_qty_total">0</h5> หน่วย</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+
+                <div class="row row-sm">
+                    <div class="form-group col-2">
+                        <label for="pck_number" class="col-form-label">วันที่จัดส่ง</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </div>
+                            </div><input class="form-control chk_data_input fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="job_date" name="job_date" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-2">
+                        <label for="inv_date" class="col-form-label">สายส่ง</label>
+                        <select type="text" class="form-control chk_data_input" id="route_no" name="route_no" disabled>
+                            <option value="">- เลือกสายส่ง -</option>
+                            <option value="00/0" selected>ส่งสินค้าด่วน</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-4">
+                        <label class="col-form-label">พนักงานขับรถ</label>
+                        <select type="text" class="form-control select2 chk_data_input" id="driver_id" name="driver_id" required>
+                            <option value="">--- เลือกพนักงาน ---</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-1">
+                        <label for="inv_branch" class="col-form-label">สาขา</label>
+                        <select type="text" class="form-control chk_data_input" id="inv_branch" name="inv_branch" disabled="">
+                            <option value="">--- เลือกสาขา ---</option>
+                            <option value="VSK" selected="">VSK</option>
+                            <option value="VSF">VSF</option>
+                            <option value="KLH">KLH</option>
+                            <option value="LLK">LLK</option>
+                            <option value="NWM">NWM</option>
+                            <option value="LKS">LKS</option>
+                            <option value="SNK">SNK</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label class="col-form-label">เลขที่อ้างอิง</label>
+                        <div class="input-group">
+                            <input class="form-control chk_data_input job_inv" placeholder="ระบุเลขที่" type="text" id="job_inv" name="job_inv" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-dark" id="btn-job_inv" type="button">
+                                    <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </form>
+            <div class="d-flex">
+                <div>
+                    <button type="reset" class="btn btn-dark " onClick="window.location.reload();">RESET</button>
+                </div>
+                <div class="mg-l-auto d-flex">
+                    <button id="btn-upload" class="btn btn-primary btn-with-icon mr-2">ส่งงาน TMS</button>
+                    <button id="btn-report" class="btn btn-success btn-with-icon">พิมพ์ใบงาน</button>
+                    <button id="btn-print" class="btn btn-primary btn-with-icon btn-block d-none"><i class="mdi mdi-printer mr-1"></i>Print</button>
+
+                    @*<button type="button" id="btn-modal-add_job" class="btn btn-success btn-modal">ADD JOB</button>
+                <button type="button" id="btn-modal-close_job" class="btn btn-danger btn-modal">CLOSE JOB</button>*@
+                </div>
+            </div>
+            <div class="border-top my-3"></div>
+            <div class="col-lg-12">
+                <table id="tbl-job-detail" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                    <thead style="font-size:11px; text-align:center">
+                        <tr>
+                            <th valign="middle" class="tx-center">ลำดับ</th>
+                            <th valign="middle" class="tx-center">เลขที่บิล</th>
+                            <th valign="middle" class="tx-center">วันที่บิล</th>
+                            <th valign="middle" class="tx-center">ใบสั่งจัด</th>
+                            <th valign="middle" class="tx-center">สินค้า</th>
+                            <th valign="middle" class="tx-center">รหัสลูกค้า</th>
+                            <th valign="middle" class="tx-center">ชื่อลูกค้า</th>
+                            <th valign="middle" class="tx-center">ที่อยู่จัดส่ง</th>
+                            <th valign="middle" class="tx-center">COD</th>
+                            <th valign="middle" class="tx-center">ผู้บันทึก</th>
+                            <th valign="middle" class="tx-center">จัดการ</th>
+                            <th valign="middle" class="tx-center d-none">ที่อยู่ลูกค้า</th>
+                            <th valign="middle" class="tx-center d-none">หมายเหตุ</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

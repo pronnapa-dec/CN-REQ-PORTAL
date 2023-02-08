@@ -1,0 +1,55 @@
+﻿<form class="form-horizontal" id="frm_remark" name="frm_remark" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_remark" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog modal-lg" role="document">
+            <div class="modal-content modal-content-demo modal-remark ">
+                <div class="modal-header">
+                    <h6 class="modal-title">หมายเหตุ</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-sm ">
+                        <div class="col-lg-4">
+                            <label for="tr_number" class="col-form-label">วันที่บิล : </label>
+                            <input type="text" class="form-control" id="r_invdate" name="r_invdate" placeholder="" disabled="">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="tr_number" class="col-form-label">เลขที่บิล : </label>
+                            <input type="text" class="form-control" id="r_invnumber" name="r_invnumber" placeholder="" disabled="">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="tr_number" class="col-form-label">เลขที่ใบสั่งจัด : </label>
+                            <input type="text" class="form-control" id="r_invpo" name="r_invpo" placeholder="" disabled="">
+                        </div>
+                        <div class="col-lg-2">
+                            <label for="tr_date" class="col-form-label">รหัสลูกค้า : </label>
+                            <input type="text" class="form-control" id="r_invcode" name="r_invcode" disabled="">
+                        </div>
+                        <div class="col-lg-10">
+                            <label for="tr_date" class="col-form-label">ชื่อลูกค้า : </label>
+                            <input type="text" class="form-control" id="r_invname" name="r_invcode" disabled="">
+                        </div>
+                        <div class="col-lg-2">
+                            <label for="tr_date" class="col-form-label">สาขา : </label>
+                            <input type="text" class="form-control" id="r_invbranch" name="r_invbranch" disabled="">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="tr_date" class="col-form-label">ประเภท : </label>
+                            <input type="text" class="form-control" id="r_invpay" name="r_invpay" disabled="">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="tr_date" class="col-form-label">ยอดเงิน : </label>
+                            <input type="text" class="form-control tx-right" id="r_invsumtt" name="r_invsumtt" disabled="">
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="tr_created_by" class="col-form-label">รายละเอียด : </label>
+                            <textarea class="form-control" placeholder="รายละเอียด" rows="2" id="r_invremark" name="r_invremark" required=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-warning tx-dark btn-action" type="button" id="bth-save_remark">แก้ไข</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

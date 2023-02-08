@@ -1,0 +1,110 @@
+﻿<form id="frm_remark" name="frm_remark" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_remark" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:90%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ใช้กล่องร่วม</h6>
+                    <span class="mg-l-15 pd-t-4 tx-15 tx-bold tx-primary" id="box_job_no"></span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-sm row">
+                                <label for="document_type" class="col-md-1 col-form-label tx-left">เลขที่ : </label>
+                                <div class="col-md-2">
+                                    <select type="text" class="form-control" id="job_no" name="job_no" required>
+                                        <option value="">--- เลือกเอกสาร ---</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-1">
+                                    <input type="text" class="form-control" id="invcode" name="invcode" placeholder="รหัสลูกค้า" disabled required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" id="invname" name="invname" placeholder="ชื่อลูกค้า" disabled required>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="invaddress" name="invaddress" placeholder="ที่อยู่จัดส่ง" disabled required>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-sm row">
+
+                                <label for="pck_qty" class="col-md-1 col-form-label">จำนวน/กล่อง :</label>
+                                <div class="col-md-1">
+                                    <input type="number" class="form-control tx-center" id="pck_qty" name="pck_qty" min="0" step="1" required="" value="0" placeholder="0" disabled="">
+                                </div>
+
+                                <div for="size_A" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_A" name="checkbox" type="checkbox" value="a" disabled>
+                                        <span>A</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_B" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_B" name="checkbox" type="checkbox" value="b" disabled>
+                                        <span>B</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_C" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_C" name="checkbox" type="checkbox" value="c" disabled>
+                                        <span>C</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_D" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_D" name="checkbox" type="checkbox" value="d" disabled>
+                                        <span>D</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_E" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_E" name="checkbox" type="checkbox" value="e" disabled>
+                                        <span>E</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_F" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_F" name="checkbox" type="checkbox" value="f" disabled>
+                                        <span>F</span>
+                                    </label>
+                                </div>
+
+                                <div for="size_Z" class="col-1 mg-t-10">
+                                    <label class="ckbox">
+                                        <input class="checkbox" id="size_Z" name="checkbox" type="checkbox" value="z" disabled>
+                                        <span>OTHER</span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group form-group-sm row">
+                                <label for="document_remark" class="col-md-1 col-form-label tx-left">หมายเหตุ : </label>
+                                <div class="col-md-11">
+                                    <textarea class="form-control" id="remark" placeholder="รายละเอียด" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-save" class="btn ripple btn-success d-none" type="button">บันทึก</button>
+                    <button id="btn-delete" class="btn ripple btn-danger d-none" type="button">ลบ</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

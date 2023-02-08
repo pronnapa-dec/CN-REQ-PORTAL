@@ -1,0 +1,266 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off" data-parsley-validate="">
+    <div class="modal effect-flip-vertical" id="modal-prnetfile" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="modal-title">ตารางกำหนดราคาสินค้า NET</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        @*<div class="pr-1 mb-3 mb-xl-0">
+                            <button type="button" class="btn btn-dark btn-with-icon btn-block mr-2" id="update_emmas"><i class="las la-user-tag"></i>Update Emmas</button>
+                        </div>
+                        <div class="pr-1 mb-3 mb-xl-0">
+                            <button type="button" class="btn btn-primary btn-with-icon btn-block mr-2" id="upload_prnetfile"><i class="las la-poll-h"></i>Upload Template</button>
+                        </div>*@
+                        <div class="pr-1 mb-3 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="tabs-menu ">
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs profile navtab-custom panel-tabs">
+                            <li class="">
+                                <a href="#list" data-toggle="tab" aria-expanded="true" class="active"> <span class="visible-xs"><i class="las la-list tx-16 mr-1"></i></span> <span class="hidden-xs">LIST TEMPLATE</span> </a>
+                            </li>
+                            <li class="">
+                                <a href="#upload" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-file-import tx-15 mr-1"></i></span> <span class="hidden-xs">UPLOAD TEMPLATE</span> </a>
+                            </li>
+                            <li class="">
+                                <a href="#emmas" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-user-tag tx-16 mr-1"></i></span> <span class="hidden-xs">UPDATE CUSTOMER</span> </a>
+                            </li>
+                            <li class="d-none">
+                                <a href="#upload_emmas" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-file-import tx-16 mr-1"></i></span> <span class="hidden-xs">UPDATE CUSTOMER</span> </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content border-left border-bottom border-right border-top-0 p-4">
+                        <div class="tab-pane active" id="list">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card card-primary">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <label class="col-sm-2 col-form-label tx-left">รหัส Template <span class="tx-danger">*</span></label>
+                                                <label class="col-sm-4 col-form-label tx-left">รายละเอียด <span class="tx-danger">*</span></label>
+                                                <label class="col-sm-5 col-form-label tx-left">หมายเหตุ <span class="tx-danger">*</span></label>
+                                                <label class="col-sm-1 col-form-label tx-left">&nbsp;</label>
+
+                                                <div class="col-sm-2">
+                                                    <input type="text" class="form-control" id="template_code" name="template_code" placeholder="" required="">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="template_detail" name="template_detail" placeholder="" required="">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" class="form-control" id="template_remark" name="template_remark" placeholder="">
+                                                </div>
+                                                <div class="d-flex flex-row justify-content-center">
+                                                    <div class="d-btn-create" style="margin: 0 .125rem; ">
+                                                        <button class="btn btn-outline-success btn-icon btn-action btn-create" data-action="create" id="create_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                                    </div>
+                                                    <div class="d-btn-update d-none" style="margin: 0 .125rem;">
+                                                        <button class="btn btn-outline-primary btn-icon btn-action btn-update" data-action="update" id="update_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                                    </div>
+                                                    <div class="d-btn-reset" style="margin: 0 .125rem; ">
+                                                        <button class="btn btn-outline-secondary btn-icon btn-action btn-reset" data-action="reset" id="btn-reset" type="reset"><i class="fas fa-undo"></i></button>
+                                                        @*<button class="btn btn-primary btn-icon btn-action btn-update" id="update_item" type="submit"><i class="typcn typcn-edit"></i></button>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card card-success">
+                                        <div class="card-body">
+                                            <table id="tbl-prnetfile-list" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>รหัส Template</th>
+                                                        <th>รายละเอียด</th>
+                                                        <th>หมายเหตุ</th>
+                                                        <th>แก้ไขล่าสุด</th>
+                                                        <th>แก้ไขโดย</th>
+                                                        <th class="tx-center">จัดการ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="upload">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-2" style="margin-top:10px;">
+                                        <label class="form-label">File Upload <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-4" style="margin-top:5px;">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" id="import_prnetfile" type="file"> <label class="custom-file-label" for="customFile">UPLOAD TEMPLATE</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2" style="margin-top:5px;">
+
+                                        <button type="button" class="btn btn-success btn-icon" id="btn_prnetfile_downloadtemplate" target="_blank"><i class="las la-file-excel"></i></button>
+                                    </div>
+                                    <div class="col main-dashboard-header-right">
+                                        <div>
+                                            <label class="tx-13">ข้อมูลทั้งหมด</label>
+                                            <div><h5 id="prnetfile_all_information">0</h5>รายการ</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลผิดพลาด</label>
+                                            <div><h5 id="prnetfile_wrong_information">0</h5> หน่วย</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลสำเร็จ</label>
+                                            <div><h5 id="prnetfile_success_information">0</h5> หน่วย</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 prnetfile-import d-none">
+                                <table id="tbl-prnetfile-import" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับ</th>
+                                            <th>สถานะ</th>
+                                            <th>ตรวจสอบ</th>
+                                            <th>รหัสเทมเพลต</th>
+                                            <th>ชื่อเทมเพลต</th>
+                                            <th>หมายเหตุ</th>
+                                            <th>จัดการ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div class="col-sm-12 mt-3">
+                                    <button id="btn_update_prnetfile-data" class="btn btn-dark btn-block d-none" type="button">UPLOAD</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="emmas">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-2" style="margin-top:10px;">
+                                        <label class="form-label">File Upload <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-4" style="margin-top:5px;">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" id="import_update_emmas" type="file"> <label class="custom-file-label" for="customFile">UPDATE NETPRICE-EMMAS</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2" style="margin-top:5px;">
+                                        <button type="button" class="btn btn-success btn-icon" id="btn_update_emmas_downloadtemplate" target="_blank"><i class="las la-file-excel"></i></button>
+                                    </div>
+                                    <div class="col main-dashboard-header-right">
+                                        <div>
+                                            <label class="tx-13">ข้อมูลทั้งหมด</label>
+                                            <div><h5 id="emmas_all_information">0</h5>รายการ</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลผิดพลาด</label>
+                                            <div><h5 id="emmas_wrong_information">0</h5> หน่วย</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลสำเร็จ</label>
+                                            <div><h5 id="emmas_success_information">0</h5> หน่วย</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 update_emmas-import d-none">
+                                <table id="tbl-update_emmas-import" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับ</th>
+                                            <th>สถานะ</th>
+                                            <th>ตรวจสอบ</th>
+                                            <th>รหัสลูกค้า</th>
+                                            <th>ชื่อลูกค้า</th>
+                                            <th>รหัสเทมเพลต</th>
+                                            <th>จัดการ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div class="col-sm-12 mt-3">
+                                    <button id="btn_update_emmas-data" class="btn btn-dark btn-block d-none" type="button">UPDATE</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="upload_emmas">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-2" style="margin-top:10px;">
+                                        <label class="form-label">File Upload <span class="tx-danger">*</span></label>
+                                    </div>
+                                    <div class="col-md-4" style="margin-top:5px;">
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" id="import_prnetfile_emmas" type="file"> <label class="custom-file-label" for="customFile">UPLOAD TEMPLATE</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2" style="margin-top:5px;">
+
+                                        <button type="button" class="btn btn-success btn-icon" id="btn_prnetfile_downloadtemplate" target="_blank"><i class="las la-file-excel"></i></button>
+                                    </div>
+                                    <div class="col main-dashboard-header-right">
+                                        <div>
+                                            <label class="tx-13">ข้อมูลทั้งหมด</label>
+                                            <div><h5 id="prnetfile_em_all_information">0</h5>รายการ</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลผิดพลาด</label>
+                                            <div><h5 id="prnetfile_em_wrong_information">0</h5> หน่วย</div>
+                                        </div>
+                                        <div>
+                                            <label class="tx-13">ข้อมูลสำเร็จ</label>
+                                            <div><h5 id="prnetfile_em_success_information">0</h5> หน่วย</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 prnetfile-emmas-import d-none">
+                                <table id="tbl-prnetfile-emmas-import" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับ</th>
+                                            <th>สถานะ</th>
+                                            <th>ตรวจสอบ</th>
+                                            <th>รหัสเทมเพลต</th>
+                                            <th>ชื่อเทมเพลต</th>
+                                            <th>หมายเหตุ</th>
+                                            <th>รหัสลูกค้า</th>
+                                            <th>ชื่อลูกค้า</th>
+                                            <th>จัดการ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div class="col-sm-12 mt-3">
+                                    <button id="btn_update_prnetfile_emmas-data" class="btn btn-dark btn-block d-none" type="button">UPLOAD</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--End Scroll with content modal -->

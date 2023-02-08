@@ -1,0 +1,111 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_upload" name="frm_upload" autocomplete="off" data-parsley-validate="">
+    <div class="modal effect-flip-vertical" id="modal-frm_upload" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo" style="width: 110%">
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="card-title tx-15 mb-0 pb-0">อัพโหลดไฟล์สแกน</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        @*<div class="mb-6 mb-xl-0" style="margin-right: 20px;">
+                                <button type="button" id="btn_downloadtemplate" target="_blank" class="btn btn-outline-primary btn-block">Download Template</button>
+                            </div>*@
+                        <div class="main-dashboard-header-right">
+                            @*<div>
+                                    <label class="tx-13">Customer Ratings</label>
+                                    <div class="main-star">
+                                        <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star"></i> <span>(14,873)</span>
+                                    </div>
+                                </div>*@
+                            <div>
+                                <label class="tx-13">จำนวนทั้งหมด</label>
+                                <h5 class="item_total" id="item_total">0</h5>
+                                <span class="tx-11">รายการ</span>
+                            </div>
+                            <div>
+                                <label class="tx-13">จำนวนที่สำเร็จ</label>
+                                <h5 class="item_success tx-success" id="item_success">0</h5>
+                                <span class="tx-11">รายการ</span>
+                            </div>
+                            <div class="mg-r-15">
+                                <label class="tx-13">จำนวนที่ผิดพลาด</label>
+                                <h5 class="item_warning tx-warning" id="item_warning">0</h5>
+                                <span class="tx-11">รายการ</span>
+                            </div>
+                        </div>
+                        <div class="mb-6 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="frm_upload" name="frm_upload" autocomplete="off">
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label tx-right">วันที่สแกน : </label>
+                            <div class="col-md-3">
+                                <div class="row row-sm ">
+                                    <div class="input-group col-md-12">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                            </div>
+                                        </div><input class="form-control chk_data_input fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="scan_date" name="scan_date" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-md-2 col-form-label tx-right">ผู้ตรวจสอบ : </label>
+                            <div class="col-md-3 mg-l-20">
+                                <select type="text" class="form-control chk_data_input tx-center tx-bold user_scan" id="user_scan" name="user_scan" required="">
+                                    <option value="" selected>--- เลือกผู้ตรวจสอบ ---</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-sm btn-icon bg-primary-transparent bd-primary" type="button" id="btn_downloadtemplate" target="_blank"><i class="las la-file-excel tx-primary"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-group row d-none">
+                            <label class="col-md-2 col-form-label tx-right mg-r-10">แนบไฟล์ :</label>
+                            <div class="col-md-8 custom-file">
+                                <input class="custom-file-input" id="customFile" type="file" accept="application/vnd.ms-excel ,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="row pd-t-20 d-none">
+                        <div class="col-12 tbl-upload">
+                            <table id="table-upload" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                @*<thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>STATUS</th>
+                                            <th></th>
+                                            <th>BARCODE</th>
+                                            <th>CODE</th>
+                                            <th>NAME</th>
+                                            <th>UOM</th>
+                                            <th>QTY</th>
+                                            <th>PRICE</th>
+                                            <th>ZONE</th>
+                                            <th>LOG</th>
+                                            <th>BRANCH</th>
+                                            <th>ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>*@
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-upload" class="btn ripple btn-primary btn-action d-none" type="button">อัพโหลด</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    <!--End Scroll with content modal -->

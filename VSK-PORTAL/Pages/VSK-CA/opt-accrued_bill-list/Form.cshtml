@@ -1,0 +1,149 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:90%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"]</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-12">
+                        <div class="form-group form-group-sm row">
+                            <label for="pck_number" class="col-md-1 col-form-label">เลขที่ PCK</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="pck_number" name="pck_number" value="" disabled="">
+                                </div>
+                            </div>
+                            <label for="inv_date" class="col-md-1 col-form-label">วันที่ PCK</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="inv_date" name="inv_date" value="" disabled="">
+                            </div>
+                            <label for="pck_user" class="col-md-1 col-form-label">ผู้ตรวจสอบ</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="pck_user" name="pck_user" value="" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 1 -->
+
+                        <div class="form-group form-group-sm row">
+                            <label for="transport_start" class="col-md-1 col-form-label">ผู้ส่ง</label>
+                            <div class="col-md-3">
+                                <select class="form-control select2" id="transport_start" name="transport_start" required="" disabled="">
+                                    <option value="">--SELECT ALL--</option>
+                                    <option value="KLH">KLH</option>
+                                    <option value="VSM" selected="">VSM</option>
+                                    <option value="VSF">VSF</option>
+                                    <option value="LLK">LLK</option>
+                                    <option value="NWM">NWM</option>
+                                    <option value="KSW">KSW</option>
+                                    <option value="CPS">CPS</option>
+                                    <option value="ONL">ONL</option>
+                                    <option value="MW">MW</option>
+                                </select>
+                            </div>
+                            <label for="transport_end" class="col-md-1 col-form-label">ผู้รับ</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="transport_end" name="transport_end" value="" disabled="" required="">
+                            </div>
+                            <label for="customer_code" class="col-md-1 col-form-label">รหัสลูกค้า</label>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="customer_code" name="customer_code" value="" disabled="" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group-sm row">
+
+                            <label for="delivery_address" class="col-md-1 col-form-label">ที่อยู่จัดส่ง</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="delivery_address" name="delivery_address" value="" disabled="" required="">
+                            </div>
+                            <label for="shipping_company" class="col-md-1 col-form-label">บริษัทขนส่ง</label>
+                            <div class="col-md-3">
+                                <select class="form-control select2" id="shipping_company" name="shipping_company" required="" disabled="">
+                                    <option value="" selected="">--SELECT--</option>
+                                </select>
+                            </div>
+                            <label for="freight" class="col-md-1 col-form-label" style="margin-right:-15px;">ชำระค่าขนส่ง</label>
+                            <div class="col-md-1">
+                                <select class="form-control select2" id="freight" name="freight" required="" style="width: 120%;" disabled="">
+                                    <option value="">--SELECT--</option>
+                                    <option value="DC01" selected="">ต้นทาง</option>
+                                    <option value="DC02">ปลายทาง</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="form-group form-group-sm row">
+
+                            <label for="pck_qty" class="col-md-1 col-form-label">จำนวน/กล่อง</label>
+                            <div class="col-md-1">
+                                <input type="number" class="form-control tx-center" id="pck_qty" name="pck_qty" min="0" step="1" required value="0" disabled>
+                            </div>
+                            <label class="col-form-label mr-3 ">ขนาด</label>
+
+                            <label for="size_a" class="col-form-label">A</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_A" name="size_A" value="0" disabled>
+                            </div>
+                            <label for="size_b" class="col-form-label">B</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_B" name="size_B" value="0" disabled>
+                            </div>
+                            <label for="size_c" class="col-form-label">C</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_C" name="size_C" value="0" disabled>
+                            </div>
+                            <label for="size_d" class="col-form-label">D</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_D" name="size_D" value="0" disabled>
+                            </div>
+                            <label for="size_e" class="col-form-label">E</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_E" name="size_E" value="0" disabled>
+                            </div>
+                            <label for="size_f" class="col-form-label">F</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_F" name="size_F" value="0" disabled>
+                            </div>
+                            <label for="size_more" class="col-form-label">อื่นๆ</label>
+                            <div class="col-md">
+                                <input type="text" class="form-control tx-center size_box" id="size_Z" name="size_Z" value="0" disabled>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row row-sm mg-t-25">
+                        <div class="col-lg-12">
+                            <table id="tbl-inv" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th><div style="text-align:center;">id</div></th>
+                                        <th><div style="text-align:center;">ลำดับ</div></th>
+                                        <th><div style="text-align:center;">วันที่บิล</div></th>
+                                        <th><div style="text-align:center;">เลขที่บิล</div></th>
+                                        <th><div style="text-align:center;">ใบสั่งจัด</div></th>
+                                        <th><div style="text-align:center;">จำนวน</div></th>
+                                        <th><div style="text-align:center;">ผู้ออกใบเสร็จ</div></th>
+                                        <th><div style="text-align:center;">จัดการ</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--End Scroll with content modal -->
+</form>

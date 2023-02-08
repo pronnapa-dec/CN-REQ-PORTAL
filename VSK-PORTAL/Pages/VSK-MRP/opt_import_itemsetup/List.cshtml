@@ -1,0 +1,173 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"] List</h5>
+        </div>
+        <div class="card-body">
+
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+            
+
+                <div class="kt-portlet__body">
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">PO type</label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="PO_type" name="PO_type">
+                                <option value=""></option>
+                                <option value="POD">POD</option>
+                                <option value="POE">POE</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label">Stock Status</label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="StockStatus" name="StockStatus">
+                                <option value=""></option>
+                                <option value="STOCK">STOCK</option>
+                                <option value="BACKLOG">BACKLOG</option>
+                                <option value="PLAN">PLAN</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">Receive Date(est.)</label>
+                        <div class="col-md-3">
+                            <div class="input-group date">
+                                <input class="form-control date-picker" id="po_date" name="po_date" type="text" value="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label">Panding</label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="PO_Panding" name="PO_Panding">
+                                <option value="panding" selected >panding</option>
+                                <option value="no_panding">no_panding</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">PO Date</label>
+                        <div class="col-md-3">
+                            <div class="input-group date">
+                                <input class="form-control date-picker" id="POdate" name="POdate" type="text" value="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label">PO</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="PO_no" name="PO_no" value="">
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">GR Date</label>
+                        <div class="col-md-3">
+                            <div class="input-group date">
+                                <input class="form-control date-picker" id="GR_date" name="GR_date" type="text" value="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label">GR Code</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="GR_no" name="GR_no" value="">
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    @*<div class="form-group form-group-sm row">
+            <label class="col-md-2 col-form-label kt-hide">คู่ค้า (Suppliers)</label>
+            <div class="col-md-3  kt-hide">
+                <select class="form-control" id="apmas_code" name="apmas_code">
+                    <option value="">&nbsp;</option>
+                </select>
+            </div>
+            <label class="col-md-2 col-form-label kt-hide">ลูกค้า (Customer)</label>
+            <div class="col-md-3 kt-hide">
+                <select class="form-control" id="emmas_code" name="emmas_code">
+                    <option value="">&nbsp;</option>
+                </select>
+            </div>
+
+        </div>*@
+
+                    <!-- 5 -->
+                    @*<div class="form-group form-group-sm row">
+            <label class="col-md-2 col-form-label">ผู้ขาย (Sale user)</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="Sale_user" name="Sale_user" value="">
+            </div>
+            <label class="col-md-2 col-form-label">ผู้ขอซื้อ (Buyer Po User)</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="Buyer_Po_User" name="Buyer_Po_User" value="">
+            </div>
+        </div>*@
+
+                    <!-- 4 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">Item Code</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="item_code" name="item_code" value="">
+                        </div>
+                        <label class="col-md-2 col-form-label">Item Name</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="item_name" name="item_name" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">Vendor Code</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="vendor_code" name="vendor_code" value="">
+                        </div>
+                        <label class="col-md-2 col-form-label">Vendor Name</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="vendor_name" name="vendor_name" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">Status</label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="pr_receive_type" name="pr_receive_type">
+                                <option value=""></option>
+                                <option value="2">BACKORDER</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label">Item Spcodes</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="item_spcodes" name="item_spcodes" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                        <div align="right">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" id="btn-export" class="btn btn-success">&nbsp;&nbsp;Export&nbsp;&nbsp;</button>&nbsp;
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="table-responsive mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+            </div>
+        </div>
+    </div>
+</div>

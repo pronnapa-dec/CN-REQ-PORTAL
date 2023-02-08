@@ -1,0 +1,47 @@
+﻿@page "/hr/job"
+
+@{
+    ViewData["Script"] = "apps/hr/hr-job.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "HR";
+    ViewData["Content-Title-Page"] = "Job information";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-6 mb-xl-0">
+                <button id="btn-create" class="btn-emp_create btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_data"><i class="fas fa-user-plus"></i> ADD JOB</button>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-HR/hr-job/Search.cshtml" />
+        <partial name="~/Pages/VSK-HR/hr-job/List.cshtml" />
+    </div>
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-HR/hr-job/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

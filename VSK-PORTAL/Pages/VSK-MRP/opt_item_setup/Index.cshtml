@@ -1,0 +1,61 @@
+﻿@page "/mrp/opt/itemsetup"
+
+@{
+    ViewData["Script"] = "apps/mrp/mrp-opt-itemsetup.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "MRP";
+    ViewData["Content-Title-Page"] = "Item Setup";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+        <div class="d-flex my-xl-auto right-content">
+            @*<div class="mb-6 mb-xl-0 mg-r-10">
+                    <button id="btn-report_loscan" class="btn btn-dark btn-with-icon btn-block"><i class="las la-barcode"></i> Report Loscan </button>
+                </div>*@
+            @*<div class="mb-6 mb-xl-0 mg-r-10">
+                    <button id="btn-report_check_tr" class="btn btn-dark btn-with-icon btn-block"><i class="las la-barcode"></i> Report CheckTR </button>
+                </div>*@
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-import_item" class="btn btn-primary btn-with-icon btn-block btn-import" data-target="#modal-import" data-toggle="modal" href=""><i class="typcn typcn-cloud-storage-outline"></i>Import Item Setup</button>
+            </div>
+        </div>
+
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+
+        <partial name="~/Pages/VSK-MRP/opt_item_setup/List.cshtml" />
+
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-MRP/opt_item_setup/Form.cshtml" />
+        <partial name="~/Pages/VSK-MRP/opt_item_setup/Form_Schedule.cshtml" />
+    </div>
+    @* modal form *@
+
+    <partial name="~/Pages/VSK-MRP/opt_item_setup/Modal_Import.cshtml" />
+
+</div>
+@* Container closed *@

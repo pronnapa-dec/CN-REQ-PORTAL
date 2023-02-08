@@ -1,0 +1,30 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:690px">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">@ViewData["Content-Title-Page"] Form</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="kt-portlet__body">
+                      
+                        @*<div class="form-group form-group-sm row ">
+                            <label class="col-sm-3 col-form-label">หมายเหตุ :</label>
+                            <div class="col-sm-9">
+                                <input class="form-control " id="pick_up_remark" name="pick_up_remark" type="text" value="">
+                            </div>
+                        </div>*@
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form" data-action="save_exit" type="submit">Save</button>
+                        @*<button id="btn-save_new" class="btn ripple btn-success btn-save_form" data-action="save_new"  type="submit">Save & New</button>*@
+                        <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

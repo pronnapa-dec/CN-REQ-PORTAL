@@ -1,0 +1,56 @@
+﻿@page "/intranet/reports"
+
+@{
+    ViewData["Script"] = "apps/reports/reports.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "Reports";
+    ViewData["Content-Title-Page"] = "รายงานทั้งหมด";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-REPORTS/reports/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-REPORTS/reports/modal/STL_Target.cshtml" />
+    </div>
+    @* modal form *@
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-REPORTS/reports/modal/HR_Pms.cshtml" />
+    </div>
+    @* modal form *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-REPORTS/reports/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+
+</div>
+@* Container closed *@

@@ -1,0 +1,53 @@
+﻿@page "/mrp/opt/import_itemsetup";
+
+@{
+    ViewData["Script"] = "apps/mrp/mrp-opt-import_itemsetup.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "Import Item Setup";
+    ViewData["Content-Title-Page"] = "Import Item Setup";
+
+}
+
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+        @* action *@
+    <div class="d-flex my-xl-auto right-content mb-3 mb-xl-0">
+        <div class="input-group col">
+            <div class="custom-file">
+                <input class="custom-file-input" id="customFile" type="file"> <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </div>
+        <button id="btn-item_template" class="btn btn-primary"><i class="typcn typcn-document"></i> Template</button>&nbsp;&nbsp;&nbsp;
+        <button id="btn-item_import" class="btn btn-success"><i class="typcn typcn-upload"></i> Import Data</button>
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-wizards" class="row">
+
+        <partial name="~/Pages/VSK-MRP/opt_import_itemsetup/Wizards.cshtml" />
+
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@

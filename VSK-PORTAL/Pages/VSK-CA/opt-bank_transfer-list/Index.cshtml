@@ -1,0 +1,63 @@
+﻿@page "/csh/opt/banksliplist"
+
+@{
+    ViewData["Script"] = "apps/ca/opt-bank_transfer-list.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "จัดการรับเงินเโอน";
+    ViewData["Content-Title-Page"] = "รายการสลิปเงินโอน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+    <div class="d-flex my-xl-auto right-content">
+        <div class="mb-6 mb-xl-0 pd-l-10">
+            <button id="btn-export-rt-v1" class="btn btn-warning btn-with-icon btn-block"><i class="far fa-file-excel"></i> Report V1</button>
+        </div>
+        <div class="mb-6 mb-xl-0 pd-l-10">
+            <button id="btn-export-rt-v2" class="btn btn-info btn-with-icon btn-block"><i class="far fa-file-excel"></i> Report V2</button>
+        </div>
+        <div class="mb-3 mb-xl-0 pd-l-10">
+            <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-document-add"></i> New Item</button>
+        </div>
+
+    </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* advance search *@
+    @*<div id="card-adv_search" class="row">
+            <partial name="~/Pages/Auth/Application/Search.cshtml" />
+        </div>*@
+    @* advance search *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-CA/opt-bank_transfer-list/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-CA/opt-bank_transfer-list/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+
+</div>
+@* Container closed *@

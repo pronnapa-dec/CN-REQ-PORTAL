@@ -1,0 +1,86 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+            <!-- 1 -->
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="form-group form-group-sm row">
+                    <label class="col-md-1 col-form-label">วันที่รายงาน : </label>
+                    <div class="col-md-3">
+                        <div class="input-group date">
+                            <input class="form-control date-picker" id="job_inv_date" name="job_inv_date" type="text" value="" disabled>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="la la-calendar-check-o"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="col-sm-1 col-form-label">เลขที่เอกสาร : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="job_number" name="job_number">
+                    </div>
+                    <label class="col-sm-1 col-form-label">เลขที่ PK : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="job_pk_number" name="job_pk_number">
+                    </div>
+                </div>
+
+                <!-- 2 -->
+
+                <div class="form-group form-group-sm row">
+
+                    <label class="col-sm-1 col-form-label">เลขที่ INV : </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="job_inv_number" name="job_inv_number">
+                    </div>
+                    <label class="col-sm-1 col-form-label">ลูกค้า : </label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="job_inv_emmas" name="job_inv_emmas" data-width="100%">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <label class="col-md-1 col-form-label">ผู้สร้างเอกสาร : </label>
+                    <div class="col-md-3">
+                        <select class="form-control rt_createby" id="created_by" name="created_by" data-width="100%">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm row">
+
+                    <label class="col-md-1 col-form-label">สินค้า : </label>
+                    <div class="col-md-3">
+                        <select class="form-control" id="inv_item" name="inv_item" data-width="100%">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <label class="col-md-1 col-form-label">สถานะ : </label>
+                    <div class="col-md-3">
+                        <select class="form-control rt_createby" id="check_status" name="check_status" data-width="100%">
+                            <option value=""></option>
+                            <option value="true">สำเร็จ</option>
+                            <option value="false">ไม่สำเร็จ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                    <div align="right">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="reset" class="btn btn-secondary" onClick="window.location.reload();">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="border-top my-3"></div>
+                <div class="tablekk-responsive">
+                    <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="overflow-x:visible"></table>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

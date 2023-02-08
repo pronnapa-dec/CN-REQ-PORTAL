@@ -1,0 +1,103 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h3 class="text-center">&emsp;&emsp;<i class="fas fa-search"></i> Search</h3>
+            @*<h5 class="card-header mb-0 pb-0">@ViewData["Content-Title-Page"] ระดับปฎิบัติการ</h5>*@
+            <br />
+            <br />
+        </div>
+
+        <div class="card-body">
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+                <div class="kt-portlet__body">
+
+                    <div class="form-group form-group-sm row">
+                        @*<label class="col-md-1 col-form-label">รหัสพนักงาน</label>
+                            <div class="col-md-3 ">
+                                <select type="text" class="form-control" id="employee_code" name="employee_code">
+                                    <option value="" selected></option>
+                                </select>
+                            </div>*@
+                        <label class="col-md-1 col-form-label">Assessor</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control" id="data_leader_assess" name="data_leader_assess">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">Assess</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control" id="data_employee_assess" name="data_employee_assess">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">The form</label>
+                        <div class="col-md-3 ">
+                            <select class="form-control data_form" id="data_form" name="data_form">
+                                <option value="" selected></option>
+                                <option value="1">ระดับปฏับัติการ</option>
+                                <option value="2">ระดับบริหาร</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-1 col-form-label">Quarter</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control data_quarter" id="data_quarter" name="data_quarter">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">Evaluated by</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control data_assess_by" id="data_assess_by" name="data_assess_by">
+                                <option value="" selected></option>
+                                <option value="1">ประเมินโดยตนเอง</option>
+                                <option value="2">ประเมินโดยหัวหน้า</option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">Status</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control updated_status" id="updated_status" name="updated_status">
+                                <option value="" selected></option>
+                                <option value="0">รอ</option>
+                                <option value="1">สำเร็จ</option>
+                                <option value="2">ยกเลิก</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-1 col-form-label">Section</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control employee_sec" id="employee_sec" name="employee_sec">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">Department</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control employee_dept" id="employee_dept" name="employee_dept">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                        <label class="col-md-1 col-form-label">Position</label>
+                        <div class="col-md-3 ">
+                            <select type="text" class="form-control employee_pos" id="employee_pos" name="employee_pos">
+                                <option value="" selected></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="border-top my-3"></div>
+
+                    <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                        <div align="right">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="reset" class="btn btn-secondary reset">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

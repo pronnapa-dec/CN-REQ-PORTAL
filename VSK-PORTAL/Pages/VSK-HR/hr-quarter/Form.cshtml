@@ -1,0 +1,70 @@
+﻿<!-- Scroll with content modal -->
+<form id="frm_data" name="frm_data" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:400px">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title text-center">@ViewData["Content-Title-Page"] HR</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="kt-portlet__body">
+
+                        <div class="form-group form-group-sm  row">
+                            <label class="col-sm-3 col-form-label">รอบประเเมิน</label>
+                            <div class="col-sm-5">
+                                <label id="quarter_name" name="quarter_name" class="col-form-label tx-left tx-value">&nbsp;รอ</label>
+                                @*<input type="text" class="form-control" id="quarter_name" name="quarter_name" placeholder="" value="" style="font-weight:bold;" readonly>*@
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm row">
+                            <label class="col-sm-3 col-form-label">ปี : </label>
+                            <div class="col-md-5">
+                                <select class="form-control form-control select" id="quarter_year" name="quarter_year">
+                                    <option label="ระบุรอบประเมิน"></option>
+                                    <option value="2564">2564</option>
+                                    <option value="2565">2565</option>
+                                    <option value="2566">2566</option>
+                                    <option value="2567">2567</option>
+                                    <option value="2568">2568</option>
+                                </select>
+                            </div>
+
+                            @*<label class="col-sm-2 col-form-label">สถานะ : </label>
+                            <div class="col-md-4">
+                                <div class="main-toggle main-toggle-success mg-lg-b-10">
+                                    <input class="hide" id="quarter_status" value="1" />
+                                    <span></span>
+                                </div>
+                            </div>*@
+
+                        </div>
+                        <div class="form-group form-group-sm row">
+                            <label class="col-sm-3 col-form-label">สถานะ : </label>
+                            <div class="col-md-5">
+                                <div class="main-toggle main-toggle-success mg-lg-b-10" id="quarter_status" data-status="1">
+                                    @*<input type="checkbox" class="custom-control-input" id="quarter_status">*@
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            @*<div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                            </div>*@
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-save_exit" class="btn ripple btn-primary btn-save_form" data-action="save_exit" type="submit">Save</button>
+                        <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>
+
+

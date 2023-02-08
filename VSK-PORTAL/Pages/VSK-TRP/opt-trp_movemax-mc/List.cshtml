@@ -1,0 +1,290 @@
+﻿<div class="col-sm-9">
+    <div class="card ht-120">
+        <div class="card-body">
+            <div class="row">
+                <div class="col text-center">
+                    <label class="tx-12">
+                        ทั้งหมด
+                    </label>
+                    <p class="font-weight-bold tx-20 tx-primary count_inv" id="count_total">0</p>
+                </div><!-- col -->
+                <div class="col border-left text-center">
+                    <label class="tx-12">
+                        ยกเลิก
+                    </label>
+                    <p class="font-weight-bold tx-20 tx-danger count_inv" id="count_close">0</p>
+                </div><!-- col -->
+                <div class="col border-left text-center">
+                    <label class="tx-12">
+                        ส่งสินค้าด่วน
+                    </label>
+                    <p class="font-weight-bold tx-20 count_inv" id="count_express">0</p>
+                </div><!-- col -->
+                <div class="col border-left text-center">
+                    <label class="tx-12">
+                        รับสินค้า Supplier
+                    </label>
+                    <p class="font-weight-bold tx-20 count_inv" id="count_supplier">0</p>
+                </div><!-- col -->
+                <div class="col border-left text-center">
+                    <label class="tx-12">
+                        จัดส่งสินค้าสาขา
+                    </label>
+                    <p class="font-weight-bold tx-20 count_inv" id="count_br">0</p>
+                </div>
+                <div class="col border-left text-center">
+                    <label class="tx-12">
+                        รับสินค้าคืน
+                    </label>
+                    <p class="font-weight-bold tx-20 count_inv" id="count_cn">0</p>
+                </div>
+            </div><!-- row -->
+        </div>
+    </div>
+</div>
+
+<div class="col-3">
+    <div class="card ht-120">
+        <div class="card-body">
+            <div class="card-order">
+                <h6 class="mb-2">
+                    ยอดรวม COD
+                </h6>
+                <h4 class="text-right ">
+                    <i class="icon-size mdi mdi-poll-box float-left text-warning text-warning-shadow"></i>
+                    <span class="count_inv" id="cod_today">0</span>
+                </h4>
+                <p class="mb-0"> ทั้งหมด <span class="float-right">  บาท/วัน </span>  </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 col-sm-12">
+    <div class="card">
+        @*<div class="card-header pb-0">
+                <h5 id="card-title-pages" class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            </div>*@
+        <div class="card-body">
+            <form id="frm_data" name="frm_data" autocomplete="off">
+                <div class="row row-sm">
+                    @* <input class="d-none" id="job_date" name="job_date" type="date" value="" required="">*@
+                    <div class="form-group col-2">
+                        <label for="pck_number" class="col-form-label">วันที่จัดส่ง</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                </div>
+                            </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="job_date" name="job_date" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-2">
+                        <label for="inv_date" class="col-form-label">สายส่ง</label>
+                        <select type="text" class="form-control" id="route_no" name="route_no" disabled>
+                            <option value="">- เลือกสายส่ง -</option>
+                            <option value="00/0" selected>ส่งสินค้าด่วน</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label class="col-form-label">พนักงานขับรถ</label>
+                        <div class="input-group">
+                            <input class="form-control driver_id" placeholder="ระบุเบอร์พนักงาน" type="text" id="driver_id" name="driver_id">
+                            <span class="input-group-btn">
+                                <button class="btn btn-dark" id="btn-driver_id" type="button">
+                                    <span class="input-group-btn"><i class="fa fa-motorcycle"></i></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="mt_job_plate" class="col-form-label">ทะเบียนรถ</label>
+                        <select type="text" class="form-control" id="job_plate" name="job_plate" required disabled>
+                            <option value="">- เลือกทะเบียนรถ -</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-1">
+                        <label for="inv_branch" class="col-form-label">สาขา</label>
+                        <select type="text" class="form-control" id="inv_branch" name="inv_branch" disabled="">
+                            <option value="">--- เลือกสาขา ---</option>
+                            <option value="VSK" selected="">VSK</option>
+                            <option value="VSF">VSF</option>
+                            <option value="KLH">KLH</option>
+                            <option value="LLK">LLK</option>
+                            <option value="NWM">NWM</option>
+                            <option value="LKS">LKS</option>
+                            <option value="SNK">SNK</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-2">
+                        <label class="col-form-label">เลขที่อ้างอิง</label>
+                        <div class="input-group">
+                            <input class="form-control job_inv" placeholder="ระบุเลขที่" type="text" id="job_inv" name="job_inv" disabled="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-dark" id="btn-job_inv" type="button">
+                                    <span class="input-group-btn"><i class="fa fa-book"></i></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <button type="reset" class="btn btn-dark" onClick="window.location.reload();">RESET</button>
+                    </div>
+                    <div class="mg-l-auto">
+                        <button type="button" id="btn-modal-multi_job" class="btn btn-success btn-modal">MULTIPLE JOB</button>
+                        <button type="button" id="btn-modal-close_job" class="btn btn-danger btn-modal d-none">CLOSE JOB</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 col-sm-12">
+    <div class="card">
+        @*<div class="card-header pb-0">
+                <h5 id="card-title-pages" class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+            </div>*@
+        <div class="card-body">
+            <div class="tabs-menu ">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs profile navtab-custom panel-tabs">
+                    <li class="">
+                        <a href="#tab_list" data-toggle="tab" aria-expanded="true"> <span class="visible-xs"><i class="las la-file-invoice tx-16 mr-1"></i></span> <span class="hidden-xs">LIST</span> </a>
+                    </li>
+                    @*<li class="">
+                        <a href="#tab_dashboard" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-user-circle tx-16 mr-1"></i></span> <span class="hidden-xs">DRIVER</span> </a>
+                    </li>*@
+                    <li class="">
+                        <a href="#tab_item" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-clock tx-16 mr-1"></i></span> <span class="hidden-xs">TIME</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content border-left border-bottom border-right border-top-0 p-4">
+                <div class="tab-pane active" id="tab_list">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="align-self-center spinner-border loader-spinner" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div aria-multiselectable="true" class="accordion accordion-dark" id="accordion" role="tablist">
+                        <div class="card mb-0">
+                            <div class="card-header" id="headingOne" role="tab">
+                                <a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne">
+                                    <i class="las la-search tx-15 mr-2"></i>
+                                    SREACH
+                                </a>
+                            </div>
+                            <div aria-labelledby="headingOne" class="collapse" data-parent="#accordion" id="collapseOne" role="tabpanel">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="form-group col-3">
+                                            <label class="col-form-label">พนักงานขับรถ</label>
+                                            <select type="text" class="form-control select2" id="sh_driver_id" name="sh_driver_id">
+                                                <option value="">- เลือกพนักงาน -</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label class="col-form-label">ลูกค้า</label>
+                                            <select class="form-control" id="sh_emmas_code" name="sh_emmas_code" data-width="100%" placeholder="เลือกลูกค้า">
+                                                <option value="">- เลือกลูกค้า -</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label class="col-form-label">สถานะจัดส่ง</label>
+                                            <select class="form-control" id="sh_derivery_status" name="sh_derivery_status" data-width="100%" placeholder="สถานะจัดส่ง">
+                                                <option value="">- เลือกลูกค้า -</option>
+                                                <option value="1">ปิดบรรทุกแล้ว</option>
+                                                <option value="2">รับสินค้าขึ้นรถ</option>
+                                                <option value="3">จัดส่งเรียบร้อย</option>
+                                                <option value="4">จัดส่งเรียบร้อย ล่าช้า</option>
+                                                <option value="5">จัดส่งไม่สำเร็จ</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-3 mg-l-auto">
+                                            <label class="col-form-label">
+                                                &nbsp;
+                                            </label>
+                                            <div align="right">
+                                                <button type="button" id="btn-search_action" class="btn btn-dark btn-action">SEARCH</button>
+                                                <button type="reset" id="btn-search_reset" class="btn btn-secondary btn-action">CLEAR</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- accordion -->
+
+                    <div class="mt-2">
+                        <table id="table-list" class="table table-hover mg-b-0 text-md-nowrap" width="100%">
+                        </table>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="tab_dashboard">
+                    <div class="row" id="card_driver">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_item">
+                    <div aria-multiselectable="true" class="accordion accordion-dark" id="accordion3" role="tablist">
+                        <div class="card mb-0">
+                            <div class="card-header" id="headingOne" role="tab">
+                                <a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne">
+                                    <i class="las la-search tx-15 mr-2"></i>
+                                    SREACH
+                                </a>
+                            </div>
+                            <div aria-labelledby="headingOne" class="collapse" data-parent="#accordion3" id="collapseOne" role="tabpanel">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="form-group col-3">
+                                            <label class="col-form-label">พนักงานขับรถ</label>
+                                            <select type="text" class="form-control select2" id="sh3_driver_id" name="sh3_driver_id">
+                                                <option value="">- เลือกพนักงาน -</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label class="col-form-label">สถานะจัดส่ง</label>
+                                            <select class="form-control" id="sh3_derivery_status" name="sh3_derivery_status" data-width="100%" placeholder="สถานะจัดส่ง">
+                                                <option value="">- เลือกสถานะ -</option>
+                                                <option value="DELIVERY">DELIVERY</option>
+                                                <option value="READY">READY</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-3 mg-l-auto">
+                                            <label class="col-form-label">
+                                                &nbsp;
+                                            </label>
+                                            <div align="right">
+                                                <button type="button" id="btn-search_action3" class="btn btn-dark btn-action">SEARCH</button>
+                                                <button type="reset" id="btn-search_reset3" class="btn btn-secondary btn-action">CLEAR</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-primary text-center mt-2" role="alert" id="last_update">
+                      
+                    </div>
+
+                    <div class="mt-2">
+                        <table id="table-time" class="table table-hover mg-b-0 text-md-nowrap" width="100%">
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

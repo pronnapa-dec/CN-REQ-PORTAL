@@ -1,0 +1,111 @@
+﻿<!-- Scroll with content modal -->
+<div class="modal effect-flip-vertical" id="modal-carmodel_upload" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content modal-content-demo" style="width: 120%">
+
+            <div class="modal-header justify-content-between">
+                <div class="my-auto">
+                    <div class="d-flex">
+                        <span class="modal-title" style="font-size:14px;">ตาราง CarModel</span>
+                    </div>
+                </div>
+                <div class="main-dashboard-header-right">
+                    <div>
+                        <label class="tx-13">ข้อมูลทั้งหมด</label>
+                        <div><h5 id="all_information">0</h5>รายการ</div>
+                    </div>
+                    <div>
+                        <label class="tx-13">ข้อมูลผิดพลาด</label>
+                        <div><h5 id="wrong_information">0</h5> หน่วย</div>
+                    </div>
+                    <div>
+                        <label class="tx-13">ข้อมูลสำเร็จ</label>
+                        <div><h5 id="success_information">0</h5> หน่วย</div>
+                    </div>
+                </div>
+
+                <div class="d-flex my-xl-auto right-content">
+                    <!--
+                    <div class="mb-6 mb-xl-0" style="margin-right: 20px;">
+                        <button type="button" id="btn_downloadtemplate" target="_blank" class="btn btn-outline-primary btn-block">Download Template</button>
+                    </div>
+                        -->
+                    <div class="mb-6 mb-xl-0">
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-primary">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3 text-xl-right" style="margin-top:5px;">
+                                            <label class="form-label">File Upload <span class="tx-danger">*</span></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="custom-file">
+                                                <input class="custom-file-input" id="customFile" type="file"> <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="button" id="btn_downloadtemplate" target="_blank" class="btn btn-outline-primary btn-block">Download Template</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 tbl-carmodel-import d-none">
+                        <div class="card card-success">
+                            <div class="card-body">
+                                <table id="tbl-carmodel_import" class="table table-striped table-hover mg-b-0 text-md-nowrap" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Action</th>
+                                            <th>STATUS</th>
+                                            <th style="width:500px;"></th>
+                                            @*<th>barcode</th>*@
+                                            @*<th>spcodes</th>*@
+                                            <th>model id</th>
+                                            <th>model mixed</th>
+                                            <th>gnamechr</th>
+                                            <th>cartype</th>
+                                            <th>Vehicle Brand</th>
+                                            @*<th>VEHICLE SEGMENTS</th>*@
+                                            <th>Vehicle Model</th>
+                                            <th>Model Change</th>
+                                            <th>Minor Change</th>
+                                            <th>Fuel Type</th>
+                                            <th>Engine Displacement</th>
+                                            <th>Engine Code</th>
+                                            <th>Trnasmission Type</th>
+                                            <th>Body type</th>
+                                            <th>High Stant</th>
+                                            <th>Wheel Drive</th>
+                                            <th>Street Name</th>
+                                            <th>Model Code</th>
+                                            <th>Remarks</th>
+                                            <th>ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button id="btn_update-data" class="btn btn-outline-success btn-block btn_update-data" type="submit">Export</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--End Scroll with content modal -->

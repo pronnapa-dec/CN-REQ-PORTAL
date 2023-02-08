@@ -1,0 +1,162 @@
+﻿<form id="frm_data" name="frm_data" autocomplete="off" data-parsley-validate="">
+    <div class="modal effect-flip-vertical" id="modal-frm_data" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo" style="width: 120%">
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="modal-title">Detail CarModelMix</h5><span class="modal-title ml-3 tx-secondary">MODEL ID : </span><span id="model_id" class="modal-title ml-1 tx-primary"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        <div class="mb-6 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @*<div class="card-header pb-0">
+                                    <span class="card-title mb-0 pb-0">ข้อมูลสินค้า</span>
+                                </div>*@
+                            <div class="card-body" style="margin-top:-15px;">
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label for="modelmix" class="col-form-label tx-left">MODELMIX</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="gnamechr" class="col-form-label tx-left">GNAMECHR</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="vehicle_brand" class="col-form-label tx-left">VEHICLE BRAND</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="vehicle_model" class="col-form-label tx-left">VEHICLE MODEL</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="gnamechr" class="col-form-label tx-left">VEHICLE SEGMENTS</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input id="modelmix" type="text" class="form-control tx-center">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="gnamechr" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="vehicle_brand" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="vehicle_model" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="cartype" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-6">
+                                    <div class="col-sm-2">
+                                        <label for="minor_change" class="col-form-label tx-left">MINOR CHANGE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="model_change" class="col-form-label tx-left">MODEL CHANGE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="fuel_type" class="col-form-label tx-left">FUEL TYPE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="engine_displacement" class="col-form-label tx-left">ENGINE DISPLACEMENT</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="engine_code" class="col-form-label tx-left">ENGINE CODE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="transmission_type" class="col-form-label tx-left">TRANSMISSION TYPE</label>
+                                    </div>
+                                    <!--<div class="col-sm-1">-->
+                                    @*<select id="minor_change" class="form-control"><option value=""> ---select item---</option></select>*@
+                                    <!--<input id="minor_start" class="form-control date-picker"  type="text" >
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input id="minor_end"  class="form-control date-picker" type="text">
+                                    </div>-->
+                                    <div class="col-sm-2">
+                                        <input id="minor_change" class="form-control date-picker" type="text">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input id="model_change" class="form-control date-picker" type="text">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="fuel_type" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="engine_displacement" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input id="engine_code" class="form-control" type="text">
+                                        @*<select id="engine_code" class="form-control"><option value=""> ---select item---</option></select>*@
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="transmission_type" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-6">
+                                    <div class="col-sm-2">
+                                        <label for="body_type" class="col-form-label tx-left">BODY TYPE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="hign_stant" class="col-form-label tx-left">HIGN STANT</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="wheel_drive" class="col-form-label tx-left">WHEEL DRIVE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="street_name" class="col-form-label tx-left">STREET NAME</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="model_code" class="col-form-label tx-left">MODEL CODE</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input id="body_type" class="form-control" type="text">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input id="hign_stant" class="form-control" type="text">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select id="wheel_drive" class="form-control"><option value=""> ---select item---</option></select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input id="street_name" class="form-control" type="text">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input id="model_code" class="form-control" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="row mg-t-6">
+                                    <div class="col-sm-12">
+                                        <label for="remarks" class="col-form-label tx-left">REMARKS</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea type="text" class="form-control" id="remarks" name="remarks" placeholder="" rows="3"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    @*<button id="btn-save_exit" class="btn ripple btn-primary btn-save_form btn-action btn-create" data-action="save_exit" style="width: 100px;">Save</button>
+                        <button id="btn-save_new" class="btn ripple btn-success btn-save_form btn-action btn-create" data-action="save_new" type="submit" style="width: 100px;">Save New</button>
+                        <button id="btn-update" class="btn ripple btn-primary btn-update btn-action" data-action="update" type="submit" style="width: 100px;">Update</button>*@
+                    <button class="btn ripple btn-secondary " data-dismiss="modal" type="button" style="width: 100px;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+﻿@page "/trp/rpt_trp_movemax_daily_delivery"
+
+@{
+    ViewData["Script"] = "apps/trp/rpt-trp_movemax-daily-delivery.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "VSK Transport Plan";
+    ViewData["Content-Title-Page"] = "รายงานการจัดส่ง-ประจำวัน";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-upload" class="btn btn-primary btn-with-icon btn-block d-none">ส่งงาน TMS</button>
+            </div>
+            <div class="mb-3 mb-xl-0" style="padding-left:10px;">
+                <button id="btn-report" class="btn btn-success btn-with-icon btn-block d-none">พิมพ์ใบงาน</button>
+            </div>
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-print" class="btn btn-primary btn-with-icon btn-block d-none"><i class="mdi mdi-printer mr-1"></i>Print</button>
+            </div>
+        </div>
+
+    </div>
+    @* subheader *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-TRP/rpt-trp_movemax-daily-delivery/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+
+    @* modal form *@
+    <!--<div id="card-form" class="row">
+        <partial name="~/Pages/BR/br-opt-job/List_history.cshtml" />
+    </div>-->
+    @* modal form *@
+
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+        <partial name="~/Pages/VSK-TRP/rpt-trp_movemax-daily-delivery/List.cshtml" />
+    </div>
+    @* datatables *@
+
+
+
+</div>
+@* Container closed *@

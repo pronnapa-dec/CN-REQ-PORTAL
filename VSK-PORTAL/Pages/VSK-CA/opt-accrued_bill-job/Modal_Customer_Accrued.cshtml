@@ -1,0 +1,64 @@
+﻿<form id="frm_cus_acr" name="frm_cus_acr" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_cus_acr" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:90%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">รายการบิลค้างรับลูกค้า</h6>
+                    <span class="tx-15 tx-primary pd-t-3 mg-l-10 time-today"></span>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-sm">
+                        <div class="col-lg-2">
+                            <label class="col-form-label tx-right">สาขา : </label>
+                            <div class="">
+                                <select type="text" class="form-control chk_data_input tx-center tx-bold bd bd-4 bd-gray-500" id="accrued_customer_branch" name="accrued_customer_branch" required="">
+                                    <option value="" selected>--- เลือกสาขา ---</option>
+                                    <option value="VSK">VSK</option>
+                                    <option value="VSF">VSF</option>
+                                    <option value="KLH">KLH</option>
+                                    <option value="LLK">LLK</option>
+                                    <option value="NWM">NWM</option>
+                                    <option value="LKS">LKS</option>
+                                    <option value="SNK">SNK</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="col-form-label tx-right-f">วันที่ : </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                    </div>
+                                </div><input class="form-control chk_data_input fc-datepicker" placeholder="MM/DD/YYYY" type="text" id="accrued_customer_date" name="accrued_customer_date" required="">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="col-form-label tx-right">ลูกค้า : </label>
+                            <select class="form-control select2" id="accrued_customer">
+                                <option label="--- เลือกลูกค้า ---"></option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3  pd-t-30">
+                            <div class="">
+                                <button type="button" class="btn btn-dark" id="btn-accrued_customer"><i class="las la-search-location mr-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-sm">
+                        <div class="col-lg-12">
+                            <table id="tbl-accrued_customer" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@*<form id="history_edc" name="history_edc" autocomplete="off">*@
+    <div class="modal effect-flip-vertical" id="modal-history_edc" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ประวัติเงิน EDC</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table id="tbl-history_edc" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap" style="width:100%">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">ลำดับ</th>
+                                        <th valign="middle" @*width="5%"*@ class="tx-center">วันที่/เวลา</th>
+                                        <th valign="middle" @*width="40%"*@ class="tx-center">จำนวนเงิน</th>
+                                        <th valign="middle" @*width="15%"*@ class="tx-center">ผู้บันทึก</th>
+                                        <th valign="middle" @*width="20%"*@ class="tx-center">วันที่สรุป</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button class="btn ripple btn-primary" type="button">บันทึก</button>*@
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@*</form>*@

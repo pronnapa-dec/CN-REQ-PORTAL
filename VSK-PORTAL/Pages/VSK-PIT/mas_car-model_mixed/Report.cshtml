@@ -1,0 +1,69 @@
+﻿<form id="frm_report" name="frm_report" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-report" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:1400px">
+            <div class="modal-content modal-content-demo" @*style="width: 120%" *@>
+                <div class="modal-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h5 class="modal-title">Report CarModelMix</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex my-xl-auto right-content">
+                        <div class="mb-6 mb-xl-0">
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="report_vehicle_brand" class="col-form-label tx-left">Vehicle Brand<span class="tx-danger"> *</span></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="report_vehicle_model" class="col-form-label tx-left">Vehicle Model </label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="report_vehicle_minor" class="col-form-label tx-left">Minor Change</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="report_engine_displacement" class="col-form-label tx-left">Engine Dispacement</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="action" class="col-form-label tx-left"></label>
+                        </div>
+
+
+                        <div class="col-sm-3">
+                            <select id="report_vehicle_brand" class="form-control"><option value="">---select---</option></select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select id="report_vehicle_model" class="form-control"><option value="">---select---</option></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="report_vehicle_minor" class="form-control"><option value="">---select---</option></select>
+                        </div>
+                        <div class="col-sm-2">
+                            <select id="report_engine_displacement" class="form-control"><option value="">---select---</option></select>
+                        </div>
+                        <div class="row col-sm">
+                            <div align="right">
+                                <button id="btn-save-report" type="submit" class="btn btn-primary" style="width: 100px;">Search</button>
+                                <button id="btn-reset" class="btn btn-danger" style="width: 100px;">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mg-t-20">
+                        <div class="col-sm-12">
+                            <iframe id="url_report" src="" frameborder="0" width="100%" height="900px"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" style="width: 100px;" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Scroll with content modal -->
+</form>

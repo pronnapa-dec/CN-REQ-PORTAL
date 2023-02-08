@@ -1,0 +1,152 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0 ">
+            <div class="row">
+                <div class="col-sm-6 mg-t-10">
+                    <h5 class="card-title" id="tiltle-table">รายละเอียดตารางราคา NET</h5>
+                </div>
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <select class="form-control select2" id="search_prnetfile" name="search_prnetfile" data-width="100%">
+                            <option value="">
+                                --- Select Search ---
+                            </option>
+                        </select>
+                    </div><!-- input-group -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 mg-t-20">
+            <div class="panel panel-primary tabs-style-2">
+                <div class=" tab-menu-heading">
+                    <div class="tabs-menu1">
+                        <!-- Tabs -->
+                        <ul class="nav panel-tabs main-nav-line">
+                            <li><a href="#tab4" class="nav-link active" data-toggle="tab">สินค้า</a></li>
+                            <li><a class="nav-link tx-danger active" data-toggle="tab" >รายละเอียด:<span class="ml-2" style="color: black;" id="item_detail"></span></a></li>
+                                @*<h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">Hi, welcome back!</h2>
+            <p class="mg-b-0">Sales monitoring dashboard template.</p>*@
+                          
+                        </ul>
+                       
+                    </div>
+                </div>
+                <div class="panel-body tabs-menu-body main-content-body-right border">
+                    <form id="frm_item" name="frm_item" autocomplete="off" data-parsley-validate="">
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab4">
+                                <table class="table mg-b-0-f text-md-nowrap">
+                                    <thead style="font-size:11px; text-align:center">
+                                        <tr>
+                                            <th class="tx-center">รายการสินค้า</th>
+                                            <th class="tx-center">QTY-A</th>
+                                            <th class="tx-center">QTY-B</th>
+                                            <th class="tx-center">UOM</th>
+                                            <th class="tx-center">Avg.s.Cost</th>
+                                            <th class="tx-center">Now.Cost</th>
+                                            <th class="tx-center">%ส่วนต่าง</th>
+                                            <th class="tx-center d-none">Vat</th>
+                                            <th class="tx-center d-none">Suggested</th>
+                                            <th class="tx-center">Net</th>
+                                            <th class="tx-center"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-size: 11px; text-align: center" class="">
+                                        <tr>
+                                            <td style="width: 28%;">
+                                                <select id="search_itemmaster" class="form-control" required>
+                                                    <option value="" selected>--- Select Search ---</option>
+                                                </select>
+                                            </td>
+                                            @*<td><select id="search_itemmaster" class="form-control"></select></td>*@
+                                            <td><input type="number" min="1" max="100" style="width: 80px;" class="form-control tx-right" id="Qty_A" placeholder="0" step="1" required></td>
+                                            <td><input type="number" min="1" max="100" style="width: 80px;" class="form-control tx-right" id="Qty_B" placeholder="0" step="1" required></td>
+                                            @*<td><div class="tx-center-f c_text" id="gunit" style="margin-top:12px;">หน่วย</div></td>*@
+                                            <td><input type="text" class="form-control tx-center-f c_text" style="width: 80px;" id="gunit" placeholder="หน่วย" required></td>
+                                            <td><div class="tx-center-f c_text" id="avgcost" style="margin-top:12px;">0.00</div></td>
+                                            <td><div class="tx-center-f c_text" id="nowcost" style="margin-top:12px;">0.00</div></td>
+                                            <td><div class="tx-center-f c_text" id="difference" style="margin-top: 12px; width: 80px;">0%</div></td>
+                                            <td class="d-none"><div class="tx-center-f c_text d-none" id="vat"></div></td>
+                                            <td class="d-none"><div class="tx-center-f c_text d-none" id="suggested">0.00</div></td>
+                                            <td><input type="text" min="1.00" class="form-control tx-right" id="NetPrice" placeholder="0.00" @*step="1"*@ required data-parsley-type="number"></td>
+
+                                            <td class="d-flex flex-row justify-content-center">
+                                                <button style="margin: 0 .125rem; " class="btn btn-outline-primary btn-block btn-icon pril-btn-action" data-action="create" id="pril_create_item" type="submit"><i class="typcn typcn-document-add"></i></button>
+                                                <button style="margin: 0 .125rem; " class="btn btn-outline-secondary btn-icon btn-action pril-btn-reset" data-action="reset" id="btn-reset" type="reset"><i class="fas fa-undo"></i></button>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <hr style="margin-top:0px">
+                                <table id="tbl-net_list" class="table mg-b-0 text-md-nowrap">
+                                    <thead style="font-size:10px; text-align:center">
+                                        <tr>
+                                            <th valign="middle" width="3%" class="tx-center"></th>
+                                            <th valign="middle" class="tx-center">รายการสินค้า</th>
+                                            <th valign="middle" width="7%" class="tx-center">QTY-A</th>
+                                            <th valign="middle" width="7%" class="tx-center">QTY-B</th>
+                                            <th valign="middle" width="8%" class="tx-center">UOM</th>
+                                            <th valign="middle" width="8%" class="tx-center">Avg.s.Cost</th>
+                                            <th valign="middle" width="8%" class="tx-center">Now.Cost</th>
+                                            <th valign="middle" width="7%" class="tx-center">%ส่วนต่าง</th>
+                                            <th valign="middle" width="8%" class="tx-center d-none">Vat</th>
+                                            <th valign="middle" width="8%" class="tx-center d-none">Suggested</th>
+                                            <th valign="middle" width="8%" class="tx-center">Net</th>
+                                            <th valign="middle" width="6%" class="tx-center"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="max-height: 500px; overflow-y: scroll; font-size: 11px; text-align: center" class="prnettra_list"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 mg-t-20 mg-b-20">
+            <div class="panel panel-success tabs-style-2">
+                <div class=" tab-menu-heading">
+                    <div class="tabs-menu1">
+                        <!-- Tabs -->
+                        <ul class="nav panel-tabs main-nav-line">
+                            <li><a href="#tab4" class="nav-link active" data-toggle="tab">ลูกค้า</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body tabs-menu-body main-content-body-right border">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab4">
+                            <table id="tbl-emmas_list" class="table mg-b-0 text-md-nowrap">
+                                <thead style="font-size:11px; text-align:center">
+                                    <tr>
+                                        <th width="3%" class="tx-center">#</th>
+                                        <th class="tx-center">รหัส</th>
+                                        <th class="tx-center">ลูกค้า</th>
+                                        <th width="20%" class="tx-center">ที่อยู่</th>
+                                        <th width="12%" class="tx-center">ตำบล</th>
+                                        <th width="12%" class="tx-center">อำเภอ</th>
+                                        <th width="12%" class="tx-center">จังหวัด</th>
+                                        <th width="12%" class="tx-center">รหัสไปษณีย์</th>
+                                        @*<th valign="middle" width="6%" class="tx-center"></th>*@
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size:11px; text-align:center">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

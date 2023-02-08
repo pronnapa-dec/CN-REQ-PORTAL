@@ -1,0 +1,109 @@
+﻿<form id="frm_confirm" name="frm_confirm" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_confirm" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document" style="max-width:95%">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">ฟอร์มยืนยันการประเมิน</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label for="search_quarter" class="col-form-label tx-left">Quarter</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="search_status" class="col-form-label tx-left">Status</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="search_leader" class="col-form-label tx-left">Leader</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="search_employee" class="col-form-label tx-left">Employee</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_quarter" name="search_quarter" required>
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_status" name="search_status">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                        <option value="0/1" >0/1</option>
+                                        <option value="0/2" >0/2</option>
+                                        <option value="0/3" >0/3</option>
+                                        <option value="1/1" >1/1</option>
+                                        <option value="1/2" >1/2</option>
+                                        <option value="1/3" >1/3</option>
+                                        <option value="2/2" >2/2</option>
+                                        <option value="2/3" >2/3</option>
+                                        <option value="3/3" >3/3</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_leader" name="search_leader">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_employee" name="search_employee">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label for="search_section" class="col-form-label tx-left">Section</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="search_department" class="col-form-label tx-left">Department</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="search_position" class="col-form-label tx-left">Position </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="" class="col-form-label tx-left"> </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_section" name="search_section">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_department" name="search_department">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control select2" id="search_position" name="search_position">
+                                        <option value="" selected>--SELECT ALL--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3" align="right">
+                                    <button type="submit" class="btn btn-primary" id="btn-search">Search</button>
+                                    <button type="reset" class="btn btn-secondary reset" id="btn-reset">Cancel</button>
+                                </div>
+                            </div>
+
+                            <div class="card-header mt-2">
+                                <h3 class="card-title tx-center mb-2">&emsp;&emsp;<i class="far fa-address-card"></i> Confirm Assress <span id="title_confirm" class="card-title tx-primary ml-2"></span></h3>
+                                
+                            </div> 
+
+                            <div class="tablekk-responsive">
+                                <table id="tbl-confirm" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

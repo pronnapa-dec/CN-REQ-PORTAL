@@ -1,0 +1,112 @@
+﻿<form class="form-horizontal" id="frm_job" name="frm_job" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-frm_job" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">รายการตรวจสอบเอกสาร TR</h6>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row row-sm ">
+                            <div class="col-lg-2">
+                                <label for="tr_number" class="col-form-label">เลขที่เอกสาร : </label>
+                                <input type="text" class="form-control" id="tr_number" name="tr_number" placeholder="TRA && TRB" disabled>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="tr_date" class="col-form-label">วันที่ : </label>
+                                <input type="text" class="form-control" id="tr_date" name="tr_date" disabled>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="tr_wh" class="col-form-label">คลัง : </label>
+                                <input type="text" class="form-control" id="tr_wh" name="tr_wh" disabled>
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="tr_created_by" class="col-form-label">ผู้ตรวจสอบ : </label>
+                                <input type="text" class="form-control" id="tr_created_by" name="tr_created_by" disabled>
+                            </div>
+                            <div class="col-lg-2 d-none">
+                                <label for="tr_scan" class="col-form-label">สแกน : </label>
+                                <input type="text" class="form-control" id="tr_scan" name="tr_scan" disabled>
+                            </div>
+                            <div class="col-lg-1 d-none">
+                                <label for="tr_qty" class="col-form-label">จำนวน : </label>
+                                <input type="number" min="0" step="1" value="1" class="form-control" id="tr_qty" name="tr_qty" disabled>
+                            </div>
+                            <div class="col-lg-1 mg-t-30 justify-content-end d-none" align="right">
+                                <button type="reset" class="btn btn-dark btn-icon" id="reset_location"><i class="typcn typcn-refresh"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top my-3"></div>
+                    <div class="row row-sm">
+                        <div class="col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-order">
+                                        <h6 class="mb-2">สินค้า</h6>
+                                        <h4 class="text-right ">
+                                            <i class="las la-cubes icon-size float-left text-primary text-primary-shadow tx-30"></i>
+                                            <span class="item_total">0</span>
+                                        </h4>
+                                        <p class="mb-0">ทั้งหมด <span class="float-right"> รายการ / ชิ้น</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="card-widget">
+                                        <h6 class="mb-2">ตรวจสอบ</h6>
+                                        <h4 class="text-right">
+                                            <i class="las la-truck-loading icon-size float-left text-success text-success-shadow tx-30"></i>
+                                            <span class="item_current">0</span>
+                                        </h4>
+                                        <p class="mb-0">ทั้งหมด <span class="float-right"> รายการ</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="card-widget">
+                                        <h6 class="mb-2">หมายเหตุ</h6>
+                                        <h4 class="text-right">
+                                            <i class="las la-clipboard-list icon-size float-left text-warning tx-30"></i>
+                                            <span class="item_cn">0</span>
+                                        </h4>
+                                        <p class="mb-0">ทั้งหมด <span class="float-right"> รายการ</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="card-widget">
+                                        <h6 class="mb-2">คงเหลือ</h6>
+                                        <h4 class="text-right">
+                                            <i class="las la-box-open icon-size float-left text-purple tx-30"></i>
+                                            <span class="item_balance">0</span>
+                                        </h4>
+                                        <p class="mb-0">ทั้งหมด <span class="float-right"> รายการ</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table_view" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    @*<button class="btn ripple btn-primary" type="button">Save changes</button>*@
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

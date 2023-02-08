@@ -1,0 +1,50 @@
+﻿@page "/opt/stmas_exp_information"
+
+@{
+    ViewData["Script"] = "apps/pit/opt-mas_stmas_exp-information.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "Stmas-Exp Information";
+    ViewData["Content-Title-Page"] = "Stmas-Exp - Information";
+
+}
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-3 mb-xl-0 mg-l-10">
+                <button id="btn-item_create" class="btn btn-success btn-with-icon btn-block" data-toggle="modal" data-target="#modal-frm_data"><i class="typcn typcn-document-add"></i> New Item</button>
+            </div>
+        </div>
+        @* breadcrumb *@
+
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row scrollbar-ripe-malinka">
+
+        <partial name="~/Pages/VSK-PIT/mas_stmas_exp/List.cshtml" />
+        
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/VSK-PIT/mas_stmas_exp/form.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

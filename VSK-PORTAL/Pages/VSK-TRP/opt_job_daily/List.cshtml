@@ -1,0 +1,82 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"]</h5>
+        </div>
+        <div class="card-body">
+
+            <form class="form-horizontal" id="frm_data" name="frm_data" autocomplete="off">
+
+
+                <div class="kt-portlet__body">
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">วันที่จัดส่ง : </label>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input class="form-control" id="job_date" name="job_date" type="date" value="" required>
+                               
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label tx-right-f">สายส่ง : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="route_no" name="route_no">
+                                <option value="">--- เลือกสายส่ง ---</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">ทะเบียนรถ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="job_plate" name="job_plate">
+                                <option value="">--- เลือกทะเบียนรถ ---</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label tx-right-f">พนักงานขับรถ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="driver_id" name="driver_id">
+                                <option value="">--- เลือกพนักงานขับรถ ---</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label tx-right-f">สถานะ : </label>
+                        <div class="col-md-3">
+                            <select type="text" class="form-control" id="job_status" name="job_status" required>
+                                <option value="delivery">ส่งสินค้า</option>
+                                <option value="receive">รับสินค้า</option>
+                                <option value="branch">ส่งสาขา</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label tx-right-f">เลขที่บิล : </label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="job_inv" name="job_inv" value="" disabled required>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="mg-t-20">
+                <table id="tbl-job-detail" class="table table-sm table-head-bg-brand" style="font-size:12px;">
+                    <tbody>
+                        <tr class="table-primary row">
+                            <th class="d-none">uuid</th>
+                            <th class="tx-center col-sm-1">วันที่จัดส่ง</th>
+                            <th class="tx-center col-sm-1">ใบงาน</th>
+                            <th class="tx-center col-sm-1">เลขที่บิล</th>
+                            <th class="tx-center col-sm-1">ใบสั่งจัด</th>
+                            <th class="tx-left col-sm-3">ชื่อลูกค้า</th>
+                            <th class="tx-left col-sm-1">สายส่ง</th>
+                            <th class="tx-center col-sm-1">สถานะ</th>
+                            <th class="tx-center col-sm-1">ผู้บันทึก</th>
+                            <th class="tx-center col-sm-2">วัน/เวลา บันทึก</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

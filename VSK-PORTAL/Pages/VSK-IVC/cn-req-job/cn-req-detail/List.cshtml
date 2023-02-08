@@ -1,0 +1,139 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0">
+            <h5 class="card-title mb-0 pb-0">@ViewData["Content-Title-Page"] List</h5>
+        </div>
+        <div class="card-body">
+
+            <form class="form-horizontal" id="frm_search" name="frm_search" autocomplete="off">
+
+
+                <div class="kt-portlet__body">
+                    <div class="form-group form-group-sm row">
+                        @*<label class="col-md-2 col-form-label">PO Type</label>
+            <div class="col-md-3">
+                <select type="text" class="form-control" id="PO_type" name="PO_type">
+                    <option value=""></option>
+                    <option value="POD">POD</option>
+                    <option value="POE">POE</option>
+                </select>
+            </div>*@
+
+                    </div>
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">วันที่</label>
+                        <div class="col-md-4">
+                            <div class="input-group date">
+                                <input class="form-control date-picker" id="cn_date" name="cn_date" type="text" value="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="la la-calendar-check-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="col-md-2 col-form-label">เลขที่อ้างอิง</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="cn_pre_job_jobno_search" name="cn_pre_job_jobno_search" value="">
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">เลขที่ใบเสร็จ</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="invbook" name="invbook" value="">
+                        </div>
+                        <label class="col-md-2 col-form-label">Barcode</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="barcode" name="barcode" value="">
+                        </div>
+
+                        @*<label class="col-md-2 col-form-label">WH</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="whdiscode" name="whdiscode" value="">
+                        </div>*@
+                    </div>
+
+
+                    <!-- 2 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">สาเหตุ</label>
+                        <div class="col-md-4">
+                            <select class="form-control cn_comment" id="cn_comment" name="cn_comment" data-width="100%">
+                                <option value="">-- เลือกสาเหตุการรับคืน --</option>
+
+                                @*<option value="EXT_CUS_01">EXT_CUS_01 : ลูกค้ายกเลิก สั่งซ้ำ ไม่ได้ใช้งาน </option>
+                    <option value="EXT_CUS_02">EXT_CUS_02 : ลูกค้าสั่งผิดรุ่น เปลี่ยนยี่ห้อใหม่ ไม่เหมือนตัวอย่าง</option>
+                    <option value="EXT_CUS_03">EXT_CUS_03 : ลูกค้าเปลี่ยนเอาแท้/เทียบ เปลี่ยนเอาแบบชุด</option>
+                    <option value="EXT_CUS_04">EXT_CUS_04 : รับคืนแบตเก่า</option>
+
+                    <option value="INT_SAL_01">INT_SAL_01 : เซลล์จัดผิด ผิดรุ่น ผิดตำแหน่ง จัดเกิน จัดซ้ำ จัดไปเผื่อ</option>
+                    <option value="INT_SAL_02">INT_SAL_02 : คืนสินค้าตัวอย่าง</option>
+
+                    <option value="INT_SUP_01">INT_SUP_01 : คืนซัพพลาย</option>
+                    <option value="INT_SUP_02">INT_SUP_02 : ชำรุด เป็นรอย เสียหาย แตกหัก รั่ว</option>*@
+
+                            </select>
+                        </div>
+                        <label class="col-md-2 col-form-label">บันทึกโดย</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="created_by_search" name="created_by_search" value="">
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="form-group form-group-sm row">
+                        <label class="col-md-2 col-form-label">สถานะ</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="job_status_search" name="job_status_search" data-width="100%">
+                                <option value="">-- เลือกสถานะ --</option>
+                                <option value="1">Open - รับเรื่อง </option>
+                                <option value="2">On Process - กำลังดำเนินการ</option>
+                                <option value="3">Receive - รับสินค้า</option>
+                                <option value="4">Complete - รับคืนสำเร็จ </option>
+                                <option value="5">Reject - ยกเลิกสินค้า </option>
+                                <option value="0">Cancel - ยกเลิก </option>
+                            </select>
+                        </div>
+
+                        <label class="col-md-2 col-form-label">ผู้รับผิดชอบ</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="cn_pre_job_assige_search" name="cn_pre_job_assige_search" data-width="100%">
+                                <option value="">-- ทั้งหมด --</option>
+                                <option value="ADM">ADM</option>
+                                <option value="TRP">TRP</option>
+                                <option value="IVC">IVC</option>
+                            </select>
+                        </div>
+
+
+                        @*<label class="col-md-2 col-form-label item_status">สภาพสินค้า</label>
+                        <div class="col-md-4 item_status">
+                            <select class="form-control" id="item_status" name="item_status" data-width="100%">
+                                <option value="">-- เลือกสภาพสินค้า --</option>
+                                <option value="1">สมบูรณ์ </option>
+                                <option value="2">ไม่สมบูรณ์</option>
+                            </select>
+                        </div>*@
+
+                    </div>
+                    <div class="form-group mb-0 mt-3 justify-content-end" align="right">
+                        <div align="right">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" id="btn-export" class="btn btn-success">&nbsp;&nbsp;Export&nbsp;&nbsp;</button>&nbsp;
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <div class="border-top my-3"></div>
+            <div class="table-responsive mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,199 @@
+﻿<form id="frm_search" name="frm_search" autocomplete="off">
+    <div class="main-content horizontal-content">
+        <div class="row row-sm">
+            <div class="col-xl-3 col-lg-3 col-md-12 mb-3 mb-md-0">
+                <div class="card">
+                    <div class="card-header border-bottom pt-3 pb-3 mb-0 font-weight-bold text-uppercase">
+                        YOUR VEHICLES
+                        @*<button class="btn btn-sm col-3 btn-dark btn-block" style="float: right;" id="reset-all" type="button">Reset</button>*@
+                    </div>
+                    <div class="card-body pb-0">
+                        <div class="form-group">
+                            <label class="form-label">Vehicle Brand</label>
+                            <select name="search_vehicle_brand" id="search_vehicle_brand" class="form-control select2 select-main tx-bold" required>
+                                <option value="">---โปรดเลือก---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search_vehicle_segments" class="form-label">Vehicle Segments</label>
+                            <select id="search_vehicle_segments" class="form-control select2 select-main search_vehicle_segments tx-bold" required="">
+                                <option value="">---โปรดเลือก---</option>
+                                @*<option value="CAR">CAR</option>
+                                <option value="TRUCK">TRUCK</option>*@
+                            </select>
+                        </div>
+
+                        @*<div class="form-group">
+                            <label class="form-label">Car Type</label>
+                            <select name="search_car_type" id="search_car_type" class="form-control select2 select-main">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>*@
+                        <div class="form-group">
+                            <label class="form-label">Vehicle Name</label>
+                            <select name="search_vehicle_model" id="search_vehicle_model" class="form-control select2 select-main select-model tx-bold">
+                                <option value="">---โปรดเลือก---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Year</label>
+                            <select name="search_vehicle_year" id="search_vehicle_year" class="form-control select2 year select-main select-model tx-bold">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Modification</label>
+                            <select name="search_modification" id="search_modification" class="form-control select2 select-main select-model tx-bold">
+                                <option value="">---ทั้งหมด---</option>
+                            </select>
+                        </div>
+                        <div class="">
+                            <span class="input-group-append">
+                                <button class="btn btn-sm btn-dark col-8 btn-search" type="button" id="btn-search-main">Search</button>
+                                <button class="btn btn-sm col-4 btn-secondary btn-block ml-1" style="float: right;" id="reset-main" type="button">Reset</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="panel-group1 mt-3 bg-gray-100 d-none" id="accordion11">
+                        <div class="panel panel-default">
+                            <div class="panel-heading1 bg-gray-800">
+                                <h4 class="panel-title1 tx-center">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion11" href="#collapseFour1" aria-expanded="true"><i class="las la-car mr-2"></i>DETAIL VEHICLES</a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour1" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">
+                                <div class="card-body border">
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Minor Chang</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_minor_chang" name="search_minor_chang" style="width: 110%;">
+                                            <option value="">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Wheel</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_wheel" name="search_wheel" style="width: 110%;">
+                                            <option value="">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Wheel Drive</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_wheel_drive" name="search_wheel_drive" style="width: 110%;">
+                                            <option value="">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Body Type</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_body_type" name="search_body_type" style="width: 110%;">
+                                            <option value="_ALL_">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    @*<div class="form-group select-master-h">
+                                        <label class="form-label">Max Output (HP)</label>
+                                        <select class="form-control-sm select-master" id="search_horsepower" name="search_horsepower" style="width: 110%;">
+                                            <option value="">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>*@
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">High Stant</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_high_stant" name="search_high_stant" style="width: 110%;">
+                                            <option value="_ALL_">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Street Name</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_street_name" name="search_street_name" style="width: 110%;">
+                                            <option value="_ALL_">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group select-master-h">
+                                        <label class="form-label">Chassis Model</label>
+                                        <select class="form-control-sm select-master tx-bold" id="search_chassis_model" name="search_chassis_model" style="width: 110%;">
+                                            <option value="">---ทั้งหมด---</option>
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <span class="input-group-append">
+                                            <button class="btn btn-sm btn-dark col-8 btn-search" type="button" id="btn-search-detail">Search</button>
+                                            <button class="btn btn-sm col-4 btn-secondary btn-block ml-1" style="float: right;" id="reset-detail" type="button">Reset</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header border-bottom border-top pt-3 pb-3 mb-0 font-weight-bold text-uppercase mt-3">
+                        Product Filter
+                    </div>
+                    <div class="card-body" id="master_product">
+                        <div class="form-group">
+                            <label class="form-label">Product Division</label>
+                            <select name="search_product_division" id="search_product_division" class="form-control select2 tx-bold">
+                                <option value="">---โปรดเลือก---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Main Category</label>
+                            <select name="search_main_category" id="search_main_category" class="form-control select2 select-product tx-bold">
+                                <option value="">---โปรดเลือก---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Sub Category</label>
+                            <select name="search_sub_category" id="search_sub_category" class="form-control select2 select-product tx-bold">
+                                <option value="">---โปรดเลือก---</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Product Group</label>
+                            <div class="input-group">
+                                <select name="search_item_code1" id="search_item_code1" class="form-control select2 select-gcode tx-bold">
+                                    <option value="">---โปรดเลือก---</option>
+                                </select>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary btn-icon btn-clear br-tl-0 br-bl-0" btn-action="btn-search_item_code1" type="button"><i class="las la-broom tx-black"></i></button>
+                                </span>
+                            </div>
+                          
+                        </div>
+                        <div class="">
+                            <span class="input-group-append">
+                                <button class="btn btn-sm col-8 btn-dark btn-search" type="button" id="btn-search-master">Search</button>
+                                <button class="btn btn-sm col-4 btn-secondary btn-block ml-1" style="float: right;" id="reset-gcode" type="button">Reset</button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 data_item" id="data_item">
+                <div class="card">
+                    <div class="card-body p-2">
+                        <div class="input-group">
+                            <select class="form-control select2-sm select-item" id="search_item_code" name="search_item_code" style="width: 81%;">
+                                <option value="">ค้นหา... ชื่อสินค้า, รหัสสินค้า, บาร์โค้ด, เลขอะไหล่</option>
+                            </select>
+                            <span class="input-group-append ml-1">
+                                <button class="btn btn-dark btn-search" type="button" id="btn-search">Search</button>
+                            </span>
+                            <span class="input-group-append ml-1">
+                                <button class="btn btn-secondary" type="button" id="btn-reset-item">Reset</button>
+                            </span>
+                        </div>
+                        <p class="text-drak  mt-2 mb-0"><span class="text-warning search-results mr-1">0</span>ผลลัพธ์</p>
+                    </div>
+                </div>
+                <div class="row row-sm" id="items_list">
+                    <div id="image_search_car" class=""><img alt="Responsive image" class="img-fluid" src="../../assets/img/image search car.png"></div>
+                </div>
+                <div class="col-12 tx-center d-none" id="image_no_results" style="font-size: 200px;">
+                    <i class="las la-exclamation-triangle"></i>
+                    <h2 style="margin-top: -40px;">No Results found.</h2>
+                </div>
+                <div class="col-12 tx-center mg-b-10 d-none" id="show_more">
+                    <button class="btn btn-dark btn-block">Show more... </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

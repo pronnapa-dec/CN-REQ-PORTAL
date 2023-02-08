@@ -1,0 +1,39 @@
+﻿<!-- Basic modal -->
+<form id="frm-description" name="frm-remark_face_sheet" autocomplete="off">
+    <div class="modal effect-flip-vertical" id="modal-description" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title">คำอธิบายเพิ่มเติม/ใบปะ</h6><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-sm">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        JOB:
+                                    </div>
+                                </div>
+                                <input class="form-control text-center tx-bold" id="description_job_no" placeholder="" type="text" disabled="">
+                            </div>
+                            <div class="form-group pd-t-10">
+                                <label class="form-label">คำอธิบาย/ใบปะ:</label>
+                                <textarea class="form-control" placeholder="คำอธิบายในใบปะหน้า..." name="description_txt" id="description_txt" maxlength="45" rows="3"></textarea>
+                            </div>
+                            <div class="table-responsive" style="overflow-x: visible;">
+                                <table id="table-description" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-primary" type="button" id="btn-save_description">บันทึก</button>
+                    <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">ปิด</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- End Basic modal -->

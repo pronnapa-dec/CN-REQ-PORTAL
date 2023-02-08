@@ -1,0 +1,54 @@
+﻿@page "/trp/opt_job_daily"
+
+@{
+    ViewData["Script"] = "apps/trp/trp-opt-job_daily.js";
+
+    ViewData["Title"] = "Index";
+    ViewData["Content-Title"] = "VSK Transport Plan";
+    ViewData["Content-Title-Page"] = "บันทึกการนำส่งสินค้า-ประจำวัน";
+
+}
+
+
+@* container opened *@
+<div class="container">
+
+    @* subheader *@
+    <div class="breadcrumb-header justify-content-between">
+
+        @* breadcrumb *@
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">@ViewData["Content-Title"]</h4><span class="text-muted mt-1 tx-13 ml-2 mb-0">/ @ViewData["Content-Title-Page"]</span>
+            </div>
+        </div>
+        @* breadcrumb *@
+        @* action *@
+        <div class="d-flex my-xl-auto right-content">
+            <div class="mb-3 mb-xl-0">
+                <button id="btn-upload" class="btn btn-primary btn-with-icon btn-block">ส่งงาน TMS</button>
+            </div>
+            <div class="mb-3 mb-xl-0" style="padding-left:10px;">
+                <button id="btn-report" class="btn btn-success btn-with-icon btn-block">พิมพ์ใบงาน</button>
+            </div>
+        </div>
+        @* action *@
+
+    </div>
+    @* subheader *@
+
+    @* datatables *@
+    <div id="card-datatables" class="row">
+
+        <partial name="~/Pages/trp/opt_job_daily/List.cshtml" />
+    </div>
+    @* datatables *@
+
+    @* modal form *@
+    <div id="card-form" class="row">
+        <partial name="~/Pages/trp/opt_job_daily/Form.cshtml" />
+    </div>
+    @* modal form *@
+
+</div>
+@* Container closed *@

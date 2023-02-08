@@ -1,0 +1,69 @@
+﻿<div class="col-12 col-sm-12">
+    <div class="card">
+        <div class="card-header pb-0 border-bottom">
+            <h3 class="text-dark text-center"><i class="far fa-clock"></i> &nbsp; Time Information : ข้อมูลเวลาพนักงาน</h3>
+            <br />
+        </div>
+
+        <div class="card-body">
+
+            <div class="pd-30 pd-sm-40 bg-gray-200">
+                <div class="row row-xs align-items-center mg-b-20">
+                    <div class="col-md-4">
+                        <h5 class="card-title mb-1">รอบประเมิน   : Quarter</h5>
+                    </div>
+                    <div class="col-md-8 mg-t-5 mg-md-t-0">
+                        <select type="text" class="form-control data_quarter" id="time_data_quarter" name="time_data_quarter">
+                            <option value="">เลือกรอบแบบประเมิน</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row row-xs align-items-center mg-b-20 fileupload">
+                    <div class="col-md-4">
+                        <h5 class="card-title mb-1">อัพโหลดไฟล์ : File Upload</h5>
+                    </div>
+                    <div class="col-md-8 mg-t-5 mg-md-t-0">
+                        <input type="file" class="custom-file-input" id="fileupload" accept=".xlsx">
+                        <label class="custom-file-label" for="customFile">เลือกไฟล์ Excel</label>
+                    </div>
+                </div>
+
+
+                @*<div>
+                        <h6 class="card-title mb-1">อัพโหลดไฟล์ : File Upload</h6>
+                        <p class="text-muted card-sub-title"> กรุณาอัพโหลดไฟล์ข้อมูลตามแบบฟอร์ม &nbsp;<code>type-file=".xlsx"</code> </p>
+                    </div>
+                    <div>
+                        <input id="demo" type="file" name="files" accept=".xlsx" multiple>
+                    </div>*@
+
+            </div>
+        </div>
+
+        @*<div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="card-title mb-1">File Upload</h6>
+                                <p class="text-muted card-sub-title">Dropify is a jQuery plugin to create a beautiful file uploader that converts a standard <code>input type="file"</code> into a nice drag & drop zone with previews and custom styles.</p>
+                            </div>
+                            <div>
+                                <input id="demo" type="file" name="files" accept=".xlsx" multiple>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+
+
+        <div class="card-body">
+            <div class="tablekk-responsive mg-t-20">
+                <table id="tbl-list" class="table table-bordered table-striped table-hover mg-b-0 text-md-nowrap"></table>
+            </div>
+        </div>
+
+    </div>
+</div>
