@@ -12,23 +12,26 @@ const url_api_master = "http://192.168.1.247:8899/cn-branch-api";
 const url_salefile_get = url_api_uat + '/api/Cn_Req_Saletra_Get';
 const url_cn_req_daily_get = url_api_uat + '/api/Cn_Req_Job_Daily_Get';
 const url_cn_req_create = url_api_uat + '/api/Cn_Req_Job_Create';
-const url_cn_req_lov_get = url_api_master + '/v1/Cn_Branch_Lov_Get';
+const url_cn_req_lov_get = url_api_uat + '/api/Cn_Req_Cause_Get';
+const url_cn_req_cause_get = url_api_uat + '/api/Cn_Req_Cause_Master_Get';
+const url_cn_req_assige_get = url_api_uat + '/api/Cn_Req_Assige_Master_Get';
+const url_cn_req_source_get = url_api_uat + '/api/Cn_Req_Source_Master_Get';
 
 
 let oTable = [];
 let history_Table; //$('#tbl-list-history').DataTable({ "order": [[0, "desc"]], "pageLength": 50 });
 
 let cn_pre_job_type_dataset = [];
-let job_comment_dataSet = [];
-let job_comment_dataSet_list = [];
+let job_comment_dataSet = [], job_source_dataSet = [], job_status_dataSet = [];
+let job_comment_dataSet_list = [], job_source_dataSet_list = [], job_status_dataSet_list = [];
 
 
 $.init = async function () {
 
 
-    $.Load_Case();
-    $.Load_comment();
-    $.List();
+    await $.Load_cause();
+    await $.Load_source();
+    await $.List();
     $.SearchJob();
     $.Create();
 
@@ -38,6 +41,16 @@ $.init = async function () {
         $("#saletra_qty").attr({ "max": trnqty });
     });
     $('#created_by').val(user_id);
+
+    $("#frm_data #reset").on('click', function (event) {
+
+        //$("#frm_data input:not(#job_status , #created_by)").trigger('reset');
+        $("#frm_data select").val('').trigger('change');
+        $("#frm_data input:not(#job_status , #created_by)").val('');
+
+        event.preventDefault();
+
+    });
 
 };
 
@@ -395,12 +408,8 @@ $.SearchJob = function () {
 
 }
 
-$.Load_Case = function () {
-    let Get_comment = new URL(url_cn_req_lov_get);
-
-    Get_comment.search = new URLSearchParams({
-        lov_type: 'Case Type'
-    });
+$.Load_cause = function () {
+    let Get_comment = new URL(url_cn_req_cause_get);
 
     fetch(Get_comment).then(function (response) {
         return response.json();
@@ -410,6 +419,7 @@ $.Load_Case = function () {
             $.LoadingOverlay("hide");
 
             $("#global-loader").fadeOut("slow");
+
             swal({
                 type: 'error',
                 title: 'Oops...',
@@ -424,40 +434,35 @@ $.Load_Case = function () {
         } else {
 
             $.each(result.data, function (key, val) {
-                cn_pre_job_type_dataset.push({ id: val['lov_code'], text: val['lov1'] });
+                job_comment_dataSet.push({ id: val['lov_code'], text: val['lov_code'] + ' : ' + val['lov1'] });
+                job_comment_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
 
             });
 
-            $('#cn_pre_job_type').select2({
+            $('#job_comment').select2({
                 width: '100%',
-                minimumResultsForSearch: Infinity,
-                data: cn_pre_job_type_dataset,
-                placeholder: '-- เลือกการแจ้งรับ --',
+                height: '40px',
+                data: job_comment_dataSet,
                 templateResult: function (data) {
                     return data.text;
                 },
                 sorter: function (data) {
                     return data.sort(function (a, b) {
-                        return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
                     });
                 }
             });
-
-
-            $('#cn_pre_job_type').val('1').trigger('change.select2');
         }
 
     });
-
-
 }
 
 $.Load_comment = function () {
     let Get_comment = new URL(url_cn_req_lov_get);
 
-    Get_comment.search = new URLSearchParams({
-        lov_type: 'Pre Job Code'
-    });
+    //Get_comment.search = new URLSearchParams({
+    //    lov_type: 'Pre Job Code'
+    //});
 
     fetch(Get_comment).then(function (response) {
         return response.json();
@@ -506,6 +511,119 @@ $.Load_comment = function () {
 
 
 }
+
+$.Load_source = function () {
+    let Get_source = new URL(url_cn_req_source_get);
+
+    fetch(Get_source).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+        } else {
+
+            $.each(result.data, function (key, val) {
+                job_source_dataSet.push({ id: val['lov_code'], text: val['lov1'] + ' : ' + val['lov2'] });
+                job_source_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
+
+            });
+
+            $('#cn_pre_job_type').select2({
+                width: '100%',
+                height: '40px',
+                data: job_source_dataSet_list,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+        }
+
+    });
+}
+
+$.Load_status = function () {
+    let get_status = new URL(url_cn_req_status_get);
+
+    fetch(get_status).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+        } else {
+
+            $.each(result.data, function (key, val) {
+                job_status_dataSet.push({ id: val['lov_code'], text: val['lov1'] + ' : ' + val['lov2'] });
+                job_status_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
+
+            });
+
+            $('#job_status_search').select2({
+                width: '100%',
+                height: '40px',
+                data: job_status_dataSet,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+
+            $('#job_status_edit').select2({
+                width: '100%',
+                height: '40px',
+                data: job_status_dataSet,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+        }
+
+    });
+}
+
 
 firebase.auth().onAuthStateChanged(function (user) {
 

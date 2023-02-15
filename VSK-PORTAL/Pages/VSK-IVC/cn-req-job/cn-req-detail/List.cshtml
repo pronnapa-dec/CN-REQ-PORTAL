@@ -90,12 +90,12 @@
                         <div class="col-md-4">
                             <select class="form-control" id="job_status_search" name="job_status_search" data-width="100%">
                                 <option value="">-- เลือกสถานะ --</option>
-                                <option value="1">Open - รับเรื่อง </option>
-                                <option value="2">On Process - กำลังดำเนินการ</option>
-                                <option value="3">Receive - รับสินค้า</option>
-                                <option value="4">Complete - รับคืนสำเร็จ </option>
-                                <option value="5">Reject - ยกเลิกสินค้า </option>
-                                <option value="0">Cancel - ยกเลิก </option>
+                                @*<option value="1">Open - รับเรื่อง </option>*@
+                                @*<option value="2">On Process - กำลังดำเนินการ</option>*@
+                                @*<option value="3">Receive - รับสินค้า</option>*@
+                                @*<option value="4">Complete - รับคืนสำเร็จ </option>*@
+                                @*<option value="5">Reject - ยกเลิกสินค้า </option>*@
+                                @*<option value="0">Cancel - ยกเลิก </option>*@
                             </select>
                         </div>
 
@@ -103,9 +103,9 @@
                         <div class="col-md-4">
                             <select class="form-control" id="cn_pre_job_assige_search" name="cn_pre_job_assige_search" data-width="100%">
                                 <option value="">-- ทั้งหมด --</option>
-                                <option value="ADM">ADM</option>
+                                @*<option value="ADM">ADM</option>
                                 <option value="TRP">TRP</option>
-                                <option value="IVC">IVC</option>
+                                <option value="IVC">IVC</option>*@
                             </select>
                         </div>
 
@@ -123,7 +123,7 @@
                     <div class="form-group mb-0 mt-3 justify-content-end" align="right">
                         <div align="right">
                             <button type="submit" class="btn btn-primary">Search</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="button" id="reset" class="btn btn-secondary">Cancel</button>
                             <button type="button" id="btn-export" class="btn btn-success">&nbsp;&nbsp;Export&nbsp;&nbsp;</button>&nbsp;
                         </div>
                     </div>

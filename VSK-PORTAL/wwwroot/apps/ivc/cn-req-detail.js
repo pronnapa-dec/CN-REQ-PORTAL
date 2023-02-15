@@ -5,14 +5,12 @@ const objProfile = JSON.parse(localStorage.getItem('objAuth'));
 const user_id = objProfile[0]['username'];
 
 let collection = 'mrp_opt_purchaseplan';
-let oTable, history_Table, history_status_Table, history_assige_Table, history_drive_Table, history_condition_Table, role_code, mode;
+let oTable, history_Table, history_status_Table, history_assige_Table, history_drive_Table, history_remark_Table, history_condition_Table, role_code, mode;
 let inventorycode_dataset = [];
 let invfrecode_dataset = [];
 
 const url_api = "http://192.168.1.247/intranet/pur-api";
 const url_api_uat = "http://localhost:49708";
-const url_api_trp = "http://192.168.1.247:8899/trp-api/";
-const url_api_master = "http://192.168.1.247:8899/cn-branch-api";
 
 //let export_cn_job = 'http://192.168.1.247/intranet/report/cn-rpt/Pages/RPT_CN/RPT_CN_JOB';
 const lists_get = url_api_uat + '/api/Cn_Req_Job_Search_Get';
@@ -25,26 +23,23 @@ const api_lists_history_status = url_api_uat + '/api/Cn_Req_Status_Get';
 const api_lists_history_driver = url_api_uat + '/api/Cn_Req_Driver_Get';
 const api_lists_history_condition = url_api_uat + '/api/Cn_Req_Condition_Get';
 const api_lists_history_assige = url_api_uat + '/api/Cn_Req_Assige_Get';
+const api_lists_history_remark = url_api_uat + '/api/Cn_Req_Remark_Get';
+
+const url_cn_req_cause_get = url_api_uat + '/api/Cn_Req_Cause_Master_Get';
+const url_cn_req_assige_get = url_api_uat + '/api/Cn_Req_Assige_Master_Get';
+const url_cn_req_source_get = url_api_uat + '/api/Cn_Req_Source_Master_Get';
+const url_cn_req_status_get = url_api_uat + '/api/Cn_Req_Status_Master_Get';
 
 const api_status = url_api_uat + '/api/Cn_Req_Status_Update';
-
-const url_cn_req_lov_get = url_api_master + '/v1/Cn_Branch_Lov_Get';
 
 const api_key = "cOaI7TF@3am9Gc?89hqC(18)h{{G$dsaVt0$FnxpCf0vO%I2{Fp8?Y7rBcRqNNzv";
 const url_employee_movemax_get = "https://vsk.movemax.me/public-api/tms/v1/employee";
 
 
-//let lists_history = url_api_uat + '/v1/Cn_Branch_Pre_Job_Detail_Get';
-//let update_detail = url_api_uat + '/v1/Cn_Branch_Pre_Job_Detail_Create';
-////let export_invoice = 'http://192.168.1.187/intranet/report/cn-rpt/Pages/RPT_CN/RPT_CN_REINVOICE';
-//let export_invoice = 'http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fReInvoiceCnBranch%2fCnBranch_TRP_Report&rs:Command=Render&rs:Format=pdf';
-//const Cn_Lov_Get = url_api + '/v1/Cn_Lov_Get';
-
-
 let validator, table, options, item_action, item_id, deatailCondition;
 
-let job_comment_dataSet = [];
-let job_comment_dataSet_list = [];
+let job_comment_dataSet = [], job_source_dataSet = [], job_status_dataSet = [];
+let job_comment_dataSet_list = [], job_assige_dataSet_list = [], job_source_dataSet_list = [], job_status_dataSet_list = [];
 let Master_dataSet = [];
 let arraydriver = [];
 
@@ -75,9 +70,12 @@ $.init = async function () {
     });
     $('#cn_date').val(moment().format('DD/MM/YYYY') + '-' + moment().format('DD/MM/YYYY'))
 
-    $.Load_comment();
-    $.Driver_Get();
-    $.List();
+    await $.Load_cause();
+    await $.Load_assige();
+    await $.Load_source();
+    await $.Driver_Get();
+    await $.Load_status();
+    await $.List();
 
     $('#frm_search').submit(async function (e) {
 
@@ -92,85 +90,15 @@ $.init = async function () {
 
     });
 
+    $('#modal-frm_history').on('hidden.bs.modal', function () {
 
-    //$('#job_status_search').append('<option value="complete">Complete - สำเร็จ </option>')
+        history_Table.destroy();
+        history_assige_Table.destroy();
+        history_drive_Table.destroy();
+        history_condition_Table.destroy();
+        history_status_Table.destroy();
 
-    //$('#btn-export').off('click').on('click', function (evt) {
-
-    //    evt.preventDefault();
-
-    //    $(this).on('click', function (evt) {
-    //        evt.preventDefault();
-    //    });
-
-    //    let CNdate_start = $('#cn_date').val() != '' ? moment($('#cn_date').val().substring(0, 10), 'DD/MM/YYYY').format('YYYY-MM-DD') + " 00:00" : moment().add(-365, 'days').format('YYYY-MM-DD') + " 00:00";
-    //    let CNdate_end = $('#cn_date').val() != '' ? moment($('#cn_date').val().substring(11, 25), 'DD/MM/YYYY').format('YYYY-MM-DD') + " 23:59" : moment().add(1, 'days').format('YYYY-MM-DD') + " 23:59";
-
-    //    let url = 'http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fReInvoiceCnBranch%2fRPT_Cn_job_branch&rs:Command=Render';
-    //    window.open(url, '_blank'); // kung edit 17/11/20
-
-    //});
-
-    ////if (role_code == 'TRP') {
-    ////    $('#cn_pre_job_assige_search').val('TRP')
-    ////}
-
-    //$.Load_comment();
-    //$.Driver_Get();
-
-    //$("#driver_id").append('<option value="driver_free">คนขับรถนอก</option>');
-
-    //$('.item_status').hide();
-
-    //$('#job_status_search').on("change", function () {
-    //    if ($(this).val() == "receive") {
-    //        $('.item_status').show();
-    //    } else {
-    //        $('.item_status').hide();
-    //        $('#item_status').val('');
-    //    }
-    //})
-
-    //$('.fc-datepicker').datepicker({
-    //    dateFormat: 'dd/mm/yy',
-    //    autoclose: true,
-    //});
-
-    //$('.date-picker').on('apply.daterangepicker', function (ev, picker) {
-    //    $(this).val(picker.startDate.format('DD/MM/YYYY') + '-' + picker.endDate.format('DD/MM/YYYY'));
-    //});
-
-    //$('#btn-item_create').click(function (e) {
-
-    //    e.preventDefault();
-
-    //    $.Create();
-
-    //});
-
-    //$('#modal-frm_data').on('hidden.bs.modal', function () {
-
-    //    //$('#site_code').val('').trigger('change').prop('disabled', false);
-    //    //$('#schedule_note').val('').prop('disabled', false);
-    //    //$('.schedule_day').prop('checked', false).prop('disabled', true);
-    //    //$('#schedule_all').prop('checked', false).prop('disabled', true);
-    //    //$('.record_status').prop('disabled', true);
-
-    //    $("#frm_data").parsley().reset();
-
-    //});
-
-    //$("#global-loader").fadeIn("slow");
-
-    //$.List(); //before search
-
-
-
-
-    //$('#modal-frm_history').on('hidden.bs.modal', function () {
-
-    //    history_Table.destroy();
-    //});
+    });
 
 };
 
@@ -630,6 +558,14 @@ $.List = async function () {
         }
     })
 
+    $("#frm_search #reset").on('click', function (event) {
+
+        $("#frm_search select").val('').trigger('change');
+        $("#frm_search input:not(#cn_date)").val('');
+        event.preventDefault();
+
+    });
+
 };
 
 $.Driver_Get = async function () {
@@ -693,9 +629,9 @@ $.Driver_Get = async function () {
 }
 
 $.Details = async function (citem) {
+
     $('#frm_data').find('input, select').prop("disabled", true);
     $('.hide_job_status').addClass('d-none');
-
 
     if (citem['record_status'] == "1") {
         $('#frm_data').find('#job_status').css('color', 'red');
@@ -721,7 +657,7 @@ $.Details = async function (citem) {
     $('#frm_data').find('#cn_datetime').val(moment(citem['created_date'], 'YYYY-MM-DD HH:mm:ss').format('DD/MM/YYYY HH:mm:ss')).prop("disabled", true);
     $('#frm_data').find('#job_status').val(citem['cn_req_job_status']).prop("disabled", true);
     $('#frm_data').find('#job_status_edit').val(citem['record_status']).trigger('change').prop("disabled", true);
-    $('#frm_data').find('#job_assige').val(citem['cn_req_job_lastassige']).prop("disabled", true);
+    $('#frm_data').find('#job_assige').val(citem['cn_req_job_lastassige']).trigger('change').prop("disabled", true);
     $('#frm_data').find('#salefile_number').val(citem['number']).prop("disabled", true);
     $('#frm_data').find('#saletra_item_name').val(citem['stkname']).prop("disabled", true);
     $('#frm_data').find('#cn_qty').val(citem['cn_req_job_qty']).prop("disabled", true);
@@ -744,12 +680,15 @@ $.Souce_Update = async function (citem) {
     $('#btn-save-driver').addClass('d-none').prop("disabled", true);
     $('#btn-save-assige').addClass('d-none').prop("disabled", true);
     $('#btn-save-condition').addClass('d-none').prop("disabled", true);
+
     $('#frm_data input').removeAttr('required');
     $('#frm_data select:not(#source_site_code)').removeAttr('required');
     $('#source_site_code').attr('required');
 
     $('.hide_job_status').addClass('d-none');
     $('#source_site_code').prop("disabled", false);
+    $('#pick_up_remark').prop("disabled", false);
+
     $('#btn-save-souce').removeClass('d-none').prop("disabled", false);
 
     $('#btn-save-souce').on('click', function (e) {
@@ -763,6 +702,7 @@ $.Souce_Update = async function (citem) {
             let add_data = {
                 cn_req_job_jobno: citem['cn_req_job_jobno'],
                 cn_req_job_source: $('#source_site_code').val(),
+                cn_req_job_note: $('#pick_up_remark').val(),
                 created_by: user_id
             };
 
@@ -817,6 +757,8 @@ $.Souce_Update = async function (citem) {
 }
 
 $.Assige_Update = async function (citem) {
+
+    console.log(citem);
 
     $('#btn-save-status').addClass('d-none').prop("disabled", true);
     $('#btn-save-souce').addClass('d-none').prop("disabled", true);
@@ -1173,6 +1115,7 @@ $.History = async function (citem) {
     $.History_Status(citem);
     $.History_Driver(citem);
     $.History_Condition(citem);
+    $.History_Remark(citem);
 
 }
 
@@ -1676,7 +1619,149 @@ $.History_Status = async function (citem) {
     })
 };
 
-$.Invoice = async function (citem) { 
+$.History_Remark = async function (citem) {
+
+    let url_history_remark = new URL(api_lists_history_remark);
+
+    url_history_remark.search = new URLSearchParams({
+        cn_req_job_jobno: citem['cn_req_job_jobno']
+    });
+
+    fetch(url_history_remark).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+
+
+        } else {
+
+            $('#tbl-list-history-remark').css({ "width": "100%" });
+
+            history_remark_Table = $('#tbl-list-history-remark').DataTable({
+                data: result.data,
+                //scrollX: true,
+                //scrollCollapse: true,
+                // autoWidth: true,
+                info: false,
+                searching: false,
+                paging: false,
+                columns: [
+                    {
+                        title: "created_date",
+                        data: "created_date",
+                        visible: false
+                    }, //3
+                    {
+                        title: "<span style='font-size:11px;'>วันที่/เวลา</span>",
+                        data: "created_date",
+                        //width: "70px",
+                        //visible: false,
+                        class: "tx-center",
+                        render: function (data, type, row, meta) {
+                            return '<span style="font-size:11px;">' + moment(data).format('DD/MM/YYYY') + '  ' + moment(data).format('HH:mm') + '<span/>';
+                        }
+                    }, //3
+                    {
+                        title: "<span style='font-size:11px;'>สถานะ</span>",
+                        data: "record_status",
+                        class: "tx-center job_status",
+                        width: "50px",
+                        render: function (data, type, row, meta) {
+                            if (row.record_status == '1') {
+                                return '<span style="color:red; font-size:11px;">Open</span>';
+                            } else if (row.record_status == '2') {
+                                return '<span style="color:orange; font-size:11px;">On Process</span>';
+                            } else if (row.record_status == '3') {
+                                return '<span style="color:green; font-size:11px;">Receive</span>';
+                            } else if (row.record_status == '4') {
+                                return '<span style="color:green; font-size:11px;">Complete</span>';
+                            } else if (row.record_status == '5') {
+                                return '<span style="color:red; font-size:11px;">Rejected</span>';
+                            } else if (row.record_status == "0") {
+                                return '<span style="color:#FFC300; font-size:11px;">Cancel</span>';
+                            } else {
+                                return '<span style="color:#000; font-size:11px;">' + data + '</span>';
+                            }
+                        }
+                    }, //4
+                    {
+                        title: "<span style='font-size:11px;'>สาเหตุ</span>",
+                        data: "cn_req_job_cause",
+                        class: "tx-center",
+                        width: "250px",
+                        render: function (data, type, row, meta) {
+                            let job_comment_obj = job_comment_dataSet.find(obj => obj.id === data);
+                            console.log(job_comment_dataSet)
+                            console.log(job_comment_obj)
+                            return '<span style="font-size:11px;">' + job_comment_obj.text + '</span>';
+                        }
+
+                    }, //5
+                    {
+                        title: "<span style='font-size:11px;'>ผู้รับผิดชอบ</span>",
+                        data: "cn_req_job_lastassige",
+                        class: "tx-center assige",
+                        width: "70px",
+                        render: function (data, type, row, meta) {
+                            return '<span style="font-size:11px;">' + data + '</span>';
+                        }
+                    }, //6
+                    {
+                        title: "<span style='font-size:11px;'>การรับแจ้ง</span>",
+                        data: "cn_req_job_source",
+                        class: "tx-center job_type",
+                        width: "80px",
+                        //visible: false,
+                        render: function (data, type, row, meta) {
+                            return data == '1' ? '<span class="badge badge-info">รับคืน</span>' : data == '2' ? '<span class="badge badge-success">หน้างาน</span>' : '-';
+                        }
+                    }, //7
+                    {
+                        title: "<span style='font-size:11px;'>หมายเหตุ</span>",
+                        data: "cn_req_job_note",
+                        //width: "70px",
+                        //visible: false,
+                        class: "tx-center",
+                        render: function (data, type, row, meta) {
+                            return data != null ? '<span style="font-size:11px;">' + data + '</span>' : '';
+
+                        }
+                    }, //8
+                    {
+                        title: "<span style='font-size:11px;'>บันทึกโดย</span>",
+                        width: "10%",
+                        class: "tx-center",
+                        data: 'created_by',
+                        render: function (data, type, row, meta) {
+                            return '<div class="tx-left">' + data + '</div>'
+                        }
+                    }
+                ],
+
+            });
+
+        }
+    })
+};
+
+$.Invoice = async function (citem) {
     $('#modal-frm_data').modal('hide');
 
     //let url = export_invoice + '&cn_pre_job_jobno=' + citem['cn_pre_job_jobno'];
@@ -1684,12 +1769,8 @@ $.Invoice = async function (citem) {
 
 };
 
-$.Load_comment = function () {
-    let Get_comment = new URL(url_cn_req_lov_get);
-
-    Get_comment.search = new URLSearchParams({
-        lov_type: 'Pre Job Code'
-    });
+$.Load_cause = function () {
+    let Get_comment = new URL(url_cn_req_cause_get);
 
     fetch(Get_comment).then(function (response) {
         return response.json();
@@ -1732,11 +1813,197 @@ $.Load_comment = function () {
                     });
                 }
             });
+
+            $('#cn_comment').select2({
+                width: '100%',
+                height: '40px',
+                data: job_comment_dataSet,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
         }
 
     });
+}
 
+$.Load_assige = function () {
+    let Get_assige = new URL(url_cn_req_assige_get);
 
+    fetch(Get_assige).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+        } else {
+
+            $.each(result.data, function (key, val) {
+                job_assige_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
+
+            });
+
+            $('#cn_pre_job_assige_search').select2({
+                width: '100%',
+                height: '40px',
+                data: job_assige_dataSet_list,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+
+            $('#job_assige').select2({
+                width: '100%',
+                height: '40px',
+                data: job_assige_dataSet_list,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+        }
+
+    });
+}
+
+$.Load_source = function () {
+    let Get_source = new URL(url_cn_req_source_get);
+
+    fetch(Get_source).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+        } else {
+
+            $.each(result.data, function (key, val) {
+                job_source_dataSet.push({ id: val['lov_code'], text: val['lov1'] + ' : ' + val['lov2'] });
+                job_source_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
+
+            });
+
+            $('#source_site_code').select2({
+                width: '100%',
+                height: '40px',
+                data: job_source_dataSet_list,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+        }
+
+    });
+}
+
+$.Load_status = function () {
+    let get_status = new URL(url_cn_req_status_get);
+
+    fetch(get_status).then(function (response) {
+        return response.json();
+    }).then(function (result) {
+        if (result.status === 'Error') {
+
+            $.LoadingOverlay("hide");
+
+            $("#global-loader").fadeOut("slow");
+
+            swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            }, function (isConfirmed) {
+                if (isConfirmed) {
+
+                    location.reload();
+
+                }
+            })
+        } else {
+
+            $.each(result.data, function (key, val) {
+                job_status_dataSet.push({ id: val['lov_code'], text: val['lov1'] + ' : ' + val['lov2'] });
+                job_status_dataSet_list.push({ id: val['lov_code'], text: val['lov1'] });
+
+            });
+
+            $('#job_status_search').select2({
+                width: '100%',
+                height: '40px',
+                data: job_status_dataSet,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+
+            $('#job_status_edit').select2({
+                width: '100%',
+                height: '40px',
+                data: job_status_dataSet,
+                templateResult: function (data) {
+                    return data.text;
+                },
+                sorter: function (data) {
+                    return data.sort(function (a, b) {
+                        return a.text < b.text ? -1 : a.text > b.text ? 1 : 0;
+                    });
+                }
+            });
+        }
+
+    });
 }
 
 $.MM_Employee_Get = async function (code, positionName, groupName) {
@@ -1774,6 +2041,20 @@ $.MM_Employee_Get = async function (code, positionName, groupName) {
     return result;
 
 };
+
+function checkValue(value, arr) {
+    var status = 'Not exist';
+
+    for (var i = 0; i < arr.length; i++) {
+        var name = arr[i];
+        if (name == value) {
+            status = 'Exist';
+            break;
+        }
+    }
+
+    return status;
+}
 
 function Driver_Find(code, name) {
 

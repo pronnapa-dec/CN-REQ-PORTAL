@@ -49,14 +49,15 @@
                 <div class="row row-sm mg-t-15">
                     <div class="col-lg-3">
                         <label for="cn_pre_job_type">การแจ้งรับ:</label>
-                        <select class="form-control select2-no-search" id="cn_pre_job_type" name="cn_pre_job_type" data-width="100%" required data-parsley-error-message="กรุณาระบุการแจ้งรับ"> </select>
+                        <select class="form-control select2-no-search" id="cn_pre_job_type" name="cn_pre_job_type" data-width="100%" required data-parsley-error-message="กรุณาระบุการแจ้งรับ">
+                            <option value="">-- เลือกการแจ้งรับ --</option>
+                        </select>
                     </div>
 
                     <div class="col-lg-7">
                         <label for="job_comment">สาเหตุ</label>
                         <select class="form-control select2" id="job_comment" name="job_comment" data-width="100%" required="" data-parsley-error-message="สาเหตุ">
                             <option value="">-- เลือกสาเหตุการรับคืน --</option>
-
                         </select>
                     </div>
 
@@ -82,7 +83,7 @@
                 <div class="form-group mb-0 mt-3 justify-content-end" align="right">
                     <div>
                         <button type="submit" id="btn-save-form" class="btn btn-md btn-primary">บันทึก</button>
-                        <button type="reset" class="btn btn-md btn-secondary" onClick="window.location.reload();">ยกเลิก</button>
+                        <button type="button" id="reset" class="btn btn-md btn-secondary">ยกเลิก</button>
                     </div>
                 </div>
             </form>

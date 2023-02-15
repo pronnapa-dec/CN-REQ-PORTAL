@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN\\VSK-PORTAL\\WEB_VSK.csproj": {}
+    "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN-REQ-PORTAL\\VSK-PORTAL\\WEB_VSK.csproj": {}
   },
   "projects": {
-    "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN\\VSK-PORTAL\\WEB_VSK.csproj": {
+    "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN-REQ-PORTAL\\VSK-PORTAL\\WEB_VSK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN\\VSK-PORTAL\\WEB_VSK.csproj",
+        "projectUniqueName": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN-REQ-PORTAL\\VSK-PORTAL\\WEB_VSK.csproj",
         "projectName": "WEB_VSK",
-        "projectPath": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN\\VSK-PORTAL\\WEB_VSK.csproj",
+        "projectPath": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN-REQ-PORTAL\\VSK-PORTAL\\WEB_VSK.csproj",
         "packagesPath": "C:\\Users\\Pornnapa.d\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN\\VSK-PORTAL\\obj\\",
+        "outputPath": "D:\\Project\\vsk-project\\MIS-PORTAL-8099\\CN-REQ-PORTAL\\VSK-PORTAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pornnapa.d\\AppData\\Roaming\\NuGet\\NuGet.Config",
