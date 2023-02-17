@@ -34,6 +34,7 @@ const api_status = url_api_uat + '/api/Cn_Req_Status_Update';
 
 const api_key = "cOaI7TF@3am9Gc?89hqC(18)h{{G$dsaVt0$FnxpCf0vO%I2{Fp8?Y7rBcRqNNzv";
 const url_employee_movemax_get = "https://vsk.movemax.me/public-api/tms/v1/employee";
+const export_invoice = 'http://192.168.1.187/ReportServer/Pages/ReportViewer.aspx?%2fRPT-CN-REQ%2fReportCnReqReinvoice&rs:Format=PDF';
 
 
 let validator, table, options, item_action, item_id, deatailCondition;
@@ -433,7 +434,7 @@ $.List = async function () {
                             }
                             else if (key === 'invoice') {
 
-                                $.Invoice(cn_jobno, salefile_number, gbarcode, salefile_invcode);
+                                $.Invoice(cn_jobno);
 
                             }
                             else if (key === 'cancel1') {
@@ -1761,14 +1762,6 @@ $.History_Remark = async function (citem) {
     })
 };
 
-$.Invoice = async function (citem) {
-    $('#modal-frm_data').modal('hide');
-
-    //let url = export_invoice + '&cn_pre_job_jobno=' + citem['cn_pre_job_jobno'];
-    //window.open(url, '_blank');
-
-};
-
 $.Load_cause = function () {
     let Get_comment = new URL(url_cn_req_cause_get);
 
@@ -2005,6 +1998,14 @@ $.Load_status = function () {
 
     });
 }
+
+$.Invoice = async function (cn_req_job_jobno) {
+    $('#modal-frm_data').modal('hide');
+
+    let url = export_invoice + '&cn_req_job_jobno=' + cn_req_job_jobno;
+    window.open(url, '_blank');
+
+};
 
 $.MM_Employee_Get = async function (code, positionName, groupName) {
 
